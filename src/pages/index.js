@@ -7,6 +7,7 @@ import Emoji from "../components/util/Emoji";
 import Splash from "../components/splash/Splash";
 import DirectoryPreview from "../components/splash/DirectoryPreview";
 import BuyMeACoffee from "../components/layout/BuyMeACoffee";
+import MentorsPreview from "../components/splash/MentorsPreview";
 
 export default function IndexPage() {
   return (
@@ -19,6 +20,7 @@ export default function IndexPage() {
               subtitle="Discover resources to help you navigate your journey into product management"
             />
             <DirectoryPreview context={context} />
+            <MentorsPreview context={context} />
           </>
         )}
       </Context.Consumer>

@@ -13,7 +13,7 @@ import Button from "@material-ui/core/Button";
 
 import Card from "../util/MediaCard";
 import Link from "../util/Link";
-import { Divider } from "@material-ui/core";
+import Emoji from "../util/Emoji";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -98,30 +98,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DirectoryPreview({ context }) {
+export default function MentorsPreview({ context }) {
   const classes = useStyles();
-
-  const data = useStaticQuery(graphql`
-    query GetFeaturedResources {
-      allRecruitingResource(filter: { featured: { eq: true } }) {
-        nodes {
-          id
-          name
-          description
-          category
-          tags
-          link
-          image {
-            childImageSharp {
-              fluid(quality: 75, cropFocus: ATTENTION) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
 
   return (
     <>
@@ -134,7 +112,7 @@ export default function DirectoryPreview({ context }) {
             align="center"
             gutterBottom
           >
-            {"directory"}
+            {"mentors"}
           </Typography>
           <Typography
             className={classes.title}
@@ -143,7 +121,7 @@ export default function DirectoryPreview({ context }) {
             color="textPrimary"
             gutterBottom
           >
-            {"Simplify the A/PM recruiting process"}
+            {"Get help from those who've done it"}
           </Typography>
           <Typography
             className={classes.subtitle}
@@ -155,76 +133,20 @@ export default function DirectoryPreview({ context }) {
             {
               <>
                 {
-                  "We've collected and organized some of the best A/PM recruiting resources out there"
+                  "You are not alone. We've tapped into the vast network of awesome, successful A/PMs who are happy to help "
                 }{" "}
-                &mdash; {"so you can focus on landing your dream job"}
+                <Emoji symbol="🤜" label="right-facing fist" />
+                <Emoji symbol="🤛" label="left-facing fist" />
               </>
             }
           </Typography>
         </div>
       </Box>
-      <Container maxWidth={"xl"} className={classes.container}>
-        <div className={classes.highlights}>
-          <div className={classes.callout}>
-            <Typography
-              style={{ width: "40%" }}
-              color="textSecondary"
-              variant="h2"
-              align="center"
-              gutterBottom
-            >
-              {"150+"}
-            </Typography>
-            <Typography
-              style={{ width: "60%" }}
-              variant="h6"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              {"resources recommended by professional PMs"}
-            </Typography>
-          </div>
-          <div className={classes.callout}>
-            <Typography
-              style={{ width: "40%" }}
-              color="textSecondary"
-              variant="h2"
-              align="center"
-              gutterBottom
-            >
-              {"1"}
-            </Typography>
-            <Typography
-              style={{ width: "60%" }}
-              variant="h6"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              {"easy-to-navigate directory"}
-            </Typography>
-          </div>
-        </div>
-        <Carousel
-          className={classes.carousel}
-          navButtonsAlwaysVisible={true}
-          animation="slide"
-        >
-          {data.allRecruitingResource.nodes.map((node, index) => (
-            <div className={classes.item}>
-              <Grid justify="center" item xs={12}>
-                <Card loading={false} data={node} image={node.image} />
-              </Grid>
-            </div>
-          ))}
-        </Carousel>
-      </Container>
       <div className={classes.buttonContainer}>
         <Button
           component={Link}
           onClick={(event) => context.changeNav(event, 1)}
-          to={"/map"}
+          to={"/mentors"}
           className={classes.button}
           variant="contained"
           color="primary"
@@ -236,11 +158,10 @@ export default function DirectoryPreview({ context }) {
             align="center"
             gutterBottom
           >
-            {"start exploring"}
+            {"Get a guide"}
           </Typography>
         </Button>
       </div>
-      <Divider variant="middle" light />
     </>
   );
 }
