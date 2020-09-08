@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Grid, Container, IconButton, Paper } from "@material-ui/core";
+import { Grid, Container, IconButton, Paper, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
@@ -80,25 +80,7 @@ const useStyles = makeStyles((theme) => ({
   columns: {
     display: "flex",
     minHeight: 500,
-    background: "#eee",
     width: "50%",
-    transition: "all .5s",
-
-    "&:hover": {
-      width: "60%",
-    },
-
-    "&:nth-of-type(1)": {
-      background: "#aaa",
-    },
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  pos: {
-    marginBottom: 12,
   },
 }));
 
@@ -171,6 +153,7 @@ export default function Profile({ data }) {
                           <Grid item>
                             <IconButton
                               href="https://www.linkedin.com/in/michelle-ma-1208/"
+                              target="_blank"
                               variant="contained"
                               className={classes.linkedinButton}
                             >
@@ -180,6 +163,7 @@ export default function Profile({ data }) {
                           <Grid item>
                             <IconButton
                               href="https://twitter.com/michellema_97?lang=en"
+                              target="_blank"
                               variant="contained"
                               className={classes.twitterButton}
                             >
@@ -202,6 +186,25 @@ export default function Profile({ data }) {
                     flexDirection="column"
                     alignItems="center"
                   >
+                    <Typography
+                      className={classes.title}
+                      variant="h3"
+                      align="center"
+                      color="textPrimary"
+                      gutterBottom
+                    >
+                      {"My Path"}
+                    </Typography>
+                    <Typography
+                      className={classes.bio}
+                      variant="body2"
+                      align="center"
+                      color="textSecondary"
+                      paragraph
+                    >
+                      {"Resources that I love, recommend or have used myself!"}
+                    </Typography>
+                    <Divider variant="middle" light />
                     <Grid container display="flex" justify="center" spacing={4}>
                       {recommendations.map((card, index) => (
                         <Grid
@@ -217,6 +220,7 @@ export default function Profile({ data }) {
                   </Box>
                 </Grid>
               </div>
+              <Divider light variant="middle" orientation="vertical" flexItem />
               <div className={classes.columns}>
                 <Grid direction="column" justify="center" alignItems="center">
                   <Box
@@ -225,6 +229,24 @@ export default function Profile({ data }) {
                     flexDirection="column"
                     alignItems="center"
                   >
+                    <Typography
+                      className={classes.title}
+                      variant="h3"
+                      align="center"
+                      color="textPrimary"
+                      gutterBottom
+                    >
+                      {"My Next Journey"}
+                    </Typography>
+                    <Typography
+                      className={classes.bio}
+                      variant="body2"
+                      align="center"
+                      color="textSecondary"
+                      paragraph
+                    >
+                      {"Check out some other cool things I've worked on!"}
+                    </Typography>
                     <Grid container display="flex" justify="center" spacing={4}>
                       {nextJourneys.map((card, index) => (
                         <Grid

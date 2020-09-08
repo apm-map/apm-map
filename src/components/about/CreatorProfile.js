@@ -129,6 +129,7 @@ export default function CreatorProfile({
                   <Grid item>
                     <IconButton
                       href={github}
+                      target="_blank"
                       variant="contained"
                       className={classes.githubButton}
                     >
@@ -140,6 +141,7 @@ export default function CreatorProfile({
                   <Grid item>
                     <IconButton
                       href={linkedIn}
+                      target="_blank"
                       variant="contained"
                       className={classes.linkedinButton}
                     >
@@ -151,6 +153,7 @@ export default function CreatorProfile({
                   <Grid item>
                     <IconButton
                       href={medium}
+                      target="_blank"
                       variant="contained"
                       className={classes.mediumButton}
                     >
@@ -162,6 +165,7 @@ export default function CreatorProfile({
                   <Grid item>
                     <IconButton
                       href={twitter}
+                      target="_blank"
                       variant="contained"
                       className={classes.twitterButton}
                     >

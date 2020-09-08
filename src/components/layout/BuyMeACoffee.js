@@ -108,6 +108,7 @@ export default function BuyMeACoffee() {
             aria-label="help-support-us"
           >
             <IconButton
+              target="_blank"
               className={classes.button}
               href="https://www.buymeacoffee.com/michellema"
             >
