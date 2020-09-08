@@ -143,10 +143,12 @@ export default function Splash(props) {
   }, [sequence]);
 
   return (
-    <Box className={classes.box}>
-      <div>
-        <Video src={videoSrc} />
-      </div>
+    <Box bgcolor="lightblue" className={classes.box}>
+      {false && (
+        <div>
+          <Video src={videoSrc} />
+        </div>
+      )}
       <motion.div
         style={{
           display: "flex",

@@ -60,11 +60,13 @@ export default function DirectoryCard({ loading, data }) {
         {loading ? (
           <Skeleton variant="rect" className={classes.cardMedia} />
         ) : (
-          <CardMedia
-            className={classes.cardMedia}
-            image={data.image}
-            title={data.name}
-          />
+          data.image && (
+            <CardMedia
+              className={classes.cardMedia}
+              image={data.image}
+              title={data.name}
+            />
+          )
         )}
         <Divider variant="middle" light />
         <CardContent className={classes.cardContent}>
@@ -96,7 +98,9 @@ export default function DirectoryCard({ loading, data }) {
             </>
           ) : (
             <>
-              <Chip size="small" label={data.category} color="primary" />
+              {data.category && (
+                <Chip size="small" label={data.category} color="primary" />
+              )}
               {data.tags &&
                 data.tags
                   .split(",")
