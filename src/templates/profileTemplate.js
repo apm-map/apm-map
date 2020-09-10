@@ -69,10 +69,14 @@ const useStyles = makeStyles((theme) => ({
   },
   bio: {
     fontSize: 20,
+    width: "70%",
   },
   title: {
     fontWeight: 600,
     padding: theme.spacing(2, 0, 2),
+  },
+  subtitle: {
+    fontSize: 20,
   },
   bg: {
     width: "100%",
@@ -93,19 +97,16 @@ export default function Profile({ data }) {
   const recommendations = data.allResourcesJson.nodes;
   const nextJourneys = [
     {
-      name: "Some Name",
-      description:
-        "this is some description about someone's next journey. So cool!",
+      name: "Placeholder name",
+      description: "this is placeholder text about someone's next journey!",
     },
     {
-      name: "Some Name",
-      description:
-        "this is some description about someone's next journey. So cool!",
+      name: "Placeholder name",
+      description: "this is placeholder text about someone's next journey!",
     },
     {
-      name: "Some Name",
-      description:
-        "this is some description about someone's next journey. So cool!",
+      name: "Placeholder name",
+      description: "this is placeholder text about someone's next journey!",
     },
   ];
 
@@ -145,7 +146,7 @@ export default function Profile({ data }) {
                         color="textSecondary"
                         paragraph
                       >
-                        {mentor.bio} <Emoji symbol="🗺️" label="map" />
+                        {mentor.bio}
                       </Typography>
                       <Box p={2}>
                         <Grid container spacing={2} justify="center">
@@ -195,7 +196,7 @@ export default function Profile({ data }) {
                       {"My Path"}
                     </Typography>
                     <Typography
-                      className={classes.bio}
+                      className={classes.subtitle}
                       variant="body2"
                       align="center"
                       color="textSecondary"
@@ -238,7 +239,7 @@ export default function Profile({ data }) {
                       {"My Next Journey"}
                     </Typography>
                     <Typography
-                      className={classes.bio}
+                      className={classes.subtitle}
                       variant="body2"
                       align="center"
                       color="textSecondary"
