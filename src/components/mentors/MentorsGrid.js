@@ -33,6 +33,7 @@ export default function MentorsGrid({ category }) {
           node {
             id
             name
+            title
             bio
             image
             fields {

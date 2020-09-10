@@ -23,6 +23,11 @@ export default function AvatarCard({ data }) {
     setRaised(!raised);
   };
 
+  function shortBio(str) {
+    var shorter = str.split(" ").splice(0, 25).join(" ");
+    return str.length > shorter.length ? `${shorter} ...` : shorter;
+  }
+
   return (
     <Card
       className={classes.root}
@@ -38,9 +43,10 @@ export default function AvatarCard({ data }) {
             variant: "h5",
             gutterBottom: true,
           }}
-          subheader={data.bio}
+          subheader={shortBio(data.bio)}
           subheaderTypographyProps={{
-            variant: "subtitle1",
+            variant: "body1",
+            gutterBottom: true,
           }}
         />
       </CardActionArea>
