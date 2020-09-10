@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     width: "75%",
   },
   subtitle: {
-    width: "50%",
     fontStyle: "normal",
   },
   container: {
@@ -46,6 +45,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+  },
+  paper: {
+    width: "50%",
+    margin: theme.spacing(5, 0, 5),
+    padding: theme.spacing(4, 2, 4),
   },
 }));
 
@@ -134,22 +138,24 @@ export default function AboutPage() {
               >
                 {"About Us"}
               </Typography>
-              <Typography
-                className={classes.subtitle}
-                variant="h6"
-                align="center"
-                color="textSecondary"
-                paragraph
-              >
-                {
-                  <>
-                    <strong>{"APM Map "}</strong>
-                    {
-                      "is your one-stop destination for navigating your A/PM recruiting journey. Whether you're looking to better understand the role of a PM or to refine your System Design interviewing skills for a technical round, we've curated resources across the entire A/PM recruiting timeline to help you accomplish just that."
-                    }
-                  </>
-                }
-              </Typography>
+              <Paper className={classes.paper}>
+                <Typography
+                  className={classes.subtitle}
+                  variant="h6"
+                  align="center"
+                  color="textSecondary"
+                  paragraph
+                >
+                  {
+                    <>
+                      <strong>{"APM Map "}</strong>
+                      {
+                        "is your one-stop destination for navigating your A/PM recruiting journey. Whether you're looking to better understand the role of a PM or to refine your System Design interviewing skills for a technical round, we've curated resources across the entire A/PM recruiting timeline to help you accomplish just that."
+                      }
+                    </>
+                  }
+                </Typography>
+              </Paper>
             </div>
 
             <Container className={classes.container}>
