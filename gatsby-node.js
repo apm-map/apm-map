@@ -115,10 +115,12 @@ exports.createPages = ({ actions, graphql }) => {
       allMentorsJson {
         edges {
           node {
+            id
             name
-            image
+            title
             bio
             recommendations
+            image
             fields {
               slug
             }
