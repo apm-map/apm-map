@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     width: theme.spacing(25),
     height: theme.spacing(25),
+    marginTop: "-15%",
     boxShadow:
       "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.2),0px 1px 8px 0px #FFFFFF",
   },
@@ -75,6 +76,8 @@ const useStyles = makeStyles((theme) => ({
   },
   bg: {
     width: "100%",
+    minHeight: "25vh",
+    background: `linear-gradient(${theme.palette.primary.main}, ${theme.palette.background.paper})`,
     borderRadius: `4px 4px 0px 0px`,
   },
   columns: {
@@ -115,15 +118,11 @@ export default function Profile({ data }) {
               <Paper>
                 <Grid container direction="column" justify="center">
                   <Grid item>
-                    <img
-                      className={classes.bg}
-                      src="https://media-exp1.licdn.com/dms/image/C5616AQGU8OHAZWS2ow/profile-displaybackgroundimage-shrink_350_1400/0?e=1605139200&v=beta&t=H229SMvL5XykSE7-J8biHf1b0OcpYnHNZCb5sJ65SC8"
-                    />
+                    <div className={classes.bg} />
                   </Grid>
                   <Grid item>
                     <Box
-                      p={3}
-                      mt="-15%"
+                      pb={3}
                       display="flex"
                       flexDirection="column"
                       alignItems="center"
