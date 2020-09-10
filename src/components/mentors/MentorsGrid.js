@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
   gridContainer: {
     display: "flex",
     justifyContent: "center",
+    flexGrow: 1,
   },
   cardGrid: {
     width: "100%",

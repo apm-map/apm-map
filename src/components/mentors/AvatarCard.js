@@ -7,8 +7,19 @@ import { CardHeader } from "@material-ui/core";
 import { Link } from "gatsby";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    minWidth: 275,
+  card: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  cardHeader: {
+    flexGrow: 1,
+  },
+  cardActionArea: {
+    flex: 1,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   avatar: {
     width: theme.spacing(9),
@@ -30,13 +41,18 @@ export default function AvatarCard({ data }) {
 
   return (
     <Card
-      className={classes.root}
+      className={classes.card}
       onMouseOver={toggleRaised}
       onMouseOut={toggleRaised}
       raised={raised}
     >
-      <CardActionArea component={Link} to={data.fields.slug}>
+      <CardActionArea
+        className={classes.cardActionArea}
+        component={Link}
+        to={data.fields.slug}
+      >
         <CardHeader
+          className={classes.cardHeader}
           avatar={<Avatar src={data.image} className={classes.avatar} />}
           title={data.name}
           titleTypographyProps={{
