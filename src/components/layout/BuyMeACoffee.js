@@ -78,11 +78,11 @@ export default function BuyMeACoffee() {
 
   const [isInViewport, setIsInViewport] = useState(false);
   const { scrollYProgress } = useViewportScroll();
-  const yRange = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const yRange = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
 
   // on viewport scroll and/or path complete, trigger animations
   useEffect(() => {
-    yRange.onChange((v) => setIsInViewport(v >= 1));
+    yRange.onChange((v) => setIsInViewport(true || v >= 1));
   }, [yRange]);
 
   return (
