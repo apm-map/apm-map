@@ -20,7 +20,6 @@ export default function IndexPage() {
               subtitle="Discover resources to help you navigate your journey into product management"
             />
             <DirectoryPreview context={context} />
-            <MentorsPreview context={context} />
           </>
         )}
       </Context.Consumer>

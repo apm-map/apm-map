@@ -28,6 +28,14 @@ let theme = createMuiTheme({
       fontSize: 72,
       fontWeight: 800,
     },
+    caption: {
+      fontSize: 16,
+      fontStyle: "italic",
+    },
+    button: {
+      fontSize: 16,
+      fontWeight: 500,
+    },
   },
   shape: {
     borderRadius: 8,

@@ -3,7 +3,7 @@ import Carousel from "react-material-ui-carousel";
 
 import { graphql, useStaticQuery } from "gatsby";
 
-import { makeStyles, darken } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: theme.spacing(10),
     },
   },
-  carousel: {
+  carouselContainer: {
     [theme.breakpoints.up("sm")]: {
       width: "100%",
     },
@@ -44,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
       width: "40%",
     },
     margin: theme.spacing(0, 10, 0),
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
   header: {
     display: "flex",
@@ -51,9 +54,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     flexDirection: "column",
     padding: theme.spacing(5, 0, 5),
-  },
-  label: {
-    fontVariant: "small-caps",
   },
   title: {
     fontWeight: 900,
@@ -93,8 +93,17 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(5),
   },
   button: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
     width: "25%",
     padding: theme.spacing(1),
+  },
+  caption: {
+    marginTop: theme.spacing(3),
+  },
+  buttonText: {
+    color: theme.palette.getContrastText(theme.palette.primary.main),
   },
 }));
 
@@ -127,15 +136,6 @@ export default function DirectoryPreview({ context }) {
     <>
       <Box id="directory-preview">
         <div className={classes.header}>
-          <Typography
-            className={classes.label}
-            color="textSecondary"
-            variant="h5"
-            align="center"
-            gutterBottom
-          >
-            {"directory"}
-          </Typography>
           <Typography
             className={classes.title}
             variant="h3"
@@ -206,19 +206,26 @@ export default function DirectoryPreview({ context }) {
             </Typography>
           </div>
         </div>
-        <Carousel
-          className={classes.carousel}
-          navButtonsAlwaysVisible={true}
-          animation="slide"
-        >
-          {data.allRecruitingResource.nodes.map((node, index) => (
-            <div className={classes.item}>
-              <Grid justify="center" item xs={12}>
-                <Card loading={false} data={node} image={node.image} />
-              </Grid>
-            </div>
-          ))}
-        </Carousel>
+        <div className={classes.carouselContainer}>
+          <Carousel navButtonsAlwaysVisible={true} animation="slide">
+            {data.allRecruitingResource.nodes.map((node, index) => (
+              <div className={classes.item}>
+                <Grid justify="center" item xs={12}>
+                  <Card loading={false} data={node} image={node.image} />
+                </Grid>
+              </div>
+            ))}
+          </Carousel>
+          <Typography
+            className={classes.caption}
+            color="textSecondary"
+            variant="caption"
+            align="center"
+            gutterBottom
+          >
+            {"*note that some of these resources are affiliate links*"}
+          </Typography>
+        </div>
       </Container>
       <div className={classes.buttonContainer}>
         <Button
@@ -230,11 +237,9 @@ export default function DirectoryPreview({ context }) {
           color="primary"
         >
           <Typography
-            className={classes.label}
-            color="white"
+            className={classes.buttonText}
             variant="button"
             align="center"
-            gutterBottom
           >
             {"start exploring"}
           </Typography>
