@@ -10,9 +10,12 @@ import Zoom from "@material-ui/core/Zoom";
 
 import Video from "../util/Video";
 import Emoji from "../util/Emoji";
+import useDeviceDetect from "../../hooks/useDeviceDetect";
 
 const videoSrc =
   "https://storage.googleapis.com/apm-map-assets/bg-video-1-trimmed.mp4";
+const videoScreenshotSrc =
+  "https://storage.googleapis.com/apm-map-assets/bg-video-screenshot.png";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -31,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Splash(props) {
   const classes = useStyles();
+  const { isMobile } = useDeviceDetect();
 
   // container variant helper function
   const containerVariantsWithStagger = (stagger) => ({
@@ -144,9 +148,25 @@ export default function Splash(props) {
 
   return (
     <Box className={classes.box}>
-      <div>
+      {isMobile ? (
+        <img
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            height: "100%",
+            width: "100%",
+            zIndex: "-1",
+            objectFit: "cover",
+          }}
+          src={videoScreenshotSrc}
+        />
+      ) : (
         <Video src={videoSrc} />
-      </div>
+      )}
+
       <motion.div
         style={{
           display: "flex",
