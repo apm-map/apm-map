@@ -16,6 +16,7 @@ export default function IndexPage() {
         {(context) => (
           <>
             <Splash
+              context={context}
               title="APM Map"
               subtitle="Discover resources to help you navigate your journey into product management"
             />

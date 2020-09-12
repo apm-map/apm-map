@@ -13,17 +13,36 @@ const videoScreenshotSrc =
   "https://storage.googleapis.com/apm-map-assets/bg-video-screenshot.png";
 
 const useStyles = makeStyles((theme) => ({
-  box: {
-    display: "flex",
-    justifyContent: "center",
-    height: "95vh",
-    width: "100vw",
+  bgImg: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    height: "100%",
+    width: "100%",
+    zIndex: "-1",
+    objectFit: "cover",
+  },
+  header: {
+    position: "absolute",
+    top: "35%",
   },
   title: {
-    color: theme.palette.grey[50],
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    lineHeight: 1, // default for MUI Typography is ~1.43
+    marginBottom: 30,
   },
   subtitle: {
-    color: theme.palette.grey[300],
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    color: theme.palette.grey[50],
   },
 }));
 
@@ -31,144 +50,50 @@ export default function Splash(props) {
   const classes = useStyles();
 
   return (
-    <Box className={classes.box}>
-      <img
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          height: "100%",
-          width: "100%",
-          zIndex: "-1",
-          objectFit: "cover",
-        }}
-        src={videoScreenshotSrc}
-      />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-        size="auto"
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            lineHeight: 1, // default for MUI Typography is ~1.43
-            marginBottom: "30px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-            }}
-            background={""}
-            size="auto"
+    <>
+      <img className={classes.bgImg} src={videoScreenshotSrc} />
+      <div className={classes.header}>
+        <div className={classes.title}>
+          <Typography
+            className={classes.text}
+            variant="h1"
+            align="center"
+            color="white"
           >
-            <Typography
-              className={classes.title}
-              variant="h1"
-              align="center"
-              color="white"
-            >
-              {"APM"}
-            </Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-            background={""}
-            size="auto"
-          >
-            <div background={""} position="relative" center="y" size="auto">
-              <Typography
-                className={classes.title}
-                variant="h1"
-                align="center"
-                color="textPrimary"
-              >
-                {"\u00A0"}
-                MAP
-              </Typography>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                paddingTop: "10px",
-              }}
-              center="y"
-              background={""}
-              position="relative"
-              size="auto"
-            >
-              <Typography variant="h1" align="center">
-                {"\u00A0"}
-                <Emoji symbol="🗺️" label="map" />
-              </Typography>
-            </div>
-            <div
-              position="relative"
-              center="y"
-              size="auto"
-              initial="before"
-              background={""}
-            >
-              <Typography variant="h6" align="center">
-                <Emoji symbol="✨" label="sparkle" />
-              </Typography>
-            </div>
-          </div>
+            {"APM MAP"}
+            {"\u00A0"}
+            <Emoji symbol="🗺️" label="map" />
+          </Typography>
         </div>
         <div
           style={{
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
+            alignItems: "center",
           }}
-          background={""}
-          size="auto"
         >
-          <div background={""} position="relative" center="y" size="auto">
-            <Typography
-              className={classes.subtitle}
-              variant="h6"
-              align="center"
-              color="textSecondary"
-              paragraph
+          <Typography
+            className={classes.text}
+            variant="h6"
+            align="center"
+            color="textSecondary"
+            paragraph
+          >
+            {props.subtitle}
+          </Typography>
+          <ScrollToElement selector="#directory-preview" {...props}>
+            <Fab
+              color="transparent"
+              size="small"
+              variant="extended"
+              aria-label="scroll to directory"
             >
-              {props.subtitle}
-            </Typography>
-          </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-          background={""}
-          size="auto"
-        >
-          <div background={""} position="relative" center="y" size="auto">
-            <ScrollToElement selector="#directory-preview" {...props}>
-              <Fab
-                color="transparent"
-                size="small"
-                variant="extended"
-                aria-label="scroll to directory"
-              >
-                <KeyboardArrowDownIcon />
-              </Fab>
-            </ScrollToElement>
-          </div>
+              <KeyboardArrowDownIcon />
+            </Fab>
+          </ScrollToElement>
         </div>
       </div>
-    </Box>
+    </>
   );
 }
