@@ -62,7 +62,7 @@ export default function Layout({ children }) {
             </motion.main>
           </AnimatePresence>
           <Footer />
-          <BuyMeACoffee />
+          <BuyMeACoffee context={context} />
         </Container>
       )}
     </Context.Consumer>

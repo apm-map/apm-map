@@ -13,6 +13,7 @@ import { withStyles, makeStyles, darken } from "@material-ui/core/styles";
 
 import BuyMeACoffeeIcon from "../../../assets/bmac.svg";
 import Emoji from "../util/Emoji";
+import MobileBMAC from "./MobileBMAC";
 
 const useStyles = makeStyles((theme) => ({
   bmac: {
@@ -44,7 +45,7 @@ const HTMLTooltip = withStyles((theme) => ({
   },
 }))(Tooltip);
 
-export default function BuyMeACoffee() {
+export default function BuyMeACoffee({ context }) {
   const classes = useStyles();
 
   // spring transition helper function
@@ -86,37 +87,43 @@ export default function BuyMeACoffee() {
   }, [yRange]);
 
   return (
-    <AnimatePresence>
-      {isInViewport && (
-        <motion.div
-          className={classes.bmac}
-          initial="before"
-          animate={["after", "bounce"]}
-          exit={{ scale: 0 }}
-          variants={buttonVariants}
-        >
-          <HTMLTooltip
-            title={
-              <Typography variant="body2">
-                {
-                  " If we've helped you in your journey, consider supporting ours! "
-                }
-                <Emoji symbol="❤️" label="heart" />
-              </Typography>
-            }
-            placement="left"
-            aria-label="help-support-us"
-          >
-            <IconButton
-              target="_blank"
-              className={classes.button}
-              href="https://www.buymeacoffee.com/michellema"
+    <>
+      {context.isMobile ? (
+        <MobileBMAC context={context} />
+      ) : (
+        <AnimatePresence>
+          {isInViewport && (
+            <motion.div
+              className={classes.bmac}
+              initial="before"
+              animate={["after", "bounce"]}
+              exit={{ scale: 0 }}
+              variants={buttonVariants}
             >
-              <BuyMeACoffeeIcon height={75} width={75} />
-            </IconButton>
-          </HTMLTooltip>
-        </motion.div>
+              <HTMLTooltip
+                title={
+                  <Typography variant="body2">
+                    {
+                      " If we've helped you in your journey, consider supporting ours! "
+                    }
+                    <Emoji symbol="❤️" label="heart" />
+                  </Typography>
+                }
+                placement="left"
+                aria-label="help-support-us"
+              >
+                <IconButton
+                  target="_blank"
+                  className={classes.button}
+                  href="https://www.buymeacoffee.com/michellema"
+                >
+                  <BuyMeACoffeeIcon height={75} width={75} />
+                </IconButton>
+              </HTMLTooltip>
+            </motion.div>
+          )}
+        </AnimatePresence>
       )}
-    </AnimatePresence>
+    </>
   );
 }
