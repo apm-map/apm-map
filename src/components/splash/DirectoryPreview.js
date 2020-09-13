@@ -34,19 +34,20 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   carouselContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
     [theme.breakpoints.up("sm")]: {
       width: "100%",
+      margin: theme.spacing(5, 0, 5),
     },
     [theme.breakpoints.up("md")]: {
       width: "50%",
     },
     [theme.breakpoints.up("lg")]: {
-      width: "40%",
+      width: "45%",
+      margin: theme.spacing(0, 10, 0),
     },
-    margin: theme.spacing(0, 10, 0),
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
   },
   header: {
     display: "flex",
@@ -96,8 +97,16 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    width: "25%",
     padding: theme.spacing(1),
+    [theme.breakpoints.up("sm")]: {
+      width: "100%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "35%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "25%",
+    },
   },
   caption: {
     marginTop: theme.spacing(3),
@@ -207,7 +216,7 @@ export default function DirectoryPreview({ context }) {
           </div>
         </div>
         <div className={classes.carouselContainer}>
-          <Carousel navButtonsAlwaysVisible={true} animation="slide">
+          <Carousel autoPlay={!context.isMobile} animation="slide">
             {data.allRecruitingResource.nodes.map((node, index) => (
               <div className={classes.item}>
                 <Grid justify="center" item xs={12}>
@@ -231,16 +240,12 @@ export default function DirectoryPreview({ context }) {
         <Button
           component={Link}
           onClick={(event) => context.changeNav(event, 1)}
-          to={"/map"}
+          to={"/directory"}
           className={classes.button}
           variant="contained"
           color="primary"
         >
-          <Typography
-            className={classes.buttonText}
-            variant="button"
-            align="center"
-          >
+          <Typography variant="button" align="center">
             {"start exploring"}
           </Typography>
         </Button>
