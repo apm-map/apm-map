@@ -1,10 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 
-import DirectoryGrid from "./DirectoryGrid";
-import DirectoryAppBar from "./DirectoryAppBar";
-import Timeline from "../directory/Timeline";
+import MobileDirectory from "./MobileDirectory";
+import AnimatedDirectory from "./AnimatedDirectory";
 
 const useStyles = makeStyles((theme) => ({
   directory: {
@@ -17,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Directory() {
+export default function Directory({ context }) {
   const classes = useStyles();
 
   // filter (categories) state
@@ -26,17 +24,9 @@ export default function Directory() {
     setCategory(value);
   };
 
-  return (
-    <Container
-      id="directory"
-      disableGutters
-      maxWidth={false}
-      className={classes.container}
-    >
-      <Timeline toggleCategory={toggleCategory} />
-      <Container maxWidth="lg" className={classes.directory}>
-        <DirectoryGrid category={category} />
-      </Container>
-    </Container>
+  return context.isMobile ? (
+    <MobileDirectory category={category} toggleCategory={toggleCategory} />
+  ) : (
+    <AnimatedDirectory category={category} toggleCategory={toggleCategory} />
   );
 }

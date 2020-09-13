@@ -17,7 +17,7 @@ export default function DirectoryPage() {
               subtitle="Explore our directory of resources that'll help you get the lay of the land"
               emoji={<Emoji symbol="⛰️" label="mountain" />}
             />
-            <Directory />
+            <Directory context={context} />
           </>
         )}
       </Context.Consumer>

@@ -124,54 +124,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// SUB-COMPONENTS
-function ElevationScroll(props) {
-  const { children } = props;
-  const elevationTrigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 1250, // vertical scroll value that'll trigger this
-  });
-
-  return React.cloneElement(children, {
-    elevation: elevationTrigger ? 4 : 0,
-  });
-}
-
-ElevationScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-};
-
-function ScrollTop(props) {
-  const { children } = props;
-  const classes = useStyles();
-  const topTrigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 1400, // vertical scroll value that'll trigger this
-  });
-
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      "#directory-hero"
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  return (
-    <Zoom in={topTrigger}>
-      <div onClick={handleClick} role="presentation" className={classes.root}>
-        {children}
-      </div>
-    </Zoom>
-  );
-}
-
-ScrollTop.propTypes = {
-  children: PropTypes.element.isRequired,
-};
-
 // MAIN COMPONENT
 export default function DirectoryAppBar(props) {
   const classes = useStyles();
@@ -185,11 +137,11 @@ export default function DirectoryAppBar(props) {
     setOpen(false);
   };
 
-  const { children, selection, toggleCategory, search } = props;
+  const { children, category, toggleCategory, search } = props;
   return (
     <>
       <AppBar
-        elevation={0}
+        elevation={3}
         position="sticky"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
@@ -222,13 +174,7 @@ export default function DirectoryAppBar(props) {
           )}
         </Toolbar>
       </AppBar>
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        {children}
-      </main>
+      <main>{children}</main>
       <Drawer
         className={classes.drawer}
         PaperProps={{ style: { position: "absolute" } }}
@@ -252,8 +198,11 @@ export default function DirectoryAppBar(props) {
               <ListItem
                 button
                 key={value}
-                onClick={() => toggleCategory(value)}
-                selected={selection === value}
+                onClick={() => {
+                  handleDrawerClose();
+                  toggleCategory(value);
+                }}
+                selected={category === value}
               >
                 <ListItemText id={labelId} primary={value} />
               </ListItem>
