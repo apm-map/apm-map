@@ -170,12 +170,12 @@ export default function DirectoryPreview({ context }) {
             </Typography>
             <Typography
               style={{ width: "60%" }}
-              variant="h4"
+              variant="h6"
               align="center"
               color="textPrimary"
               gutterBottom
             >
-              {"APM recruiting resources, filtered by interview stage"}
+              {"APM recruiting resources"}
             </Typography>
           </div>
           <div className={classes.callout}>
@@ -190,7 +190,7 @@ export default function DirectoryPreview({ context }) {
             </Typography>
             <Typography
               style={{ width: "60%" }}
-              variant="h4"
+              variant="h6"
               align="center"
               color="textPrimary"
               gutterBottom
@@ -210,7 +210,7 @@ export default function DirectoryPreview({ context }) {
             </Typography>
             <Typography
               style={{ width: "60%" }}
-              variant="h4"
+              variant="h6"
               align="center"
               color="textPrimary"
               gutterBottom
