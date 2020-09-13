@@ -47,9 +47,19 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   paper: {
-    width: "50%",
-    margin: theme.spacing(5, 0, 5),
     padding: theme.spacing(4, 2, 4),
+    [theme.breakpoints.up("xs")]: {
+      width: "95%",
+    },
+    [theme.breakpoints.up("sm")]: {
+      width: "80%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "75%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      width: "60%",
+    },
   },
 }));
 
@@ -92,8 +102,6 @@ export default function AboutPage() {
     </>
   );
 
-  // TODO paragraph about why I help build APM Map
-  // TODO describe my intended brand: CS/Psychology (technology that recognizes the important human problems we all face)
   const aboutJeff = (
     <>
       <Typography variant="h5" className={classes.aboutText}>
@@ -128,7 +136,7 @@ export default function AboutPage() {
       <Context.Consumer>
         {(context) => (
           <>
-            <div className={classes.header}>
+            <Container className={classes.header}>
               <Typography
                 className={classes.title}
                 variant="h3"
@@ -156,8 +164,7 @@ export default function AboutPage() {
                   }
                 </Typography>
               </Paper>
-            </div>
-
+            </Container>
             <Container className={classes.container}>
               <Typography
                 className={classes.title}
@@ -169,6 +176,7 @@ export default function AboutPage() {
                 {"The Creators"}
               </Typography>
               <CreatorProfile
+                invert={context.isMobile}
                 content={aboutMima}
                 avatarSrc="https://storage.googleapis.com/mentors-pics/mima-profile-pic.jpg"
                 linkedIn="https://www.linkedin.com/in/michelle-ma-1208/"

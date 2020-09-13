@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     margin: theme.spacing(5, 0, 5),
-    padding: theme.spacing(1),
+    padding: theme.spacing(2, 1, 2),
   },
   avatar: {
     width: "80%",
