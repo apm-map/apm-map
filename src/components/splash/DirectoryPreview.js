@@ -152,23 +152,7 @@ export default function DirectoryPreview({ context }) {
             color="textPrimary"
             gutterBottom
           >
-            {"Simplify the A/PM recruiting process"}
-          </Typography>
-          <Typography
-            className={classes.subtitle}
-            variant="h6"
-            align="center"
-            color="textSecondary"
-            paragraph
-          >
-            {
-              <>
-                {
-                  "We've collected and organized some of the best A/PM recruiting resources out there"
-                }{" "}
-                &mdash; {"so you can focus on landing your dream job"}
-              </>
-            }
+            {"Here's to finding your"} <em>own</em> {"path."}
           </Typography>
         </div>
       </Box>
@@ -186,12 +170,32 @@ export default function DirectoryPreview({ context }) {
             </Typography>
             <Typography
               style={{ width: "60%" }}
-              variant="h6"
+              variant="h4"
               align="center"
               color="textPrimary"
               gutterBottom
             >
-              {"resources recommended by professional PMs"}
+              {"APM recruiting resources, filtered by interview stage"}
+            </Typography>
+          </div>
+          <div className={classes.callout}>
+            <Typography
+              style={{ width: "40%" }}
+              color="textSecondary"
+              variant="h2"
+              align="center"
+              gutterBottom
+            >
+              {"20+"}
+            </Typography>
+            <Typography
+              style={{ width: "60%" }}
+              variant="h4"
+              align="center"
+              color="textPrimary"
+              gutterBottom
+            >
+              {"PM mentors"}
             </Typography>
           </div>
           <div className={classes.callout}>
@@ -206,17 +210,21 @@ export default function DirectoryPreview({ context }) {
             </Typography>
             <Typography
               style={{ width: "60%" }}
-              variant="h6"
+              variant="h4"
               align="center"
               color="textPrimary"
               gutterBottom
             >
-              {"easy-to-navigate directory"}
+              {"journey"}
             </Typography>
           </div>
         </div>
         <div className={classes.carouselContainer}>
-          <Carousel autoPlay={!context.isMobile} animation="slide">
+          <Carousel
+            navButtonsAlwaysVisible
+            autoPlay={!context.isMobile}
+            animation="slide"
+          >
             {data.allRecruitingResource.nodes.map((node, index) => (
               <div className={classes.item}>
                 <Grid justify="center" item xs={12}>
@@ -232,7 +240,7 @@ export default function DirectoryPreview({ context }) {
             align="center"
             gutterBottom
           >
-            {"*note that some of these resources are affiliate links*"}
+            {"* some are affiliate links, all are our genuine recommendations"}
           </Typography>
         </div>
       </Container>

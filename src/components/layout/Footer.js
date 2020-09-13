@@ -76,7 +76,6 @@ export default function Footer({ children }) {
           variant="h3"
           align="center"
           color="textPrimary"
-          gutterBottom
         >
           {"Want to be kept in the loop?"}
         </Typography>
@@ -88,7 +87,7 @@ export default function Footer({ children }) {
           gutterBottom
         >
           {
-            "Get advice from our network of students and recent grads in A/PM programs"
+            "Sign up for our newsletter to get notified when new resources and mentors are added"
           }
         </Typography>
       </div>

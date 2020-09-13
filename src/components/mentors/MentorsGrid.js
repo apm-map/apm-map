@@ -4,6 +4,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 
 import AvatarCard from "./AvatarCard";
+import Hero from "../util/Hero";
+import Emoji from "../util/Emoji";
 
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
@@ -48,6 +50,11 @@ export default function MentorsGrid({ category }) {
 
   return (
     <Container disableGutters maxWidth={false}>
+      <Hero
+        title="The Guides"
+        subtitle="Learn what resources current APMs used to ace their interviews "
+        emoji={<Emoji symbol="🌏" label="globe" />}
+      />
       <Container maxWidth="lg" className={classes.gridContainer}>
         <Grid container spacing={2} className={classes.cardGrid}>
           {data.allMentorsJson.edges.map((edge, index) => (

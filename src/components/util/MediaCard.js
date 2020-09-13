@@ -52,7 +52,7 @@ export default function MediaCard({ loading, data, image }) {
         <Skeleton variant="rect" className={classes.cardMedia} />
         <Divider variant="middle" light />
         <CardContent className={classes.cardContent}>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5">
             <Skeleton variant="text" component="h2" />
           </Typography>
           <Typography variant="subtitle1">
@@ -89,10 +89,10 @@ export default function MediaCard({ loading, data, image }) {
         <Img fluid={{ ...image.childImageSharp.fluid, aspectRatio: 16 / 9 }} />
         <Divider light />
         <CardContent className={classes.cardContent}>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5">
             {data.name}
           </Typography>
-          <Typography variant="subtitle1">{data.description}</Typography>
+          <Typography variant="subtitle">{data.description}</Typography>
         </CardContent>
         {data.category && (
           <Box className={classes.labels}>

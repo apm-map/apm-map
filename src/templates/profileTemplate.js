@@ -84,9 +84,8 @@ const useStyles = makeStyles((theme) => ({
     background: `linear-gradient(${theme.palette.primary.main}, ${theme.palette.background.paper})`,
     borderRadius: `4px 4px 0px 0px`,
   },
-  columns: {
+  row: {
     display: "flex",
-    minHeight: 500,
     width: "50%",
   },
 }));
@@ -177,92 +176,56 @@ export default function Profile({ data }) {
                 </Grid>
               </Paper>
             </Box>
-            <div style={{ display: "flex", width: "100%" }}>
-              <div className={classes.columns}>
-                <Grid direction="column" justify="center" alignItems="center">
-                  <Box
-                    p={3}
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
+            <Box py={3}>
+              <Typography
+                className={classes.title}
+                variant="h3"
+                color="textPrimary"
+              >
+                {"My Path "}
+                <Emoji symbol="🍃" label="leaf" />
+              </Typography>
+              <Typography
+                className={classes.subtitle}
+                variant="body2"
+                color="textSecondary"
+                paragraph
+              >
+                {"Resources that I recommend for APM recruiting"}
+              </Typography>
+              <Grid container display="flex" spacing={4}>
+                {recommendations.map((card, index) => (
+                  <Grid
+                    item
+                    key={index}
+                    xs={12}
+                    sm={6}
+                    md={4}
+                    className={classes.cardGrid}
                   >
-                    <Typography
-                      className={classes.title}
-                      variant="h3"
-                      align="center"
-                      color="textPrimary"
-                      gutterBottom
-                    >
-                      {"My Path"}
-                    </Typography>
-                    <Typography
-                      className={classes.subtitle}
-                      variant="body2"
-                      align="center"
-                      color="textSecondary"
-                      paragraph
-                    >
-                      {"Resources that I love, recommend or have used myself!"}
-                    </Typography>
-                    <Divider variant="middle" light />
-                    <Grid container display="flex" justify="center" spacing={4}>
-                      {recommendations.map((card, index) => (
-                        <Grid
-                          item
-                          key={index}
-                          xs={10}
-                          className={classes.cardGrid}
-                        >
-                          <DirectoryCard loading={false} data={card} />
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </Box>
-                </Grid>
-              </div>
-              <Divider light variant="middle" orientation="vertical" flexItem />
-              <div className={classes.columns}>
-                <Grid direction="column" justify="center" alignItems="center">
-                  <Box
-                    p={3}
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                  >
-                    <Typography
-                      className={classes.title}
-                      variant="h3"
-                      align="center"
-                      color="textPrimary"
-                      gutterBottom
-                    >
-                      {"My Next Journey"}
-                    </Typography>
-                    <Typography
-                      className={classes.subtitle}
-                      variant="body2"
-                      align="center"
-                      color="textSecondary"
-                      paragraph
-                    >
-                      {"Check out some other cool things I've worked on!"}
-                    </Typography>
-                    <Grid container display="flex" justify="center" spacing={4}>
-                      {nextJourneys.map((card, index) => (
-                        <Grid
-                          item
-                          key={index}
-                          xs={10}
-                          className={classes.cardGrid}
-                        >
-                          <DirectoryCard loading={false} data={card} />
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </Box>
-                </Grid>
-              </div>
-            </div>
+                    <DirectoryCard loading={false} data={card} />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+            <Box py={3}>
+              <Typography
+                className={classes.title}
+                variant="h3"
+                color="textPrimary"
+              >
+                {"My Next Journey "}
+                <Emoji symbol="🌱" label="sprout" />
+              </Typography>
+              <Typography
+                className={classes.subtitle}
+                variant="body2"
+                color="textSecondary"
+                paragraph
+              >
+                {"Here's what I'm working on next"}
+              </Typography>
+            </Box>
           </Container>
         )}
       </Context.Consumer>

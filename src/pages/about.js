@@ -79,26 +79,19 @@ export default function AboutPage() {
       </Typography>
       <Typography className={classes.aboutText}>
         APM Map is the result of one of the <em> hardest </em>
-        recruiting seasons I've ever had to go through. A/PM recruiting is
-        already notoriously{" "}
-        <Link
-          href="https://blog.tryexponent.com/best-associate-product-manager-programs/"
-          onClick={(event) => event.preventDefault()}
-        >
-          competitive
-        </Link>
-        , and on top of that, I constantly felt like I was behind, didn't have
-        all the resources at hand, and was generally really lost. There were so
-        many times where I would find a golden resource days before an
-        interview, knowing that if I had found it maybe a week earlier, the
-        interview outcome might have been different.
+        recruiting seasons I've ever had to go through. APM recruiting is
+        already notoriously competitive, and on top of that, I constantly felt
+        like I was behind, didn't have all the resources at hand, and was
+        generally really lost. There were so many times where I would find a
+        golden resource days before an interview, knowing that if I had found it
+        maybe a week earlier, the interview outcome might have been different.
       </Typography>
       <Typography className={classes.aboutText}>
         The <strong>idea</strong> behind APM Map is that you can start the
         recruiting season with as many resources available to you as possible —
         so you can hit the ground running, wherever you are in your prep
         process.
-      </Typography>{" "}
+      </Typography>
     </>
   );
 
@@ -144,7 +137,7 @@ export default function AboutPage() {
                 color="textPrimary"
                 gutterBottom
               >
-                {"About Us"}
+                {"Our Mission"}
               </Typography>
               <Paper className={classes.paper}>
                 <Typography
@@ -158,7 +151,7 @@ export default function AboutPage() {
                     <>
                       <strong>{"APM Map "}</strong>
                       {
-                        "is your one-stop destination for navigating your A/PM recruiting journey. Whether you're looking to better understand the role of a PM or to refine your System Design interviewing skills for a technical round, we've curated resources across the entire A/PM recruiting timeline to help you accomplish just that."
+                        "is your one-stop destination for navigating your APM recruiting journey. Discover resources on everything from finding APM programs to acing your final onsite interviews — all with the help from our incredible mentors."
                       }
                     </>
                   }
@@ -171,7 +164,6 @@ export default function AboutPage() {
                 variant="h3"
                 align="center"
                 color="textPrimary"
-                gutterBottom
               >
                 {"The Creators"}
               </Typography>
@@ -179,9 +171,7 @@ export default function AboutPage() {
                 invert={context.isMobile}
                 content={aboutMima}
                 avatarSrc="https://storage.googleapis.com/mentors-pics/mima-profile-pic.jpg"
-                linkedIn="https://www.linkedin.com/in/michelle-ma-1208/"
                 twitter="https://twitter.com/michellema_97?lang=en"
-                medium="https://medium.com"
               />
               <CreatorProfile
                 invert
