@@ -35,24 +35,28 @@ export default function MobileNav({ context }) {
         label={<Typography variant="overline">Home</Typography>}
         component={Link}
         to="/"
+        onClick={(event) => context.changeNav(event, 0)}
         {...a11yProps(0)}
       />
       <Tab
         label={<Typography variant="overline">About</Typography>}
         component={Link}
         to="/about"
+        onClick={(event) => context.changeNav(event, 1)}
         {...a11yProps(1)}
       />
       <Tab
         label={<Typography variant="overline">Directory</Typography>}
         component={Link}
         to="/directory"
+        onClick={(event) => context.changeNav(event, 2)}
         {...a11yProps(2)}
       />
       <Tab
         label={<Typography variant="overline">Mentors</Typography>}
         component={Link}
         to="/mentors"
+        onClick={(event) => context.changeNav(event, 3)}
         {...a11yProps(3)}
       />
     </Tabs>
