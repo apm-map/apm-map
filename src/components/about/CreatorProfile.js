@@ -105,7 +105,7 @@ export default function CreatorProfile({
               justify="center"
               flexDirection="column"
               xs={12}
-              sm={6}
+              md={6}
             >
               {content}
             </Grid>
@@ -116,7 +116,7 @@ export default function CreatorProfile({
             justify="center"
             alignItems="center"
             xs={12}
-            sm={6}
+            md={6}
           >
             <Box className={classes.box}>
               <Avatar
@@ -184,7 +184,7 @@ export default function CreatorProfile({
               justify="center"
               flexDirection="column"
               xs={12}
-              sm={6}
+              md={6}
             >
               {content}
             </Grid>
