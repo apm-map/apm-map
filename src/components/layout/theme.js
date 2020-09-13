@@ -83,27 +83,17 @@ theme = {
     },
     MuiTabs: {
       root: {
-        position: "absolute",
-        left: "50%",
-        transform: "translate(-30%, 0)",
         color: theme.palette.text.primary,
+        margin: "0 10px",
       },
       indicator: {
         height: 3,
-        borderTopLeftRadius: 3,
-        borderTopRightRadius: 3,
         backgroundColor: theme.palette.common.black,
       },
     },
     MuiTab: {
       root: {
-        margin: "0 8px",
         minWidth: 0,
-        padding: 0,
-        [theme.breakpoints.up("md")]: {
-          padding: 0,
-          minWidth: 0,
-        },
       },
     },
     MuiIconButton: {

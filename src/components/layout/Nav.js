@@ -3,11 +3,13 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { motion } from "framer-motion";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
 
 import Link from "../util/Link";
+import MobileNav from "./MobileNav";
 
 // "a11y" = accessibility
 // ARIA = Accessible Rich Internet Application and the set of attributes
@@ -19,28 +21,16 @@ function a11yProps(index) {
   };
 }
 
-function LinkTab(props) {
-  return (
-    <motion.div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Tab component={Link} {...props} />
-    </motion.div>
-  );
-}
-
 const useStyles = makeStyles((theme) => ({
   nav: {
     display: "flex",
-  },
-  logo: {
-    display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  logo: {
+    position: "absolute",
+    top: 5,
+    left: 5,
     padding: theme.spacing(2),
 
     "&:hover": {
@@ -49,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Layout({ context, children }) {
+export default function Nav({ context }) {
   const classes = useStyles();
 
   const data = useStaticQuery(graphql`
@@ -64,29 +54,47 @@ export default function Layout({ context, children }) {
     }
   `);
 
+  const LinkTab = (props) => {
+    if (context.isMobile) {
+      return <Tab component={Link} {...props} />;
+    }
+
+    return <Tab component={Link} {...props} />;
+  };
+
   return (
-    <nav className={classes.nav}>
-      <Link
-        style={{ textDecoration: "none" }}
-        to="/"
-        onClick={(event) => context.changeNav(event, 0)}
-      >
-        <motion.div
-          className={classes.logo}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 1.3 }}
-        >
-          <Img fixed={data.file.childImageSharp.fixed} />
-        </motion.div>
-      </Link>
-      <Tabs value={context.nav} onChange={context.changeNav}>
-        <LinkTab label="Home" to="/" {...a11yProps(0)} />
-        <LinkTab label="About" to="/about" {...a11yProps(2)} />
-        <LinkTab label="Directory" to="/directory" {...a11yProps(1)} />
-        <LinkTab label="Mentors" to="/mentors" {...a11yProps(3)} />
-      </Tabs>
-    </nav>
+    <>
+      {context.isMobile ? (
+        <MobileNav context={context} />
+      ) : (
+        <nav className={classes.nav}>
+          <Link
+            style={{ textDecoration: "none" }}
+            to="/"
+            onClick={(event) => context.changeNav(event, 0)}
+          >
+            <motion.div
+              className={classes.logo}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1.3 }}
+            >
+              <Img fixed={data.file.childImageSharp.fixed} />
+            </motion.div>
+          </Link>
+          <Tabs
+            className={classes.tabs}
+            value={context.nav}
+            onChange={context.changeNav}
+          >
+            <LinkTab label="Home" to="/" {...a11yProps(0)} />
+            <LinkTab label="About" to="/about" {...a11yProps(2)} />
+            <LinkTab label="Directory" to="/directory" {...a11yProps(1)} />
+            <LinkTab label="Mentors" to="/mentors" {...a11yProps(3)} />
+          </Tabs>
+        </nav>
+      )}
+    </>
   );
 }
