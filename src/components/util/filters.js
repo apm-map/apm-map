@@ -5,7 +5,7 @@ export const CATEGORIES = [
   "All",
   "Understand Why PM",
   "Find APM Programs",
-  "Networking",
+  "Community",
   "Interview Prep",
   "Mock Interviews",
   "Technical Interview",

@@ -133,7 +133,6 @@ export default function AnimatedSplash(props) {
 
   useEffect(() => {
     async function sequence() {
-      console.log("what the fuck");
       await bgControls.start("after");
       await apmControls.start("after");
       await apmControls.start("slide");
