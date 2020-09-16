@@ -73,7 +73,7 @@ export default function DirectoryCard({ loading, data }) {
           <Typography gutterBottom variant="h5" component="h2">
             {loading ? <Skeleton variant="text" component="h2" /> : data.name}
           </Typography>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle">
             {loading ? (
               <>
                 <Skeleton />

@@ -21,7 +21,7 @@ const SHORT_CATEGORES = [
   "All",
   "Why PM",
   "Find Programs",
-  "Networking",
+  "Community",
   "Interview Prep",
   "Mock Interviews",
   "Technical Interview",

@@ -55,7 +55,7 @@ export default function MediaCard({ loading, data, image }) {
           <Typography gutterBottom variant="h5">
             <Skeleton variant="text" component="h2" />
           </Typography>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle">
             <>
               <Skeleton />
               <Skeleton />

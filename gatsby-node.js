@@ -120,7 +120,13 @@ exports.createPages = ({ actions, graphql }) => {
             title
             bio
             recommendations
-            image
+            image {
+              childImageSharp {
+                fluid(quality: 75, cropFocus: ATTENTION) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             fields {
               slug
             }

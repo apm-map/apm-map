@@ -6,13 +6,12 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import DirectoryCard from "../components/directory/DirectoryCard";
+import Card from "../components/util/MediaCard";
 import Emoji from "../components/util/Emoji";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import Layout from "../components/layout/Layout";
 import { Context } from "../components/layout/Provider";
-import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import { CardHeader } from "@material-ui/core";
 import { Link } from "gatsby";
@@ -203,7 +202,7 @@ export default function Profile({ data }) {
                     md={4}
                     className={classes.cardGrid}
                   >
-                    <DirectoryCard loading={false} data={card} />
+                    <Card loading={false} data={card} />
                   </Grid>
                 ))}
               </Grid>
@@ -232,31 +231,3 @@ export default function Profile({ data }) {
     </Layout>
   );
 }
-
-export const pageQuery = graphql`
-  query MyQuery($slug: String!, $recommendations: [String]) {
-    allMentorsJson(filter: { fields: { slug: { eq: $slug } } }) {
-      nodes {
-        name
-        image
-        bio
-        fields {
-          slug
-        }
-      }
-    }
-    allResourcesJson(filter: { id: { in: $recommendations } }) {
-      nodes {
-        image
-        description
-        link
-        name
-        stage
-        tags
-        type
-        category
-        cost
-      }
-    }
-  }
-`;

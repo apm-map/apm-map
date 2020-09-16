@@ -7,6 +7,9 @@ require("dotenv").config({
 module.exports = {
   pathPrefix: "/apm-map",
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-image`,
     {
       resolve: "gatsby-plugin-material-ui",
       // If you want to use styled components you should change the injection order.
@@ -46,9 +49,6 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-image`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

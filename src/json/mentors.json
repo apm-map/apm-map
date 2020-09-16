@@ -11,6 +11,7 @@
     "recommendations": ["4", "86", "76"]
   },
   {
+    "id": 1,
     "added": "9/3/2020 12:15:12",
     "name": "Katie Goldstein",
     "pronouns": "She/her/hers",
@@ -24,6 +25,7 @@
     "journey": "Trying to build my LinkedIn presence/give back to the community by hosting weekly Office Hours (https://calendly.com/katie-e-goldstein/katies-office-hours) & overall boosting my LinkedIn posting ability (https://www.linkedin.com/in/katie-goldstein/detail/recent-activity/shares/)!"
   },
   {
+    "id": 2,
     "added": "9/3/2020 21:12:21",
     "name": "Shruti Ramanathan",
     "pronouns": "she/her",
@@ -37,6 +39,7 @@
     "journey": ""
   },
   {
+    "id": 3,
     "added": "9/3/2020 23:26:49",
     "name": "Dasani Madipalli",
     "pronouns": "She/Her",
@@ -50,6 +53,7 @@
     "journey": ""
   },
   {
+    "id": 4,
     "added": "9/4/2020 20:26:04",
     "name": "Lisa Huang-North",
     "pronouns": "She/Her",
@@ -63,6 +67,7 @@
     "journey": "My name is Lisa Huang-North and I am a 2x Founder. I am building products at Planet, a startup with a mission to use Space 🛰 to help life on Earth 🌎  I will be sharing essays and thoughts on the intersection of Productivity (something I’ve been reading up & thinking about), Technology, and Social Impact. Sign up for my newsletter here: https://lisahuangnorth.substack.com/p/coming-soon"
   },
   {
+    "id": 5,
     "added": "9/5/2020 12:20:35",
     "name": "Nancy Wang",
     "pronouns": "she/her/hers",
@@ -76,6 +81,7 @@
     "journey": "Currently dipping my toes into writing/reflecting about my thoughts, ideas and experiences on Medium. Volunteering @ Breaktime to help launch the careers of young adults experiencing homelessness, you can check us out and support at breaktime.org! (PS not sure if this text should be formalized or anything bc it totally is not right now HAHA fyi)"
   },
   {
+    "id": 6,
     "added": "9/6/2020 1:10:41",
     "name": "Kelly Luo",
     "pronouns": "she/her/hers",
@@ -89,6 +95,7 @@
     "journey": "this is a reminder to take a breather and take care of yourself—you got this! 😊 always feel free to say hello! twitter.com/kluo25"
   },
   {
+    "id": 7,
     "added": "9/6/2020 18:26:52",
     "name": "Charlene Wang",
     "pronouns": "She/Her",
@@ -102,6 +109,7 @@
     "journey": "Weekly Gem - livingos.substack.com"
   },
   {
+    "id": 8,
     "added": "9/6/2020 21:31:04",
     "name": "David Cai",
     "pronouns": "He/him/his",
@@ -115,6 +123,7 @@
     "journey": "<pmtechlessons.com> - [Approachable explainers of tech concepts for non-technical PMs, specifically with an algorithms-focused prep course at pmtechlessons.com/interview-prep]"
   },
   {
+    "id": 9,
     "added": "9/6/2020 22:28:49",
     "name": "Nelly Lin",
     "pronouns": "she/her",
@@ -128,6 +137,7 @@
     "journey": ""
   },
   {
+    "id": 10,
     "added": "9/6/2020 23:51:40",
     "name": "Adam Chow",
     "pronouns": "he/him",
@@ -141,6 +151,7 @@
     "journey": "datemappers.com - a resource for finding dates around Atlanta, https://www.awoahmods.com/ light up longboard wheels for your electric longboard."
   },
   {
+    "id": 11,
     "added": "9/7/2020 2:18:54",
     "name": "Priyanka Maskar",
     "pronouns": "She/Her",
@@ -154,6 +165,7 @@
     "journey": "Becoming a Sr. Product Manager and cracking a PM position at FAANG."
   },
   {
+    "id": 12,
     "added": "9/7/2020 2:30:10",
     "name": "Nimalen (Nim) Sivapalan",
     "pronouns": "he/him",
@@ -167,6 +179,7 @@
     "journey": "Currently working on building an online campus hangout for college students at joinpack.app!"
   },
   {
+    "id": 13,
     "added": "9/7/2020 7:34:16",
     "name": "Aditi Priya",
     "recommendations": [],
@@ -180,6 +193,7 @@
     "journey": ""
   },
   {
+    "id": 14,
     "added": "9/7/2020 12:42:31",
     "name": "David Lietjauw",
     "pronouns": "He/Him/His",
@@ -193,6 +207,7 @@
     "journey": "My friend Jehron Petty started ColorStack, a non-profit whose mission is to increase the entrance, retention and success of Black, Latinx, and Native American college students in computing. Consider volunteering your time to help the next-gen of diverse tech talent succeed! Visit: https://www.colorstack.org/"
   },
   {
+    "id": 15,
     "added": "9/7/2020 19:50:42",
     "name": "Umesh Khanna",
     "pronouns": "He/Him",
@@ -206,6 +221,7 @@
     "journey": "https://hatchcard.com/checking-waitlist"
   },
   {
+    "id": 16,
     "added": "9/8/2020 2:45:03",
     "name": "Sandra Luo",
     "pronouns": "she/her",
@@ -219,6 +235,7 @@
     "journey": "https://medium.com/@sandrahluo"
   },
   {
+    "id": 17,
     "added": "9/8/2020 16:26:34",
     "name": "Mahmoud Alzaghari",
     "recommendations": [],
