@@ -46,8 +46,6 @@ export default function MediaCard({ loading, data, image }) {
     setRaised(!raised);
   };
 
-  console.log(data);
-
   const SkeletonCard = () => (
     <Card className={classes.card}>
       <CardActionArea className={classes.cardActionArea}>
@@ -87,7 +85,11 @@ export default function MediaCard({ loading, data, image }) {
       onMouseOut={toggleRaised}
       raised={raised}
     >
-      <CardActionArea href={data.link} className={classes.cardActionArea}>
+      <CardActionArea
+        target="_blank"
+        href={data.link}
+        className={classes.cardActionArea}
+      >
         <Img fluid={{ ...image.childImageSharp.fluid, aspectRatio: 16 / 9 }} />
         <Divider light />
         <CardContent className={classes.cardContent}>

@@ -4,10 +4,10 @@ import { graphql, useStaticQuery } from "gatsby";
 import Grid from "@material-ui/core/Grid";
 import Card from "../util/MediaCard";
 
-export default function Networking() {
+export default function Community() {
   const data = useStaticQuery(graphql`
-    query GetNetworkingResources {
-      allRecruitingResource(filter: { category: { eq: "Networking" } }) {
+    query GetCommunityResources {
+      allRecruitingResource(filter: { category: { eq: "Community" } }) {
         nodes {
           id
           name

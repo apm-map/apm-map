@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Card from "../util/MediaCard";
 import WhyPM from "./WhyPM";
 import FindPrograms from "./FindPrograms";
-import Networking from "./Networking";
+import Community from "./Community";
 import InterviewPrep from "./InterviewPrep";
 import MockInterviews from "./MockInterviews";
 import TechnicalInterview from "./TechnicalInterview";
@@ -60,8 +60,8 @@ export default function DirectoryGrid({ category }) {
         return <WhyPM />;
       case "Find APM Programs":
         return <FindPrograms />;
-      case "Networking":
-        return <Networking />;
+      case "Community":
+        return <Community />;
       case "Interview Prep":
         return <InterviewPrep />;
       case "Mock Interviews":
