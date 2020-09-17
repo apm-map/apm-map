@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import clsx from "clsx";
 import { Grid, Container, IconButton, Paper, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
@@ -10,6 +11,9 @@ import Card from "../components/util/MediaCard";
 import Emoji from "../components/util/Emoji";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import WebIcon from "@material-ui/icons/Web";
 import Layout from "../components/layout/Layout";
 import { Context } from "../components/layout/Provider";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -17,6 +21,8 @@ import { CardHeader } from "@material-ui/core";
 import { Link } from "gatsby";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+
+import MediumIcon from "../../assets/medium.svg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -41,23 +47,50 @@ const useStyles = makeStyles((theme) => ({
     height: 30,
     width: 30,
   },
-  linkedinButton: {
+  socialButton: {
     height: 50,
     width: 50,
     color: "#ffff",
-    backgroundColor: "#0072b1",
     boxShadow: theme.shadows[10],
+  },
+  linkedinButton: {
+    backgroundColor: "#0072b1",
     "&:hover": {
       color: theme.palette.common.black,
       backgroundColor: theme.palette.common.white,
     },
   },
   twitterButton: {
-    height: 50,
-    width: 50,
-    color: "#ffff",
     backgroundColor: "#00acee",
-    boxShadow: theme.shadows[10],
+    "&:hover": {
+      color: theme.palette.common.black,
+      backgroundColor: theme.palette.common.white,
+    },
+  },
+  mediumButton: {
+    backgroundColor: "#464648",
+    "&:hover": {
+      color: theme.palette.common.white,
+      backgroundColor: theme.palette.common.black,
+    },
+  },
+  instagramButton: {
+    background:
+      "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
+    "&:hover": {
+      color: theme.palette.common.black,
+      background: theme.palette.common.white,
+    },
+  },
+  facebookButton: {
+    backgroundColor: "#3b5998",
+    "&:hover": {
+      color: theme.palette.common.black,
+      backgroundColor: theme.palette.common.white,
+    },
+  },
+  personalWebsiteButton: {
+    backgroundColor: "#d3d3d3",
     "&:hover": {
       color: theme.palette.common.black,
       backgroundColor: theme.palette.common.white,
@@ -93,11 +126,45 @@ export default function Profile({ data }) {
   const classes = useStyles();
   const mentor = data.allMentorsJson.nodes[0];
   const recommendations = data.allRecruitingResource.nodes;
+  const socials = mentor.socials.split(",");
+  const platforms = ["linkedin", "twitter", "medium", "instagram", "facebook"];
+  const platformIcons = {
+    linkedin: <LinkedInIcon className={classes.icons} />,
+    twitter: <TwitterIcon className={classes.icons} />,
+    medium: <MediumIcon className={classes.icons} />,
+    instagram: <InstagramIcon className={classes.icons} />,
+    facebook: <FacebookIcon className={classes.icons} />,
+    personal: <WebIcon className={classes.icons} />,
+  };
+  const platformClasses = {
+    linkedin: classes.linkedinButton,
+    twitter: classes.twitterButton,
+    medium: classes.mediumButton,
+    instagram: classes.instagramButton,
+    facebook: classes.facebookButton,
+    personal: classes.personalWebsiteButton,
+  };
 
-  // TODO map social icons, strip social links for name, match names + apply button/styles accordingly in a grid item
-  function getSocialIconButtons() {
-    //const socials = mentor.socials.split(",");
-    //console.log(socials);
+  function getSocialIconButton(platform) {
+    const isPlatform = (str) => str.includes(platform);
+    const idx = socials.findIndex(isPlatform);
+
+    return (
+      <>
+        {idx > -1 && (
+          <Grid item>
+            <IconButton
+              href={socials[idx]}
+              target="_blank"
+              variant="contained"
+              className={clsx(classes.socialButton, platformClasses[platform])}
+            >
+              {platformIcons[platform]}
+            </IconButton>
+          </Grid>
+        )}
+      </>
+    );
   }
 
   const nextJourneys = [
@@ -155,26 +222,9 @@ export default function Profile({ data }) {
                       </Typography>
                       <Box p={2}>
                         <Grid container spacing={2} justify="center">
-                          <Grid item>
-                            <IconButton
-                              href="https://www.linkedin.com/in/michelle-ma-1208/"
-                              target="_blank"
-                              variant="contained"
-                              className={classes.linkedinButton}
-                            >
-                              <LinkedInIcon className={classes.icons} />
-                            </IconButton>
-                          </Grid>
-                          <Grid item>
-                            <IconButton
-                              href="https://twitter.com/michellema_97?lang=en"
-                              target="_blank"
-                              variant="contained"
-                              className={classes.twitterButton}
-                            >
-                              <TwitterIcon className={classes.icons} />
-                            </IconButton>
-                          </Grid>
+                          {platforms.map((val, idx) =>
+                            getSocialIconButton(val)
+                          )}
                         </Grid>
                       </Box>
                     </Box>
@@ -246,6 +296,7 @@ export const query = graphql`
         name
         image
         bio
+        socials
         fields {
           slug
         }
