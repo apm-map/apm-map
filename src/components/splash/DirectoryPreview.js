@@ -166,7 +166,7 @@ export default function DirectoryPreview({ context }) {
               align="center"
               gutterBottom
             >
-              {"150+"}
+              {"170+"}
             </Typography>
             <Typography
               style={{ width: "60%" }}

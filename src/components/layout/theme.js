@@ -25,7 +25,7 @@ let theme = createMuiTheme({
     },
 
     h2: {
-      fontSize: 72,
+      fontSize: 64,
       fontWeight: 800,
     },
     caption: {
