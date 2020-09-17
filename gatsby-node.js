@@ -9,6 +9,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(`
     type RecruitingResource implements Node {
       id: String!
+      rowID: String!,
       name: String!
       description: String,
       featured: Boolean,
@@ -49,6 +50,7 @@ exports.sourceNodes = async ({
         contentDigest: createContentDigest(row),
       },
       children: [],
+      rowID: row.id,
       name: row.name,
       link: row.link,
       category: row.category,
@@ -113,23 +115,15 @@ exports.createPages = ({ actions, graphql }) => {
   return graphql(`
     query mentorsWithResourcesQuery {
       allMentorsJson {
-        edges {
-          node {
-            id
-            name
-            title
-            bio
-            recommendations
-            image {
-              childImageSharp {
-                fluid(quality: 75, cropFocus: ATTENTION) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            fields {
-              slug
-            }
+        nodes {
+          id
+          name
+          title
+          bio
+          recommendations
+          image
+          fields {
+            slug
           }
         }
       }
@@ -141,13 +135,13 @@ exports.createPages = ({ actions, graphql }) => {
 
     // for each mentor, create a page with a custom slug (see onCreateNode)
     // and list of recommendations passed as page context
-    result.data.allMentorsJson.edges.forEach((mentor) => {
+    result.data.allMentorsJson.nodes.forEach((mentor) => {
       createPage({
-        path: mentor.node.fields.slug,
+        path: mentor.fields.slug,
         component: profileTemplate,
         context: {
-          recommendations: mentor.node.recommendations,
-          slug: mentor.node.fields.slug,
+          recommendations: mentor.recommendations,
+          slug: mentor.fields.slug,
         },
       });
     });

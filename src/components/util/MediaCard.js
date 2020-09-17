@@ -46,6 +46,8 @@ export default function MediaCard({ loading, data, image }) {
     setRaised(!raised);
   };
 
+  console.log(data);
+
   const SkeletonCard = () => (
     <Card className={classes.card}>
       <CardActionArea className={classes.cardActionArea}>

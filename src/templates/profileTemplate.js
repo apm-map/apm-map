@@ -92,7 +92,15 @@ const useStyles = makeStyles((theme) => ({
 export default function Profile({ data }) {
   const classes = useStyles();
   const mentor = data.allMentorsJson.nodes[0];
-  const recommendations = data.allResourcesJson.nodes;
+  const recommendations = data.allRecruitingResource.nodes;
+
+  // TODO map social icons, strip social links for name, match names + apply button/styles accordingly in a grid item
+  function getSocialIconButtons() {
+    //const socials = mentor.socials.split(",");
+    //console.log(socials);
+  }
+  console.log(recommendations);
+
   const nextJourneys = [
     {
       name: "Placeholder name",
@@ -231,3 +239,35 @@ export default function Profile({ data }) {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query MyQuery($slug: String!, $recommendations: [String]) {
+    allMentorsJson(filter: { fields: { slug: { eq: $slug } } }) {
+      nodes {
+        name
+        image
+        bio
+        fields {
+          slug
+        }
+      }
+    }
+    allRecruitingResource(filter: { rowID: { in: $recommendations } }) {
+      nodes {
+        id
+        name
+        description
+        category
+        tags
+        link
+        image {
+          childImageSharp {
+            fluid(quality: 75, cropFocus: ATTENTION) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
