@@ -296,7 +296,13 @@ export default function Profile({ data }) {
                 </Typography>
                 <Grid container display="flex" justify="left" spacing={4}>
                   {mentor.journeys.map((journey, index) => (
-                    <Grid item key={index} xs={4} className={classes.cardGrid}>
+                    <Grid
+                      item
+                      key={index}
+                      xs={12}
+                      md={4}
+                      className={classes.cardGrid}
+                    >
                       <JourneyCard data={journey} />
                     </Grid>
                   ))}
