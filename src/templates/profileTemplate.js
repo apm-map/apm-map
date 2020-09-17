@@ -99,7 +99,6 @@ export default function Profile({ data }) {
     //const socials = mentor.socials.split(",");
     //console.log(socials);
   }
-  console.log(recommendations);
 
   const nextJourneys = [
     {
@@ -210,7 +209,7 @@ export default function Profile({ data }) {
                     md={4}
                     className={classes.cardGrid}
                   >
-                    <Card loading={false} data={card} />
+                    <Card loading={false} data={card} image={card.image} />
                   </Grid>
                 ))}
               </Grid>
