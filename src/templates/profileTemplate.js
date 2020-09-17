@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import clsx from "clsx";
 import { Grid, Container, IconButton, Paper, Divider } from "@material-ui/core";
@@ -7,7 +7,8 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import Card from "../components/util/MediaCard";
+import Card from "@material-ui/core/Card";
+import DirectoryCard from "../components/util/MediaCard";
 import Emoji from "../components/util/Emoji";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
@@ -23,6 +24,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
 import MediumIcon from "../../assets/medium.svg";
+import JourneyCard from "../components/mentors/JourneyCard";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -124,6 +126,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Profile({ data }) {
   const classes = useStyles();
+
   const mentor = data.allMentorsJson.nodes[0];
   const recommendations = data.allRecruitingResource.nodes;
   const socials = mentor.socials.split(",");
@@ -166,6 +169,11 @@ export default function Profile({ data }) {
       </>
     );
   }
+
+  const [raised, setRaised] = useState(false);
+  const toggleRaised = () => {
+    setRaised(!raised);
+  };
 
   const nextJourneys = [
     {
@@ -259,29 +267,44 @@ export default function Profile({ data }) {
                     md={4}
                     className={classes.cardGrid}
                   >
-                    <Card loading={false} data={card} image={card.image} />
+                    <DirectoryCard
+                      loading={false}
+                      data={card}
+                      image={card.image}
+                    />
                   </Grid>
                 ))}
               </Grid>
             </Box>
-            <Box py={3}>
-              <Typography
-                className={classes.title}
-                variant="h3"
-                color="textPrimary"
-              >
-                {"My Next Journey "}
-                <Emoji symbol="🌱" label="sprout" />
-              </Typography>
-              <Typography
-                className={classes.subtitle}
-                variant="body2"
-                color="textSecondary"
-                paragraph
-              >
-                {"Here's what I'm working on next"}
-              </Typography>
-            </Box>
+            {mentor.journeys.length ? (
+              <Box py={3}>
+                <Typography
+                  className={classes.title}
+                  variant="h3"
+                  color="textPrimary"
+                >
+                  {"My Next Journey"}
+                  <Emoji symbol="🌱" label="sprout" />
+                </Typography>
+                <Typography
+                  className={classes.subtitle}
+                  variant="body2"
+                  color="textSecondary"
+                  paragraph
+                >
+                  {"Here's what I'm thinking about next"}
+                </Typography>
+                <Grid container display="flex" justify="left" spacing={4}>
+                  {mentor.journeys.map((journey, index) => (
+                    <Grid item key={index} xs={4} className={classes.cardGrid}>
+                      <JourneyCard data={journey} />
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+            ) : (
+              <></>
+            )}
           </Container>
         )}
       </Context.Consumer>
@@ -296,6 +319,11 @@ export const query = graphql`
         name
         image
         bio
+        journeys {
+          description
+          link
+          title
+        }
         socials
         fields {
           slug

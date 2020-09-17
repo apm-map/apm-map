@@ -9,7 +9,8 @@
     "socials": "https://www.linkedin.com/in/michelle-ma-1208/, https://twitter.com/michellema_97?lang=en",
     "bio": "APM @ Yahoo. Passionate about all things mental/health & wellness. Co-creator of APM Map",
     "image": "https://storage.cloud.google.com/mentors-pics/mima-profile-pic.jpg",
-    "recommendations": ["15", "119", "72", "120", "93", "6"]
+    "recommendations": ["15", "119", "72", "120", "93", "6"],
+    "journeys": []
   },
   {
     "id": 1,
@@ -21,9 +22,20 @@
     "image": "https://storage.googleapis.com/mentors-pics/katie-goldstein.png",
     "bio": "PM @ Microsoft. Recent Dartmouth grad from SF. I get excited about pugs, helping others, my Duolingo streak, and Japanese toilets. Let's chat!",
     "socials": "https://www.linkedin.com/in/katie-goldstein/",
-    "recommendations": ["18", "176", "177"],
+    "recommendations": ["18", "176", "177", "178"],
     "path": "<https://www.amazon.com/Cracking-PM-Interview-Product-Technology/dp/0984782818> - [Read this book cover to cover to learn more about PMing and prep for PM design questions. I'd recommend you take notes on the different frameworks!], <https://www.linkedin.com/> - [I networked a bunch before starting my role to 1) gain more clarity into the role and company culture and 2) gain useful insights to disseminate during my interviews, and 3) gain referrals.],  <https://www.theverge.com/, https://techcrunch.com/> - [Two great tech news sites that I browse for 5-10 min regularly! Send cool articles to your friends/family/others. Form opinions about things that are happening, and keep track of companies and initiatives that seem interesting.]",
-    "journey": "Trying to build my LinkedIn presence/give back to the community by hosting weekly Office Hours (https://calendly.com/katie-e-goldstein/katies-office-hours) & overall boosting my LinkedIn posting ability (https://www.linkedin.com/in/katie-goldstein/detail/recent-activity/shares/)!"
+    "journeys": [
+      {
+        "title": "Katie's Office Hours",
+        "description": "Trying to build my LinkedIn presence/give back to the community by hosting weekly Office Hours",
+        "link": "https://calendly.com/katie-e-goldstein/katies-office-hours"
+      },
+      {
+        "title": "Linkedin Activity",
+        "description": "Trying to overall boost my LinkedIn posting ability",
+        "link": "https://www.linkedin.com/in/katie-goldstein/detail/recent-activity/shares/"
+      }
+    ]
   },
   {
     "id": 2,
@@ -37,7 +49,7 @@
     "bio": "Product TPM @ Instagram (Facebook). Georgia Tech grad with a B.S. in CmpEng, California-born and bound, and New Jersey raised! Let’s chat about social good in tech, social psychology, or my obsession with turtles :)",
     "socials": "https://www.linkedin.com/in/shrutiramanathan/, https://www.instagram.com/shrutir16/, https://www.facebook.com/shruti.ramanathan/, https://github.com/shrutiramanathan",
     "path": "https://www.amazon.com/Cracking-PM-Interview-Product-Technology/dp/0984782818: My literal manual to life for the semester I was interview prepping! Highly recommend using this over video interviews to practice a diversity of questions.   https://blog.pramp.com/how-to-succeed-in-a-system-design-interview-27b35de0df26: Thinking about scaling infrastructure is super crucial to acing more technical product management interviews. Better understanding how to approach these questions is not a piece of cake, but highly recommend a computer architecture class curriculum as a foundation.",
-    "journey": ""
+    "journeys": []
   },
   {
     "id": 3,
@@ -46,12 +58,12 @@
     "pronouns": "She/Her",
     "email": "info@dasanidecoded.com",
     "title": "PM @ Microsoft & Founder @ Dasani Decoded",
-    "recommendations": ["164", "30", "103"],
+    "recommendations": ["174", "30", "103"],
     "image": "https://storage.googleapis.com/mentors-pics/dasani-madipalli.jpeg",
     "bio": "PM @ Microsoft & Founder @ Dasani Decoded. I love doodling, doggos and believe owning our narratives can change the world",
     "socials": "https://twitter.com/dasani_decoded,  https://www.instagram.com/dasani_decoded/, https://www.dasanidecoded.com/, https://www.linkedin.com/in/dasani-m, https://www.medium.com/@dasanidecoded",
     "path": "https://www.tryexponent.com/ -  for interview prep, , https://link.medium.com/86TL6gTNu9 - being a pm at Microsoft,  https://productbuds.co/ - aspiring pm community",
-    "journey": ""
+    "journeys": []
   },
   {
     "id": 4,
@@ -62,10 +74,16 @@
     "title": "Product Lead @ Planet",
     "recommendations": ["173"],
     "image": "https://storage.googleapis.com/mentors-pics/lisa-huang.jpg",
-    "bio": "Product Lead @ Planet.",
+    "bio": "Product Lead @ Planet. My name is Lisa Huang-North and I am a 2x Founder. I am building products at Planet, a startup with a mission to use Space 🛰 to help life on Earth 🌎  I will be sharing essays and thoughts on the intersection of Productivity (something I’ve been reading up & thinking about), Technology, and Social Impact.",
     "socials": "https://www.linkedin.com/in/lisaychuang/, https://twitter.com/lisaychuang",
     "path": "I've compiled resources into this doc: https://docs.google.com/document/d/1NZOOGbisMTocrIZ6dGfcZpmiP89iyiDoxGXtYr5NME0/edit?usp=sharing, which includes 2 resources written by me: \"Career pivots: Product Management masterclass\"  and \"How to stand out from the crowd of aspiring Product Managers",
-    "journey": "My name is Lisa Huang-North and I am a 2x Founder. I am building products at Planet, a startup with a mission to use Space 🛰 to help life on Earth 🌎  I will be sharing essays and thoughts on the intersection of Productivity (something I’ve been reading up & thinking about), Technology, and Social Impact. Sign up for my newsletter here: https://lisahuangnorth.substack.com/p/coming-soon"
+    "journeys": [
+      {
+        "title": "Lisa's Newsletter",
+        "description": "Sign up for my newsletter here",
+        "link": "https://lisahuangnorth.substack.com/p/coming-soon"
+      }
+    ]
   },
   {
     "id": 5,
@@ -79,7 +97,12 @@
     "bio": "PM @ Microsoft. JHU '20. I strive to amplify human stories to transform the world around us.",
     "socials": "https://www.linkedin.com/in/nancywangjhu/, https://medium.com/@nwang625, https://twitter.com/oldnan_andthec",
     "path": "<https://www.quora.com/q/theartofproductmanagement> - A blog about product management by Jackie Bavaro, co-founder of Cracking the PM Interview, <https://medium.com/agileinsider/navigating-the-entry-level-pm-apm-recruiting-process-957993620ac5> - Comprehensive article on APM/PM recruiting, <https://www.youtube.com/channel/UCjm_qVkCPjOVDz9BWjNqO9A> - YouTube channel with everything from mock PM interviews to tips on negotiating your offer!",
-    "journey": "Currently dipping my toes into writing/reflecting about my thoughts, ideas and experiences on Medium. Volunteering @ Breaktime to help launch the careers of young adults experiencing homelessness, you can check us out and support at breaktime.org! (PS not sure if this text should be formalized or anything bc it totally is not right now HAHA fyi)"
+    "journeys": [
+      {
+        "title": "Nancy's Thoughts",
+        "description": "Currently dipping my toes into writing/reflecting about my thoughts, ideas and experiences on Medium. Volunteering @ Breaktime to help launch the careers of young adults experiencing homelessness, you can check us out and support at breaktime.org!"
+      }
+    ]
   },
   {
     "id": 6,
@@ -93,7 +116,13 @@
     "bio": "APM @ Twitter. Love talking about pop culture, design, drinking tea.",
     "socials": "https://twitter.com/kluo25, https://kellyluo.me/",
     "path": "<https://tiny.cc/apm-two-truths-and-a-lie> - [two truths and a lie about apm recruiting: the three things i wish i knew before i started]  <https://www.amazon.com/Product-Manager-Interview-Questions-Answers/dp/0998120480> - [the product manager interview (167 actual q&a's) by lewis c. lin: an in-depth guide for practicing interview questions]  <https://www.intercom.com/blog/tag/intercom-on-product/> - [intercom on product: my favorite podcast series for understanding product management inside and out]  <https://medium.com/agileinsider/navigating-the-entry-level-pm-apm-recruiting-process-957993620ac5> - [navigating the apm recruiting process: a helpful overview of the process from start to end] <https://medium.com/@jackiebo> - [insightful advice and tips from jackie bavaro]",
-    "journey": "this is a reminder to take a breather and take care of yourself—you got this! 😊 always feel free to say hello! twitter.com/kluo25"
+    "journeys": [
+      {
+        "title": "Kelly's Thoughts",
+        "description": "this is a reminder to take a breather and take care of yourself—you got this! 😊 always feel free to say hello! twitter.com/kluo25",
+        "link": "https://twitter.com/kluo25"
+      }
+    ]
   },
   {
     "id": 7,
@@ -102,12 +131,17 @@
     "pronouns": "She/Her",
     "email": "charlene@mylivingos.com",
     "recommendations": ["167", "168", "169"],
-    "title": "Founder of LivingOS / APM @ Google",
+    "title": "APM @ Google & Founder @ LivingOS",
     "image": "https://storage.googleapis.com/mentors-pics/charlene-wang.JPG",
     "bio": "APM @ Google. Founder of LivingOS. You can achieve more and be happier. Let me help you.",
     "socials": "https://twitter.com/hsinleiwang, \nhttps://www.instagram.com/yourlivingos/, https://www.facebook.com/YourLivingOS",
     "path": "https://www.lennyrachitsky.com/ - Lenny's Newsletter, https://www.yourlivingos.com/blog/how-to-build-product-intuition/ - How To Build Product Intuition, https://www.yourlivingos.com/blog/seek-to-understand/ - Seek to Understand",
-    "journey": "Weekly Gem - livingos.substack.com"
+    "journeys": [
+      {
+        "title": "Weekly Gem",
+        "link": "https://livingos.substack.com"
+      }
+    ]
   },
   {
     "id": 8,
@@ -121,7 +155,27 @@
     "bio": "APM @ Yahoo (Verizon Media). APM by day, SWE at heart, filling my free time with running.",
     "socials": "https://www.linkedin.com/in/caiismyname,davidcai.me,https://github.com/caiismyname",
     "path": "<https://productsense.carrd.co> - [A card of the news sources I used to develop product sense],<pmtechlessons.com> - [Approachable explainers of tech concepts for non-technical PMs], <http://www.crackingthepminterview.com> - [A classic prep book. I don't really have an allegiance to a particular book, but this is what I used]",
-    "journey": "<pmtechlessons.com> - [Approachable explainers of tech concepts for non-technical PMs, specifically with an algorithms-focused prep course at pmtechlessons.com/interview-prep]"
+    "journeys": [
+      {
+        "title": "PM Tech Lessons",
+        "description": "Approachable explainers of tech concepts for non-technical PMs, specifically with an algorithms-focused prep course.",
+        "link": "pmtechlessons.com/interview-prep"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "added": "9/6/2020 22:28:49",
+    "name": "Nelly Lin",
+    "pronouns": "she/her",
+    "recommendations": ["93"],
+    "email": "linnberkeley@berkeley.edu",
+    "title": "APM @ Wayfair",
+    "image": "https://storage.googleapis.com/mentors-pics/nelly-lin.jpg",
+    "bio": "APM @ Wayfair. UC Berkeley '19. Passionate about social justice, avid reader and writer, and travel fanatic.",
+    "socials": "https://www.linkedin.com/in/nellylin/",
+    "path": "",
+    "journeys": []
   },
   {
     "id": 10,
@@ -135,7 +189,18 @@
     "bio": "PM @ VMWare, working on the Boxer Mobile Application for iOS and Android. I have also built datemappers.com and have a patent in Machine Learning for Email. I also like Electric Longboarding as well as 3D printing and photography",
     "socials": "https://www.linkedin.com/in/adam-chow-96277557/, https://www.instagram.com/liquidsn0w/, https://www.facebook.com/liquidsn0w",
     "path": "http://www.crackingthepminterview.com/ - CRACKING the PM INTERVIEW",
-    "journey": "datemappers.com - a resource for finding dates around Atlanta, https://www.awoahmods.com/ light up longboard wheels for your electric longboard."
+    "journeys": [
+      {
+        "title": "Date Mappers",
+        "description": "a resource for finding dates around Atlanta",
+        "link": "https://datemappers.com"
+      },
+      {
+        "title": "Awoah",
+        "description": "light up longboard wheels for your electric longboard",
+        "link": "https://www.awoahmods.com/"
+      }
+    ]
   },
   {
     "id": 11,
@@ -149,7 +214,12 @@
     "bio": "PM @ Loop Commerce. Started my journey as an Oracle DBA working on database and technical side for almost 6yrs. Completed my MBA program in 2019 and pivoted my career into Product Management. Being a Product Manager excites me in solving user problems and building delightful products for our customers. I'm looking forward to take on new challenges!",
     "socials": "https://www.linkedin.com/in/priyankamaskar/",
     "path": "Made my own resources list: https://docs.google.com/document/d/1J6hm6xBD6kCqJIlBPd0GjrNfeQ8p06oW-8WcpMaFgR4/edit",
-    "journey": "Becoming a Sr. Product Manager and cracking a PM position at FAANG."
+    "journeys": [
+      {
+        "title": "Priyanka's Thoughts",
+        "description": "Becoming a Sr. Product Manager and cracking a PM position at FAANG."
+      }
+    ]
   },
   {
     "id": 12,
@@ -163,7 +233,13 @@
     "bio": "APM @ WePay. Recent Cal grad. I love building products that create positive impact, basketball & football, and reading. Getting into PM is hard and I want to pay all the advice/help I received forward by helping you all become great PMs yourselves :)",
     "socials": "https://www.linkedin.com/in/nimalen/",
     "path": "Cracking the PM Interview - your 101 on breaking into PM, Decode & Conquer - excellent guide to frameworks and answering product design/execution/strategy questions effectively, http://productmanagerhq.com/blog - excellent list of PM-focused articles/resume examples/skills/etc, Lewis Lin's Slack Community - great community to do mock interviews with",
-    "journey": "Currently working on building an online campus hangout for college students at joinpack.app!"
+    "journeys": [
+      {
+        "title": "Pack",
+        "description": "Currently working on building an online campus hangout for college students at joinpack.app!",
+        "link": "https://joinpack.app"
+      }
+    ]
   },
   {
     "id": 13,
@@ -177,7 +253,7 @@
     "bio": "Sr. APM @ TIBCO, working on combining the best of technology, data and product to execute product vision. I specialize in customer research and usability, product and project management, cross-functional communications.",
     "socials": "https://linkedin.com/in/aditi-priya",
     "path": "https://theproductmanager.com/topics/best-product-management-blogs/",
-    "journey": ""
+    "journeys": []
   },
   {
     "id": 14,
@@ -191,7 +267,13 @@
     "bio": "APM @ Twitter. I used to be a sweet potato farmer from Kansas. Now, I'm an APM @ Twitter learning how to build with empathy so we can all experience a more inclusive future. You can find me tending to my succulents~",
     "socials": "https://twitter.com/davidfromkansas",
     "path": "Swipe to Unlock (book) - My friend, Neel, wrote this easy to understand primer on how technology and business work together, www.techmeme.com - Reading the technews everyday helps develop product sense by understanding trends in the industry,  https://www.getrevue.co/profile/caseynewton - The Interface is a newsletter focusing on dialogue around social media and consumer tech by The Verge's Casey Newton, https://constine.substack.com/ - Weekly newsletter over startups and new tech trends by TechCrunch's Josh Constine, https://www.youtube.com/playlist?list=PLfAX25ZLrPGRzfILkSd-YiWfsoloCETAe - Bloomberg Technology is a daily 1-hour show where Emily Chang talks about what's going on in tech by interviewing CEOs and talking to experts (I watch this during breakfast everyday!).",
-    "journey": "My friend Jehron Petty started ColorStack, a non-profit whose mission is to increase the entrance, retention and success of Black, Latinx, and Native American college students in computing. Consider volunteering your time to help the next-gen of diverse tech talent succeed! Visit: https://www.colorstack.org/"
+    "journeys": [
+      {
+        "title": "ColorStack",
+        "description": "My friend Jehron Petty started ColorStack, a non-profit whose mission is to increase the entrance, retention and success of Black, Latinx, and Native American college students in computing. Consider volunteering your time to help the next-gen of diverse tech talent succeed!",
+        "link": "https://www.colorstack.org/"
+      }
+    ]
   },
   {
     "id": 15,
@@ -205,7 +287,12 @@
     "bio": "PM @ Hatch Credit. Running the exciting world of small business financing and banking at Hatch. Love to travel (or I guess zoom now?), run and play tetris.",
     "socials": "https://www.linkedin.com/in/umeshkhanna/, https://www.facebook.com/Umesh64, https://twitter.com/ukumarkhanna",
     "path": "Get a mentor, learn how to organize your thoughts, be passionate about something!",
-    "journey": "https://hatchcard.com/checking-waitlist"
+    "journeys": [
+      {
+        "title": "Hatch",
+        "link": "https://hatchcard.com/checking-waitlist"
+      }
+    ]
   },
   {
     "id": 16,
@@ -219,7 +306,12 @@
     "bio": "PM @ Microsoft, working on industry solutions for Microsoft Teams. Passionate about travel, intuitive design, learning people’s individualities, and leaving the world a lil more open than you found it.",
     "socials": "https://twitter.com/sandrahluo, https://linkedin.com/in/sandraluo",
     "path": "1. Reach out to your network for referrals! Don’t be shy — people usually get referral bonuses if you get hired so they are probably eager to help. Make it easy for them by sending your resume, email address, relevant links, and a casual blurb selling yourself (as if you were in their shoes recommending yourself). Best means of getting your foot in the door is to do this research early and ask your contact to send your resume to the recruiter/hiring manager through their internal means of communication (Slack, company email, etc). This will make your application bubble up rather than getting lost in the application system. 2. https://2by22.blog/definitive-guide-to-behavioral-interview-questions/ A great supplement to Decode and Conquer about acing the behavioral interview questions and leaving an impression with your interviewer. 3. https://www.keyvalues.com/culture-queries End your interview on a strong note by asking the questions that matter to you and show you value culture.",
-    "journey": "https://medium.com/@sandrahluo"
+    "journeys": [
+      {
+        "title": "Medium",
+        "link": "https://medium.com/@sandrahluo"
+      }
+    ]
   },
   {
     "id": 17,
@@ -233,7 +325,7 @@
     "bio": "PM @ Redfin. I am a recent Berkeley grad where I studied Cognitive Science and a minor in Computer Science. Prior to Redfin, I was a project manager intern at Cisco, a business development intern at a neurotech startup, and I am a Bay Area local!",
     "socials": "https://www.linkedin.com/in/mahmoud-alzaghari/",
     "path": "<https://www.lennyrachitsky.com/p/how-to-get-into-product-management> - [A high level overview of what a PM does, and the paths to get into product], <https://www.youtube.com/watch?v=0ffLxnKkaJ8&list=PLrtCHHeadkHr8ro-vTg1CAdDuwrVmXS4y> - [A Youtube playlist of product interview tips and mock interviews. I used this resource a lot while I was recruiting for product roles], <https://blog.tryexponent.com/tag/product-management/> - [A collection of product management articles that detail what product management is, how to break in, and how to successfully interview for the roles]",
-    "journey": "Nothing super fleshed out yet, but will let you know as things continue to develop!"
+    "journeys": []
   },
   {
     "id": 18,
@@ -247,7 +339,12 @@
     "socials": "https://www.instagram.com/ecr.jpg/\nhttps://www.linkedin.com/in/echenran/",
     "recommendations": ["154", "155", "156", "6"],
     "path": "http://alanz.me/apm - Full time APM deadlines, https://docs.google.com/spreadsheets/d/1-RuKYVhXb3Ez0IxmvnGFvLBet6n78OgOPnX9SxkX31s - Full time + internship APM deadlines, https://alanz.me/resources - Alan Zhang's interview resources, https://docs.google.com/document/d/1CC9mbK5hi8YqBvLVwnTahzqmek8T8VPeJ3XQTvLA1FE - Jacqueline Chung's interview resources",
-    "nextJourney": "A personal financial advising platform, name TBD!"
+    "journeys": [
+      {
+        "title": "Emmett's Thoughts",
+        "description": "A personal financial advising platform, name TBD!"
+      }
+    ]
   },
   {
     "id": 19,
@@ -261,7 +358,7 @@
     "socials": "https://johnathanzhou.com\nhttps://twitter.com/johnathanzhou",
     "recommendations": ["153"],
     "path": "https://www.lennyrachitsky.com/p/how-to-get-into-product-management -- this is my top recommended resource! Lenny goes into depth onto the entire journey of getting into product.",
-    "nextJourney": ""
+    "journeys": []
   },
   {
     "id": 20,
@@ -275,7 +372,12 @@
     "socials": "https://twitter.com/fdong_\nhttps://www.linkedin.com/in/dongfrank/",
     "recommendations": ["152", "72"],
     "path": "https://stratechery.com/ - daily tech strategy articles related to industry trends/news, https://www.lewis-lin.com/blog/2018/7/8/lewis-c-lins-slack-community - good community to find peers to do PM prep with,",
-    "nextJourney": "Currently working on a ML project that has yet to be released - will provide you more details down the line"
+    "journeys": [
+      {
+        "title": "Frank's Thoughts",
+        "description": "Currently working on a ML project that has yet to be released - will provide you more details down the line"
+      }
+    ]
   },
   {
     "id": 21,
@@ -289,7 +391,13 @@
     "socials": "sariabukhadra.com, https://linkedin.com/in/sari-abukhadra",
     "recommendations": ["151", "117"],
     "path": "https://mailchi.mp/056ea1e9b0d3/subscribe-page - newsletter for APM interviews and recruiting tips, http://stellarpeers.com/ - Great resource for scheduling mock interviews",
-    "nextJourney": "https://mailchi.mp/056ea1e9b0d3/subscribe-page - newsletter for Product Management advice and recruiting tips"
+    "journeys": [
+      {
+        "title": "Sari's Newsletter",
+        "description": "newsletter for Product Management advice and recruiting tips",
+        "link": "https://mailchi.mp/056ea1e9b0d3/subscribe-page"
+      }
+    ]
   },
   {
     "id": 22,
@@ -303,7 +411,7 @@
     "socials": "https://www.linkedin.com/in/roshnirawal/",
     "recommendations": ["149", "120", "150"],
     "path": "<https://web.eecs.umich.edu/~weimerw/2019-481W/readings/PM%20at%20Microsoft%20%E2%80%93%20Steven%20Sinofsky's%20Microsoft%20TechTalk.html> -[Former President of Windows Division of Microsoft explains product/program management], <https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw>  - [Great YouTube channel to help navigate system design questions], <https://docs.google.com/spreadsheets/d/1rz10oEeLx-eGnilahKczYPhGfCUzIEKL-xRnjoQ-SX4/edit#gid=1024620532> - [PM interview question bank by company. Great for mock interviews.]",
-    "nextJourney": ""
+    "journeys": []
   },
   {
     "id": 23,
@@ -317,7 +425,16 @@
     "socials": "https://twitter.com/JoelMon97 , https://www.linkedin.com/in/joelmontanoucf/",
     "recommendations": ["29", "18"],
     "path": "Cracking the Coding Interview [Book on general PM topics], https://www.youtube.com/channel/UCjm_qVkCPjOVDz9BWjNqO9A [Great mock videos]",
-    "nextJourney": "https://www.envisionaccelerator.com/ https://learnwithjoel.substack.com/"
+    "journeys": [
+      {
+        "title": "Envision",
+        "link": "https://www.envisionaccelerator.com/"
+      },
+      {
+        "title": "Joel's Newsletter",
+        "link": "https://learnwithjoel.substack.com/"
+      }
+    ]
   },
   {
     "id": 24,
@@ -327,11 +444,17 @@
     "email": "max.beech@verizonmedia.com",
     "title": "APM @ Yahoo (Verizon Media)",
     "image": "https://storage.googleapis.com/mentors-pics/max-beech.jpg",
-    "bio": "APM @ Yahoo (Verizon Media), working on emerging ad formats team. Previously: Product @ Revolut (financial startup), Co-Founder @Intro, Computer Science graduate at Exeter University in the UK. I love building tech products and am a keen entrepreneur, programmer and coding teacher. Fun fact: I once won third prize at a talent contest for sticking out my tongue",
+    "bio": "APM @ Yahoo (Verizon Media), working on emerging ad formats team. Previously: Product @ Revolut (financial startup), Co-Founder @ Intro, Computer Science graduate at Exeter University in the UK. Fun fact: I once won third prize at a talent contest for sticking out my tongue",
     "socials": "https://twitter.com/maxedbeech,https://www.linkedin.com/in/maxbeech,https://maxbeech.com/",
     "recommendations": ["18", "117", "5"],
     "path": "<https://stellarpeers.com/> - [A fantastic community of aspiring and existing PMs who through a series of shared interview practices, made a huge difference to my ability to perform under pressure], <https://www.amazon.co.uk/Cracking-PM-Interview-Product-Technology/dp/0984782818> - [You should definitely read at least one of the popular interview books, but be wary of copy/pasting their formula. Design your own approach to answering questions], <https://apmlist.com/> - [A tried and tested site, APM list gives a comprehensive guide to US-based APM programs. Particularly if you are international, make sure to find local opportunities too]",
-    "nextJourney": "https://thetoday.app/ - Doing stuff with no-one there to push you is hard. Today helps you to actually do that side-project you've been putting off and holds you to it thanks to its unique approach of tracking the time you spend on each task. Unique timing. Daily streaks. Eye-candy."
+    "journeys": [
+      {
+        "title": "Today",
+        "description": "Doing stuff with no-one there to push you is hard. Today helps you to actually do that side-project you've been putting off and holds you to it thanks to its unique approach of tracking the time you spend on each task. Unique timing. Daily streaks. Eye-candy.",
+        "link": "https://thetoday.app/"
+      }
+    ]
   },
   {
     "id": 25,
@@ -345,7 +468,7 @@
     "socials": "https://www.linkedin.com/in/nelli-petikyan/",
     "recommendations": ["117"],
     "path": "https://stellarpeers.com/ - [for mock interviews]",
-    "nextJourney": ""
+    "journeys": []
   },
   {
     "id": 26,
@@ -359,6 +482,11 @@
     "socials": "keerthipradaa.com, twitter.com/KeerthiPradaa, medium.com/@KeerthiPradaa, linkedin.com/in/keerthipradaa,",
     "recommendations": ["148", "119", "136", "104"],
     "path": "https://medium.com/@dipducla - DIPD @UCLA's medium blog, https://www.facebook.com/groups/SubtlePM - PM Community used to network and learn, https://thepminterview.com/ - Random Interview Question Generator, https://www.productmanagementexercises.com/ - Interview Question Database,",
-    "nextJourney": "More stuff coming soon, stay tuned!"
+    "journeys": [
+      {
+        "title": "Keerthi's Thoughts",
+        "description": "More stuff coming soon, stay tuned!"
+      }
+    ]
   }
 ]
