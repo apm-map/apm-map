@@ -71,14 +71,18 @@ export default function AboutPage() {
         Michelle Ma
       </Typography>
       <Typography className={classes.aboutText}>
-        Hey, I'm Michelle <Emoji symbol="🍵" label="matcha" /> , one of the
+        Hey, I'm Michelle <Emoji symbol="🍵" label="matcha" />, one of the
         co-creators behind APM Map. I'm an Associate Product Manager @ Yahoo
         (Verizon Media). On the side, I'm also writing{" "}
-        <Link href="https://techcare.substack.com/welcome">Tech Care</Link>, a
-        newsletter that unpacks the intersection of tech {"&"} self
+        <Link target="_blank" href="https://techcare.substack.com/welcome">
+          Tech Care
+        </Link>
+        , a newsletter that unpacks the intersection of tech {"&"} self
         care/community care/structurcal care. If you have any questions about
         APM Recruiting, APM Map, or Tech Care, DM me on{" "}
-        <Link href="https://twitter.com/michellema_97?lang=en">Twitter</Link>{" "}
+        <Link target="_blank" href="https://twitter.com/musingsbymima">
+          Twitter
+        </Link>{" "}
         and let's chat!
       </Typography>
       <Typography className={classes.aboutText}>
@@ -176,7 +180,7 @@ export default function AboutPage() {
                 invert={context.isMobile}
                 content={aboutMima}
                 avatarSrc="https://storage.googleapis.com/mentors-pics/mima-profile-pic.jpg"
-                twitter="https://twitter.com/michellema_97?lang=en"
+                twitter="https://twitter.com/musingsbymima"
               />
               <CreatorProfile
                 invert
@@ -184,6 +188,7 @@ export default function AboutPage() {
                 avatarSrc="https://storage.googleapis.com/mentors-pics/jeff-3.jpg"
                 linkedIn="https://www.linkedin.com/in/jf2978/"
                 github="https://github.com/jf2978"
+                substack="https://secondgen.substack.com"
               />
             </Container>
           </>

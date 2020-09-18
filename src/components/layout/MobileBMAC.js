@@ -37,7 +37,7 @@ export default function MobileBMAC() {
       <IconButton
         target="_blank"
         className={classes.button}
-        href="https://www.buymeacoffee.com/michellema"
+        href="https://buymeacoff.ee/jeffandmichelle"
       >
         <BuyMeACoffeeIcon height={75} width={75} />
       </IconButton>

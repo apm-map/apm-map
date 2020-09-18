@@ -8,7 +8,7 @@ import Card from "../util/MediaCard";
 export default function FindPrograms() {
   const data = useStaticQuery(graphql`
     query GetFindProgramsResources {
-      allRecruitingResource(filter: { category: { eq: "Find APM Programs" } }) {
+      allRecruitingResource(filter: { category: { eq: "Find Programs" } }) {
         nodes {
           id
           name

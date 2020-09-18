@@ -15,6 +15,7 @@ import IconButton from "@material-ui/core/IconButton";
 
 import Emoji from "../util/Emoji";
 import MediumIcon from "../../../assets/medium.svg";
+import SubstackIcon from "../../../assets/substack.svg";
 
 const useStyles = makeStyles((theme) => ({
   aboutText: {
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     height: 50,
     width: 50,
     color: "#ffff",
-    backgroundColor: "#464648",
+    backgroundColor: "#464660",
     boxShadow: theme.shadows[10],
     "&:hover": {
       backgroundColor: theme.palette.common.black,
@@ -66,6 +67,17 @@ const useStyles = makeStyles((theme) => ({
     width: 50,
     color: "#ffff",
     backgroundColor: "#333",
+    boxShadow: theme.shadows[10],
+    "&:hover": {
+      color: theme.palette.common.black,
+      backgroundColor: theme.palette.common.white,
+    },
+  },
+  substackButton: {
+    height: 50,
+    width: 50,
+    padding: theme.spacing(1),
+    backgroundColor: "#f8f8f8",
     boxShadow: theme.shadows[10],
     "&:hover": {
       color: theme.palette.common.black,
@@ -90,6 +102,7 @@ export default function CreatorProfile({
   linkedIn,
   medium,
   twitter,
+  substack,
 }) {
   const classes = useStyles();
 
@@ -170,6 +183,18 @@ export default function CreatorProfile({
                       className={classes.twitterButton}
                     >
                       <TwitterIcon />
+                    </IconButton>
+                  </Grid>
+                )}
+                {substack && (
+                  <Grid item>
+                    <IconButton
+                      href={substack}
+                      target="_blank"
+                      variant="contained"
+                      className={classes.substackButton}
+                    >
+                      <SubstackIcon />
                     </IconButton>
                   </Grid>
                 )}

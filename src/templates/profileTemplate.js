@@ -149,13 +149,13 @@ export default function Profile({ data }) {
     "github",
   ];
   const platformIcons = {
-    linkedin: <LinkedIn className={classes.icons} />,
-    twitter: <Twitter className={classes.icons} />,
-    medium: <MediumIcon className={classes.icons} />,
-    instagram: <Instagram className={classes.icons} />,
-    facebook: <Facebook className={classes.icons} />,
-    github: <GitHub className={classes.icons} />,
-    personal: <Web className={classes.icons} />,
+    linkedin: <LinkedIn />,
+    twitter: <Twitter />,
+    medium: <MediumIcon />,
+    instagram: <Instagram />,
+    facebook: <Facebook />,
+    github: <GitHub />,
+    personal: <Web />,
   };
   const platformClasses = {
     linkedin: classes.linkedinButton,
@@ -286,7 +286,7 @@ export default function Profile({ data }) {
                   variant="h3"
                   color="textPrimary"
                 >
-                  {"My Next Journey"}
+                  {"My Next Journey  "}
                   <Emoji symbol="🌱" label="sprout" />
                 </Typography>
                 <Typography
@@ -303,7 +303,7 @@ export default function Profile({ data }) {
                       item
                       key={index}
                       xs={12}
-                      md={4}
+                      md={6}
                       className={classes.cardGrid}
                     >
                       <JourneyCard data={journey} />
