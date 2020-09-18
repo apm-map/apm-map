@@ -115,7 +115,7 @@ export default function BuyMeACoffee({ context }) {
                 <IconButton
                   target="_blank"
                   className={classes.button}
-                  href="https://www.buymeacoffee.com/michellema"
+                  href="https://www.buymeacoffee.com/michelleandjeff"
                 >
                   <BuyMeACoffeeIcon height={75} width={75} />
                 </IconButton>

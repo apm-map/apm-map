@@ -93,7 +93,7 @@ export default function Footer({ children }) {
       </div>
       <div className={classes.signup}>
         <iframe
-          src="https://thepmcollective.substack.com/embed"
+          src="https://apmmap.substack.com/embed"
           width="80%"
           height="100%"
           className={classes.substack}
