@@ -10,11 +10,14 @@ import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import DirectoryCard from "../components/util/MediaCard";
 import Emoji from "../components/util/Emoji";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import WebIcon from "@material-ui/icons/Web";
+import {
+  GitHub,
+  LinkedIn,
+  Twitter,
+  Instagram,
+  Facebook,
+  Web,
+} from "@material-ui/icons";
 import Layout from "../components/layout/Layout";
 import { Context } from "../components/layout/Provider";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -91,8 +94,15 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.common.white,
     },
   },
+  githubButton: {
+    backgroundColor: "#333",
+    "&:hover": {
+      color: theme.palette.common.black,
+      backgroundColor: theme.palette.common.white,
+    },
+  },
   personalWebsiteButton: {
-    backgroundColor: "#d3d3d3",
+    backgroundColor: "#b4b4b4",
     "&:hover": {
       color: theme.palette.common.black,
       backgroundColor: theme.palette.common.white,
@@ -130,14 +140,22 @@ export default function Profile({ data }) {
   const mentor = data.allMentorsJson.nodes[0];
   const recommendations = data.allRecruitingResource.nodes;
   const socials = mentor.socials.split(",");
-  const platforms = ["linkedin", "twitter", "medium", "instagram", "facebook"];
+  const platforms = [
+    "linkedin",
+    "twitter",
+    "medium",
+    "instagram",
+    "facebook",
+    "github",
+  ];
   const platformIcons = {
-    linkedin: <LinkedInIcon className={classes.icons} />,
-    twitter: <TwitterIcon className={classes.icons} />,
+    linkedin: <LinkedIn className={classes.icons} />,
+    twitter: <Twitter className={classes.icons} />,
     medium: <MediumIcon className={classes.icons} />,
-    instagram: <InstagramIcon className={classes.icons} />,
-    facebook: <FacebookIcon className={classes.icons} />,
-    personal: <WebIcon className={classes.icons} />,
+    instagram: <Instagram className={classes.icons} />,
+    facebook: <Facebook className={classes.icons} />,
+    github: <GitHub className={classes.icons} />,
+    personal: <Web className={classes.icons} />,
   };
   const platformClasses = {
     linkedin: classes.linkedinButton,
@@ -145,12 +163,16 @@ export default function Profile({ data }) {
     medium: classes.mediumButton,
     instagram: classes.instagramButton,
     facebook: classes.facebookButton,
+    github: classes.githubButton,
     personal: classes.personalWebsiteButton,
   };
 
   function getSocialIconButton(platform) {
     const isPlatform = (str) => str.includes(platform);
-    const idx = socials.findIndex(isPlatform);
+    const idx =
+      platform === "personal"
+        ? socials.length - 1
+        : socials.findIndex(isPlatform);
 
     return (
       <>
@@ -169,26 +191,6 @@ export default function Profile({ data }) {
       </>
     );
   }
-
-  const [raised, setRaised] = useState(false);
-  const toggleRaised = () => {
-    setRaised(!raised);
-  };
-
-  const nextJourneys = [
-    {
-      name: "Placeholder name",
-      description: "this is placeholder text about someone's next journey!",
-    },
-    {
-      name: "Placeholder name",
-      description: "this is placeholder text about someone's next journey!",
-    },
-    {
-      name: "Placeholder name",
-      description: "this is placeholder text about someone's next journey!",
-    },
-  ];
 
   return (
     <Layout>
@@ -233,6 +235,7 @@ export default function Profile({ data }) {
                           {platforms.map((val, idx) =>
                             getSocialIconButton(val)
                           )}
+                          {mentor.personal && getSocialIconButton("personal")}
                         </Grid>
                       </Box>
                     </Box>
@@ -331,6 +334,7 @@ export const query = graphql`
           title
         }
         socials
+        personal
         fields {
           slug
         }

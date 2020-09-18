@@ -121,7 +121,10 @@ export default function DirectoryPreview({ context }) {
 
   const data = useStaticQuery(graphql`
     query GetFeaturedResources {
-      allRecruitingResource(filter: { featured: { eq: true } }) {
+      allRecruitingResource(
+        filter: { featured: { eq: true } }
+        sort: { fields: featuredOrder }
+      ) {
         nodes {
           id
           name
@@ -166,7 +169,7 @@ export default function DirectoryPreview({ context }) {
               align="center"
               gutterBottom
             >
-              {"170+"}
+              {"175+"}
             </Typography>
             <Typography
               style={{ width: "60%" }}

@@ -71,11 +71,15 @@ export default function AboutPage() {
         Michelle Ma
       </Typography>
       <Typography className={classes.aboutText}>
-        Hi there <Emoji symbol="🍵" label="matcha" /> I'm Michelle, one of the
-        creators behind APM Map. I'm an Associate Product Manager @ Yahoo
-        (Verizon Media) by day, and building APM Map, The PM Collective, and
-        learning to play the kalimba at night (follow my kalimba insta!
-        #shameless #plug).
+        Hey, I'm Michelle <Emoji symbol="🍵" label="matcha" /> , one of the
+        co-creators behind APM Map. I'm an Associate Product Manager @ Yahoo
+        (Verizon Media). On the side, I'm also writing{" "}
+        <Link href="https://techcare.substack.com/welcome">Tech Care</Link>, a
+        newsletter that unpacks the intersection of tech {"&"} self
+        care/community care/structurcal care. If you have any questions about
+        APM Recruiting, APM Map, or Tech Care, DM me on{" "}
+        <Link href="https://twitter.com/michellema_97?lang=en">Twitter</Link>{" "}
+        and let's chat!
       </Typography>
       <Typography className={classes.aboutText}>
         APM Map is the result of one of the <em> hardest </em>

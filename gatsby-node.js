@@ -13,6 +13,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String!
       description: String,
       featured: Boolean,
+      featuredOrder: Int,
       link: String!,
       category: String,
       tags: [String],
@@ -57,6 +58,7 @@ exports.sourceNodes = async ({
       type: row.type,
       description: row.description,
       featured: row.featured == "TRUE" ? true : false,
+      featuredOrder: row.featuredOrder,
       tags: row.tags,
       image: row.image,
     };
