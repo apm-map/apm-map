@@ -1,6 +1,5 @@
 import React from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
@@ -17,15 +16,7 @@ function a11yProps(index) {
   };
 }
 
-const useStyles = makeStyles((theme) => ({
-  label: {
-    fontSize: 25,
-  },
-}));
-
 export default function MobileNav({ context }) {
-  const classes = useStyles();
-
   return (
     <Tabs value={context.nav} onChange={context.changeNav} variant="fullWidth">
       <Tab

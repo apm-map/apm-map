@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import clsx from "clsx";
 import { makeStyles, fade } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -15,8 +14,6 @@ import { CATEGORIES } from "../util/filters";
 import InputBase from "@material-ui/core/InputBase";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Zoom from "@material-ui/core/Zoom";
 
 // FILE CONSTANTS
 const drawerWidth = 360;

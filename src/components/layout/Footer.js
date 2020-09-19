@@ -1,6 +1,6 @@
 import React from "react";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
@@ -85,6 +85,7 @@ export default function Footer({ children }) {
       </div>
       <div className={classes.signup}>
         <iframe
+          title="substack"
           src="https://apmmap.substack.com/embed"
           width="80%"
           height="100%"

@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import clsx from "clsx";
-import { Grid, Container, IconButton, Paper, Divider } from "@material-ui/core";
+import {
+  Grid,
+  Container,
+  IconButton,
+  Paper,
+  Box,
+  Avatar,
+  Typography,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
 import DirectoryCard from "../components/util/MediaCard";
 import Emoji from "../components/util/Emoji";
 import {
@@ -20,13 +23,9 @@ import {
 } from "@material-ui/icons";
 import Layout from "../components/layout/Layout";
 import { Context } from "../components/layout/Provider";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import { CardHeader } from "@material-ui/core";
-import { Link } from "gatsby";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
 
 import MediumIcon from "../../assets/medium.svg";
+import SubstackIcon from "../../assets/substack.svg";
 import JourneyCard from "../components/mentors/JourneyCard";
 
 const useStyles = makeStyles((theme) => ({
@@ -108,6 +107,14 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.common.white,
     },
   },
+  substackButton: {
+    padding: theme.spacing(1),
+    backgroundColor: "#f8f8f8",
+    "&:hover": {
+      color: theme.palette.common.black,
+      backgroundColor: theme.palette.common.white,
+    },
+  },
   header: {
     margin: theme.spacing(2, 0, 2),
   },
@@ -147,6 +154,7 @@ export default function Profile({ data }) {
     "instagram",
     "facebook",
     "github",
+    "substack",
   ];
   const platformIcons = {
     linkedin: <LinkedIn />,
@@ -156,6 +164,7 @@ export default function Profile({ data }) {
     facebook: <Facebook />,
     github: <GitHub />,
     personal: <Web />,
+    substack: <SubstackIcon />,
   };
   const platformClasses = {
     linkedin: classes.linkedinButton,
@@ -165,6 +174,7 @@ export default function Profile({ data }) {
     facebook: classes.facebookButton,
     github: classes.githubButton,
     personal: classes.personalWebsiteButton,
+    substack: classes.substackButton,
   };
 
   function getSocialIconButton(platform) {

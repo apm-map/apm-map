@@ -6,11 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Layout from "../components/layout/Layout";
 import { Context } from "../components/layout/Provider";
 import Emoji from "../components/util/Emoji";
-import Blurb from "../components/util/Blurb";
-import { Grid, Divider } from "@material-ui/core";
 import Link from "@material-ui/core/Link";
-import Avatar from "@material-ui/core/Avatar";
-import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 
 import CreatorProfile from "../components/about/CreatorProfile";
@@ -161,7 +157,7 @@ export default function AboutPage() {
       <Context.Consumer>
         {(context) => (
           <>
-            <SEO lang={"en"} title={"about"} keywords={keywords} />
+            <SEO lang={"en"} title={"About"} keywords={keywords} />
             <Container className={classes.header}>
               <Typography
                 className={classes.title}

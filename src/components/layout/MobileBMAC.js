@@ -1,18 +1,9 @@
-import React, { useEffect, useState } from "react";
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
+import React from "react";
 
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import Tooltip from "@material-ui/core/Tooltip";
-import { withStyles, makeStyles, darken } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 import BuyMeACoffeeIcon from "../../../assets/bmac.svg";
-import Emoji from "../util/Emoji";
 
 const useStyles = makeStyles((theme) => ({
   bmac: {

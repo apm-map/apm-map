@@ -1,16 +1,9 @@
 // great blog post that taught me a lot about how SVGs work: https://www.sarasoueidan.com/blog/svg-coordinate-systems/
 
 import React, { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  useAnimation,
-  useTransform,
-  useViewportScroll,
-  useMotionValue,
-} from "framer-motion";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
 
 import { makeStyles, darken } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import RoomRoundedIcon from "@material-ui/icons/RoomRounded";
 
 import { CATEGORIES } from "../util/filters";

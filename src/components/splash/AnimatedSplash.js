@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { motion, useAnimation, usePresence } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import Zoom from "@material-ui/core/Zoom";
 
 import Video from "../util/Video";
 import Emoji from "../util/Emoji";
@@ -51,25 +50,6 @@ export default function AnimatedSplash(props) {
     stiffness: stiffness,
   });
 
-  /**
-   * Frame div variants
-   */
-  const bgVariants = {
-    before: {
-      opacity: 0,
-      transition: {
-        ease: "easeIn",
-        duration: 1,
-      },
-    },
-    after: {
-      opacity: 1,
-      transition: {
-        ease: "easeIn",
-        duration: 1,
-      },
-    },
-  };
   const letterVariants = {
     before: (i) => ({
       x: `calc(10vw + ${i * 50}px)`,
@@ -146,7 +126,7 @@ export default function AnimatedSplash(props) {
     }
 
     sequence();
-  }, []);
+  }, [bgControls, apmControls, mapControls, subtitleControls, arrowControls]);
 
   return (
     <Box className={classes.box}>
@@ -342,27 +322,5 @@ export default function AnimatedSplash(props) {
         </motion.div>
       </motion.div>
     </Box>
-  );
-}
-
-function ScrollToDirectory(props) {
-  const { children } = props;
-
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      "#directory-preview"
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  return (
-    <Zoom in>
-      <div onClick={handleClick} role="presentation">
-        {children}
-      </div>
-    </Zoom>
   );
 }

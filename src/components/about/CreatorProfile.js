@@ -1,10 +1,7 @@
 import React from "react";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { Grid, Divider, SvgIcon } from "@material-ui/core";
-import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
@@ -13,7 +10,6 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import IconButton from "@material-ui/core/IconButton";
 
-import Emoji from "../util/Emoji";
 import MediumIcon from "../../../assets/medium.svg";
 import SubstackIcon from "../../../assets/substack.svg";
 

@@ -1,17 +1,9 @@
 import React, { useState } from "react";
-import Img from "gatsby-image";
+
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import Divider from "@material-ui/core/Divider";
-import Chip from "@material-ui/core/Chip";
-import Box from "@material-ui/core/Box";
-import Skeleton from "@material-ui/lab/Skeleton";
-
-import Link from "../util/Link";
 
 const useStyles = makeStyles((theme) => ({
   card: {
