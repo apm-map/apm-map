@@ -57,9 +57,9 @@ export default function JourneyCard({ data }) {
       raised={raised}
     >
       <CardActionArea
+        target="_blank"
+        href={data.link}
         className={classes.cardActionArea}
-        component={Link}
-        to={data.link ? data.link : "#"}
       >
         <CardHeader
           className={classes.cardHeader}

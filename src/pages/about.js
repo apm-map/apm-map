@@ -12,7 +12,31 @@ import Link from "@material-ui/core/Link";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
+
 import CreatorProfile from "../components/about/CreatorProfile";
+import SEO from "../components/util/seo";
+
+const keywords = [
+  "apm",
+  "APM",
+  "A/PM",
+  "product",
+  "management",
+  "recruiting",
+  "michelle",
+  "ma",
+  "jeffrey",
+  "fabian",
+  "twitter",
+  "linkedin",
+  "github",
+  "substack",
+  "questbridge",
+  "tech",
+  "care",
+  "second",
+  "generation",
+];
 
 const useStyles = makeStyles((theme) => ({
   aboutText: {
@@ -137,6 +161,7 @@ export default function AboutPage() {
       <Context.Consumer>
         {(context) => (
           <>
+            <SEO lang={"en"} title={"about"} keywords={keywords} />
             <Container className={classes.header}>
               <Typography
                 className={classes.title}
@@ -181,6 +206,7 @@ export default function AboutPage() {
                 content={aboutMima}
                 avatarSrc="https://storage.googleapis.com/mentors-pics/mima-profile-pic.jpg"
                 twitter="https://twitter.com/musingsbymima"
+                substack="https://techcare.substack.com/welcome"
               />
               <CreatorProfile
                 invert

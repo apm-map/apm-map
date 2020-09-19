@@ -80,7 +80,7 @@ export default function Nav({ context }) {
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 1.3 }}
             >
-              <Img fixed={data.file.childImageSharp.fixed} />
+              <Img fixed={data.file.childImageSharp.fixed} alt="APM Map logo" />
             </motion.div>
           </Link>
           <Tabs

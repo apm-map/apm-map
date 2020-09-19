@@ -164,6 +164,7 @@ export default function AnimatedSplash(props) {
             objectFit: "cover",
           }}
           src={videoScreenshotSrc}
+          alt="APM Map video background"
         />
       ) : (
         <Video src={videoSrc} />

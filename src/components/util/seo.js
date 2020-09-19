@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import { StaticQuery, graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 export default function SEO({ description, lang, meta, keywords, title }) {
   const data = useStaticQuery(graphql`
@@ -49,7 +49,7 @@ export default function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:creator`,
-          content: data.site.siteMetadata.author,
+          content: "@musingsbymima",
         },
         {
           name: `twitter:title`,

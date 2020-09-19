@@ -1,15 +1,7 @@
 import React from "react";
-import { Link, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
-import { motion } from "framer-motion";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({

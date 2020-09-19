@@ -4,6 +4,30 @@ import { Context } from "../components/layout/Provider";
 import Directory from "../components/directory/Directory";
 import Hero from "../components/util/Hero";
 import Emoji from "../components/util/Emoji";
+import SEO from "../components/util/seo";
+
+const keywords = [
+  "apm",
+  "APM",
+  "A/PM",
+  "product",
+  "management",
+  "recruiting",
+  "linkedin",
+  "github",
+  "substack",
+  "directory",
+  "resources",
+  "journey",
+  "why product management",
+  "find programs",
+  "community",
+  "interview",
+  "prep",
+  "technical interview",
+  "books",
+  "mock interviews",
+];
 
 export default function DirectoryPage() {
   return (
@@ -11,6 +35,7 @@ export default function DirectoryPage() {
       <Context.Consumer>
         {(context) => (
           <>
+            <SEO lang={"en"} title={"directory"} keywords={keywords} />
             <Hero
               id="directory-hero"
               title="The Journey"

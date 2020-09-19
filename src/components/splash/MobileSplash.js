@@ -51,7 +51,11 @@ export default function Splash(props) {
 
   return (
     <>
-      <img className={classes.bgImg} src={videoScreenshotSrc} />
+      <img
+        className={classes.bgImg}
+        src={videoScreenshotSrc}
+        alt="APM Map background"
+      />
       <div className={classes.header}>
         <div className={classes.title}>
           <Typography

@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     width: theme.spacing(25),
     height: theme.spacing(25),
-    marginTop: "-15%",
+    marginTop: "-15vh",
     boxShadow:
       "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.2),0px 1px 8px 0px #FFFFFF",
   },
@@ -205,6 +205,7 @@ export default function Profile({ data }) {
                   </Grid>
                   <Grid item>
                     <Box
+                      pb={1}
                       display="flex"
                       flexDirection="column"
                       alignItems="center"

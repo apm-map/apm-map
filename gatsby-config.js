@@ -74,8 +74,8 @@ module.exports = {
   siteMetadata: {
     title: "APM Map",
     description:
-      "APM Map is your one-stop destination for navigating your A/PM recruiting journey",
-    author: "@jf2978",
+      "APM Map is your one-stop destination for navigating your APM recruiting journey",
+    author: "Jeffrey Fabian",
     siteUrl: "https://www.apmmap.co",
   },
 };
