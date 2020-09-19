@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Trail(context, { toggleCategory }) {
+export default function Trail({ isFirefox, toggleCategory }) {
   const classes = useStyles();
   const pathRef = useRef(null);
 
@@ -74,8 +74,6 @@ export default function Trail(context, { toggleCategory }) {
   const [pathPoints, setPathPoints] = useState(
     new Array(10).fill({ x: 0, y: 0 })
   );
-
-  const { isFirefox } = context;
 
   const trailInlineStyle = !isFirefox
     ? { overflow: "visible" }
