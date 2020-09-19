@@ -47,7 +47,7 @@ export default function MentorsPage() {
       <Context.Consumer>
         {(context) => (
           <>
-            <SEO lang={"en"} title={"mentors"} keywords={keywords} />
+            <SEO lang={"en"} title={"Mentors"} keywords={keywords} />
             <MentorsGrid />
           </>
         )}

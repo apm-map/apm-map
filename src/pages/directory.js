@@ -35,7 +35,7 @@ export default function DirectoryPage() {
       <Context.Consumer>
         {(context) => (
           <>
-            <SEO lang={"en"} title={"directory"} keywords={keywords} />
+            <SEO lang={"en"} title={"Directory"} keywords={keywords} />
             <Hero
               id="directory-hero"
               title="The Journey"
