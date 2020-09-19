@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Directory({ category, toggleCategory }) {
+export default function AnimatedDirectory({ category, toggleCategory }) {
   const classes = useStyles();
 
   return (

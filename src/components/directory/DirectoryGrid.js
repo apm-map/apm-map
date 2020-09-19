@@ -58,7 +58,7 @@ export default function DirectoryGrid({ category }) {
     switch (category) {
       case "Understand Why PM":
         return <WhyPM />;
-      case "Find APM Programs":
+      case "Find Programs":
         return <FindPrograms />;
       case "Community":
         return <Community />;

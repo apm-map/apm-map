@@ -188,7 +188,7 @@ export default function AboutPage() {
                 avatarSrc="https://storage.googleapis.com/mentors-pics/jeff-3.jpg"
                 linkedIn="https://www.linkedin.com/in/jf2978/"
                 github="https://github.com/jf2978"
-                substack="https://secondgen.substack.com"
+                substack="https://secondgen.substack.com/welcome"
               />
             </Container>
           </>

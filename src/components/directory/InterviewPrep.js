@@ -26,7 +26,6 @@ export default function InterviewPrep() {
       }
     }
   `);
-
   return (
     <>
       {data.allRecruitingResource.nodes.map((node, index) => (

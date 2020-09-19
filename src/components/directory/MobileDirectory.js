@@ -17,14 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Directory({ context }) {
+export default function Directory({ category, toggleCategory }) {
   const classes = useStyles();
-
-  // filter (categories) state
-  const [category, setCategory] = React.useState("All");
-  const toggleCategory = (value) => {
-    setCategory(value);
-  };
 
   return (
     <Container
