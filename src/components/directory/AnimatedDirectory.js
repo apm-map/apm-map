@@ -16,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AnimatedDirectory({ category, toggleCategory }) {
+export default function AnimatedDirectory({
+  isFirefox,
+  category,
+  toggleCategory,
+}) {
   const classes = useStyles();
 
   return (
@@ -26,7 +30,7 @@ export default function AnimatedDirectory({ category, toggleCategory }) {
       maxWidth={false}
       className={classes.container}
     >
-      <Timeline toggleCategory={toggleCategory} />
+      <Timeline isFirefox={isFirefox} toggleCategory={toggleCategory} />
       <Container maxWidth="lg" className={classes.directory}>
         <DirectoryGrid category={category} />
       </Container>

@@ -13,6 +13,10 @@ export default function Directory({ context }) {
   return context.isMobile ? (
     <MobileDirectory category={category} toggleCategory={toggleCategory} />
   ) : (
-    <AnimatedDirectory category={category} toggleCategory={toggleCategory} />
+    <AnimatedDirectory
+      isFirefox={context.isFirefox}
+      category={category}
+      toggleCategory={toggleCategory}
+    />
   );
 }

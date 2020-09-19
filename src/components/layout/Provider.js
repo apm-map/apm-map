@@ -10,13 +10,14 @@ export const Context = React.createContext();
 
 export default function Provider({ children }) {
   const [nav, setNav] = React.useState(0);
-  const { isMobile } = useDeviceDetect();
+  const { isMobile, isFirefox } = useDeviceDetect();
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Context.Provider
         value={{
+          isFirefox,
           isMobile,
           nav,
           changeNav: (event, val) => setNav(val),

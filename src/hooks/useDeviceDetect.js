@@ -3,6 +3,7 @@ import React from "react";
 // source: https://reedbarger.com/how-to-create-a-custom-usedevicedetect-react-hook/
 export default function useDeviceDetect() {
   const [isMobile, setMobile] = React.useState(false);
+  const [isFirefox, setIsFirefox] = React.useState(false);
 
   React.useEffect(() => {
     const userAgent =
@@ -13,7 +14,10 @@ export default function useDeviceDetect() {
       )
     );
     setMobile(mobile);
+
+    const firefox = Boolean(userAgent.match(/Firefox/i));
+    setIsFirefox(firefox);
   }, []);
 
-  return { isMobile };
+  return { isMobile, isFirefox };
 }
