@@ -271,6 +271,22 @@ export default function Profile({ data }) {
                 {"Resources that I recommend for APM recruiting"}
               </Typography>
               <Grid container display="flex" spacing={4}>
+                {mentor.tips.length ? (
+                  mentor.tips.map((tip, index) => (
+                    <Grid
+                      item
+                      key={index}
+                      xs={12}
+                      sm={6}
+                      md={4}
+                      className={classes.cardGrid}
+                    >
+                      <JourneyCard loading={false} data={tip} />
+                    </Grid>
+                  ))
+                ) : (
+                  <></>
+                )}
                 {recommendations.map((card, index) => (
                   <Grid
                     item
@@ -338,6 +354,10 @@ export const query = graphql`
         name
         image
         bio
+        tips {
+          title
+          description
+        }
         journeys {
           description
           link
