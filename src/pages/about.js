@@ -98,8 +98,8 @@ export default function AboutPage() {
           Tech Care
         </Link>
         , a newsletter that unpacks the intersection of tech {"&"} self
-        care/community care/structurcal care. If you have any questions about
-        APM Recruiting, APM Map, or Tech Care, DM me on{" "}
+        care/community care/structural care. If you have any questions about APM
+        Recruiting, APM Map, or Tech Care, DM me on{" "}
         <Link target="_blank" href="https://twitter.com/musingsbymima">
           Twitter
         </Link>{" "}

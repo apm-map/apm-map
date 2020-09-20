@@ -39,7 +39,7 @@
   },
   "scripts": {
     "dev": "GATSBY_ENV=development gatsby develop",
-    "build": "GATSBY_ENV=production gatsby build",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true GATSBY_ENV=production gatsby build --log-pages",
     "serve": "GATSBY_ENV=staging gatsby serve",
     "clean": "gatsby clean",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
