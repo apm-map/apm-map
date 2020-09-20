@@ -141,8 +141,8 @@ export default function AboutPage() {
         hours. I was spending countless hours working through
         <Link href="https://leetcode.com/"> trivial interview questions </Link>
         all while trying to keep my grades afloat, working a part-time job and
-        trying to figure out whether the path I was on was right for me to begin
-        with.
+        just trying to figure out whether the path I was on was right for me to
+        begin with.
       </Typography>
       <Typography className={classes.aboutText}>
         I'm helping build APM Map in hopes to simplify and <em> humanize </em>{" "}

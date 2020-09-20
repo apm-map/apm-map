@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Timeline({ isFirefox, toggleCategory }) {
+export default function Timeline({ toggleCategory }) {
   const classes = useStyles();
 
   return (
@@ -31,7 +31,7 @@ export default function Timeline({ isFirefox, toggleCategory }) {
         alignItems="center"
         className={classes.box}
       >
-        <Trail isFirefox={isFirefox} toggleCategory={toggleCategory} />
+        <Trail toggleCategory={toggleCategory} />
       </Box>
     </Container>
   );

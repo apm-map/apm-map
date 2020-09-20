@@ -53,16 +53,9 @@ const useStyles = makeStyles((theme) => ({
     stroke: "black",
     strokeWidth: 0.5,
   },
-  trail: {
-    overflow: "visible",
-  },
-  translateTrail: {
-    translateX: "-10%",
-    translateY: "-100%",
-  },
 }));
 
-export default function Trail({ isFirefox, toggleCategory }) {
+export default function Trail({ toggleCategory }) {
   const classes = useStyles();
   const pathRef = useRef(null);
 
@@ -75,13 +68,6 @@ export default function Trail({ isFirefox, toggleCategory }) {
     new Array(10).fill({ x: 0, y: 0 })
   );
 
-  const trailInlineStyle = !isFirefox
-    ? { overflow: "visible" }
-    : {
-        overflow: "visible",
-        translateX: "-10%",
-        translateY: "-100%",
-      };
   // once our path element is mounted to the DOM, we can get its length/points
   useEffect(() => {
     function getPathPoints() {
@@ -178,11 +164,7 @@ export default function Trail({ isFirefox, toggleCategory }) {
     <>
       <motion.svg width="100%" height="100%" viewBox="0 0 1600 375">
         {/** dashed trail */}
-        <motion.svg
-          x={isFirefox ? "0" : "-10%"}
-          y={isFirefox ? "0" : "-100%"}
-          style={trailInlineStyle}
-        >
+        <motion.svg x="-10%" y="-100%" style={{ overflow: "visible" }}>
           <motion.path
             ref={pathRef}
             className={classes.path}
@@ -209,11 +191,11 @@ export default function Trail({ isFirefox, toggleCategory }) {
         </motion.svg>
         {/** path stops  */}
         <motion.svg
-          x={isFirefox ? "0" : "-10%"}
-          y={isFirefox ? "0" : "-100%"}
+          x="-10%"
+          y="-100%"
           width="25%"
           height="25%"
-          style={trailInlineStyle}
+          style={{ overflow: "visible" }}
         >
           <motion.g
             initial="before"
