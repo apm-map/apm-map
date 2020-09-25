@@ -84,11 +84,17 @@ const useStyles = makeStyles((theme) => ({
       background: theme.palette.primary.main,
     },
   },
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: theme.spacing(3),
+  },
   button: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    padding: theme.spacing(1),
+    padding: theme.spacing(1, 5),
   },
 }));
 
