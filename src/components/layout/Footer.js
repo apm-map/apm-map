@@ -144,6 +144,8 @@ export default function Footer({ children }) {
         {isAdblock ?
           <div className={classes.buttonContainer}>
             <Button
+              target="_blank"
+              href="https://apmmap.substack.com/welcome"
               component={Link}
               className={classes.button}
               variant="contained"
