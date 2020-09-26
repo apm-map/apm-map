@@ -8,6 +8,15 @@ const HTMLTooltip = withStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
     color: "rgba(0, 0, 0, 0.87)",
     border: `1px solid ${darken(theme.palette.secondary.main, 0.2)}`,
+
+    "&:hover": {
+      cursor: "pointer",
+      backgroundColor: darken(theme.palette.secondary.main, 0.1),
+
+      "& $arrow": {
+        color: darken(theme.palette.secondary.main, 0.1),
+      }
+    }
   },
   arrow: {
     color: theme.palette.secondary.main,
@@ -26,6 +35,7 @@ export default function TrailLabel({ label, children }) {
 
   return (
     <HTMLTooltip
+      interactive
       arrow
       open={true}
       placement="bottom"
