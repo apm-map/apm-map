@@ -1,4 +1,5 @@
 import React from "react";
+import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import clsx from "clsx";
 import {
@@ -144,7 +145,9 @@ const useStyles = makeStyles((theme) => ({
 export default function Profile({ data }) {
   const classes = useStyles();
 
+
   const mentor = data.allMentorsJson.nodes[0];
+
   const recommendations = data.allRecruitingResource.nodes;
   const socials = mentor.socials.split(",");
   const platforms = [
@@ -221,7 +224,10 @@ export default function Profile({ data }) {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Avatar src={mentor.image} className={classes.avatar} />
+                      <Avatar
+                        component={Img}
+                        fluid={{ ...mentor.image.childImageSharp.fluid, aspectRatio: 16 / 9 }}
+                        className={classes.avatar} />
                       <Typography
                         className={classes.title}
                         variant="h3"
@@ -285,8 +291,8 @@ export default function Profile({ data }) {
                     </Grid>
                   ))
                 ) : (
-                  <></>
-                )}
+                    <></>
+                  )}
                 {recommendations.map((card, index) => (
                   <Grid
                     item
@@ -338,8 +344,8 @@ export default function Profile({ data }) {
                 </Grid>
               </Box>
             ) : (
-              <></>
-            )}
+                <></>
+              )}
           </Container>
         )}
       </Context.Consumer>
@@ -352,7 +358,13 @@ export const query = graphql`
     allMentorsJson(filter: { fields: { slug: { eq: $slug } } }) {
       nodes {
         name
-        image
+        image {
+          childImageSharp {
+            fluid(quality: 75, cropFocus: ATTENTION) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         bio
         tips {
           title

@@ -1,4 +1,5 @@
 import React from "react";
+import Img from "gatsby-image";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import Avatar from "@material-ui/core/Avatar";
@@ -53,7 +54,11 @@ export default function AvatarCard({ data }) {
       >
         <CardHeader
           className={classes.cardHeader}
-          avatar={<Avatar src={data.image} className={classes.avatar} />}
+          avatar={<Avatar
+            component={Img}
+            fluid={{ ...data.image.childImageSharp.fluid, aspectRatio: 16 / 9 }}
+            className={classes.avatar}
+          />}
           title={data.name}
           titleTypographyProps={{
             variant: "h5",

@@ -78,18 +78,9 @@ exports.onCreateNode = async ({
   store,
 }) => {
   const { createNode, createNodeField } = actions;
-  if (node.internal.type === "MentorsJson") {
-    const slug = `/mentors/${node.name}`.split(" ").join("-").toLowerCase();
 
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    });
-  }
-
-  // For all RecruitingResource nodes that have an image url, call createRemoteFileNode
-  if (node.internal.type === "RecruitingResource" && node.image !== null) {
+  // For all RecruitingResource and MentorJson nodes that have an image url, call createRemoteFileNode
+  if ((node.internal.type === "RecruitingResource" || node.internal.type === "MentorsJson") && node.image !== null) {
     const fileNode = await createRemoteFileNode({
       url: node.image, // string that points to the URL of the image
       parentNodeId: node.id,
@@ -104,6 +95,16 @@ exports.onCreateNode = async ({
     if (fileNode) {
       node.image___NODE = fileNode.id;
     }
+  }
+
+  if (node.internal.type === "MentorsJson") {
+    const slug = `/mentors/${node.name}`.split(" ").join("-").toLowerCase();
+
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    });
   }
 };
 
@@ -123,7 +124,17 @@ exports.createPages = ({ actions, graphql }) => {
           title
           bio
           recommendations
-          image
+          image {
+            childImageSharp {
+              fluid(quality: 75, cropFocus: ATTENTION) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+            }
+          }
           fields {
             slug
           }
