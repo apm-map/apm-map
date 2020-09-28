@@ -130,9 +130,9 @@ export default function AboutPage() {
       </Typography>
       <Typography className={classes.aboutText}>
         Hey, my name is Jeff <Emoji symbol="👋🏼" label="hand-wave" /> I'm a{" "}
-        QuestBridge alum, Software Engineer at Mailchimp, writer
-        at <Link href="https://secondgen.substack.com/welcome">Second Generation</Link>
-        {" "} and the technical co-creator of APM Map.
+        QuestBridge alum, Software Engineer at Mailchimp, amateur writer
+        of <Link href="https://secondgen.substack.com/welcome">Second Generation</Link>
+        {" "} and technical co-creator of APM Map.
       </Typography>
       <Typography className={classes.aboutText}>
         Like many others, I've had my fair share of frustrations with the
@@ -145,7 +145,7 @@ export default function AboutPage() {
       <Typography className={classes.aboutText}>
         I'm helping build APM Map in hopes to simplify and <em> humanize </em>{" "}
         the recruiting process — sharing the tools we all need to bring our best selves to that interview {" "}
-        and creating a supportive community that'll remind us that we're no alone in this journey.
+        and creating a supportive community that'll remind us that we're not alone in this journey.
       </Typography>
     </>
   );
