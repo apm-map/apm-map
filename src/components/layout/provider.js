@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql, navigate, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -9,8 +10,22 @@ import useDeviceDetect from "../../hooks/useDeviceDetect";
 export const Context = React.createContext();
 
 export default function Provider({ children }) {
-  const [nav, setNav] = React.useState(0);
+  const [currentPage, setCurrentPage] = React.useState(0);
   const { isMobile } = useDeviceDetect();
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
+          }
+        }
+      }
+    }`
+  );
+
+  const routes = data.site.siteMetadata.menuLinks;
 
   return (
     <ThemeProvider theme={theme}>
@@ -18,13 +33,17 @@ export default function Provider({ children }) {
       <Context.Provider
         value={{
           isMobile,
-          nav,
-          changeNav: (event, val) => setNav(val),
+          routes,
+          currentPage,
+          changeNav: (_, val) => {
+            setCurrentPage(val);
+            navigate(routes[val].link);
+          }
         }}
       >
         {children}
       </Context.Provider>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
 

@@ -54,10 +54,6 @@ export default function Nav({ context }) {
   `);
 
   const LinkTab = (props) => {
-    if (context.isMobile) {
-      return <Tab component={Link} {...props} />;
-    }
-
     return <Tab component={Link} {...props} />;
   };
 
@@ -66,34 +62,33 @@ export default function Nav({ context }) {
       {context.isMobile ? (
         <MobileNav context={context} />
       ) : (
-        <nav className={classes.nav}>
-          <Link
-            style={{ textDecoration: "none" }}
-            to="/"
-            onClick={(event) => context.changeNav(event, 0)}
-          >
-            <motion.div
-              className={classes.logo}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 1.3 }}
+          <nav className={classes.nav}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/"
+              onClick={(event) => context.changeNav(event, 0)}
             >
-              <Img fixed={data.file.childImageSharp.fixed} alt="APM Map logo" />
-            </motion.div>
-          </Link>
-          <Tabs
-            className={classes.tabs}
-            value={context.nav}
-            onChange={context.changeNav}
-          >
-            <LinkTab label="Home" to="/" {...a11yProps(0)} />
-            <LinkTab label="About" to="/about" {...a11yProps(2)} />
-            <LinkTab label="Directory" to="/directory" {...a11yProps(1)} />
-            <LinkTab label="Mentors" to="/mentors" {...a11yProps(3)} />
-          </Tabs>
-        </nav>
-      )}
+              <motion.div
+                className={classes.logo}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 1.3 }}
+              >
+                <Img fixed={data.file.childImageSharp.fixed} alt="APM Map logo" />
+              </motion.div>
+            </Link>
+            <Tabs
+              className={classes.tabs}
+              value={context.currentPage}
+              onChange={context.changeNav}
+            >
+              {context.routes.map((route, idx) => (
+                <Tab label={route.name} key={route.link} {...a11yProps(idx)} />
+              ))}
+            </Tabs>
+          </nav>
+        )}
     </>
   );
 }

@@ -130,24 +130,22 @@ export default function AboutPage() {
       </Typography>
       <Typography className={classes.aboutText}>
         Hey, my name is Jeff <Emoji symbol="👋🏼" label="hand-wave" /> I'm a{" "}
-        <Link href="https://www.questbridge.org/">QuestBridge</Link> alum,
-        Software Engineer at Mailchimp and the technical co-creator of APM Map.
+        QuestBridge alum, Software Engineer at Mailchimp, writer
+        at <Link href="https://secondgen.substack.com/welcome">Second Generation</Link>
+        {" "} and the technical co-creator of APM Map.
       </Typography>
       <Typography className={classes.aboutText}>
         Like many others, I've had my fair share of frustrations with the
-        recruiting process — from getting ghosted by that company I thought I'd
-        <em> at least </em> get an interview for to finally making it to that
-        on-site interview that tried to cram 4 years worth of learning into 4
-        hours. I was spending countless hours working through
-        <Link href="https://leetcode.com/"> trivial interview questions </Link>
+        recruiting process. I was spending countless hours applying to every tech company under the sun and {" "}
+        working through <Link href="https://leetcode.com/"> trivial interview questions </Link>
         all while trying to keep my grades afloat, working a part-time job and
         just trying to figure out whether the path I was on was right for me to
         begin with.
       </Typography>
       <Typography className={classes.aboutText}>
         I'm helping build APM Map in hopes to simplify and <em> humanize </em>{" "}
-        the recruiting process — sharing the tools we all need and creating a
-        supportive community to bring our best selves to that interview.
+        the recruiting process — sharing the tools we all need to bring our best selves to that interview {" "}
+        and creating a supportive community that'll remind us that we're no alone in this journey.
       </Typography>
     </>
   );
