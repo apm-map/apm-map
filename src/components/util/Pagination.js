@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignContent: "center",
     },
+    paginationText: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center"
+    }
 }));
 
 export default function Pagination({ items, itemsPerPage, setCurrentPageItems }) {
@@ -46,7 +51,7 @@ export default function Pagination({ items, itemsPerPage, setCurrentPageItems })
                 onClick={() => setCurrentPage(currentPage - 1)}>
                 <ChevronLeftIcon />
             </IconButton>
-            <Typography variant="body1" align="center" gutterBottom >
+            <Typography variant="body1" align="center" gutterBottom className={classes.paginationText}>
                 {itemRangeBeginning === itemRangeEnd
                     ? itemRangeBeginning
                     : itemRangeBeginning + '-' + itemRangeEnd}{" "}

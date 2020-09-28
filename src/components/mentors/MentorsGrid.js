@@ -58,7 +58,6 @@ export default function MentorsGrid({ category }) {
     }
   `);
 
-  // TODO useEffect set page items state
   useEffect(() => {
     setCurrentPageItems(data.allMentorsJson.edges.slice(0, mentorsPerPage));
   }, [data])

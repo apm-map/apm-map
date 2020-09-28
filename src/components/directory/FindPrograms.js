@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import Grid from "@material-ui/core/Grid";
 
 import Card from "../util/MediaCard";
+import Pagination from "../util/Pagination";
 
-export default function FindPrograms() {
+export default function FindPrograms({ resourcesPerPage }) {
+  const [currentPageItems, setCurrentPageItems] = useState(null);
   const data = useStaticQuery(graphql`
     query GetFindProgramsResources {
       allRecruitingResource(filter: { category: { eq: "Find Programs" } }) {
@@ -28,13 +30,26 @@ export default function FindPrograms() {
     }
   `);
 
+  useEffect(() => {
+    setCurrentPageItems(data.allRecruitingResource.nodes.slice(0, resourcesPerPage));
+  }, [data, resourcesPerPage])
+
   return (
     <>
-      {data.allRecruitingResource.nodes.map((node, index) => (
-        <Grid item key={index} xs={12} sm={6} lg={4}>
-          <Card loading={false} data={node} image={node.image} />
-        </Grid>
-      ))}
+      {currentPageItems && (
+        currentPageItems.map((node, index) => (
+          <Grid item key={index} xs={12} sm={6} lg={4}>
+            <Card loading={false} data={node} image={node.image} />
+          </Grid>
+        ))
+      )}
+      <Grid item xs={12}>
+        <Pagination
+          items={data.allRecruitingResource.nodes}
+          itemsPerPage={resourcesPerPage}
+          setCurrentPageItems={setCurrentPageItems}
+        />
+      </Grid>
     </>
   );
 }
