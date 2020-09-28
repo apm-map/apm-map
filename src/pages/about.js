@@ -129,7 +129,7 @@ export default function AboutPage() {
         Jeffrey Fabian
       </Typography>
       <Typography className={classes.aboutText}>
-        Hey, my name is Jeff <Emoji symbol="👋🏼" label="hand-wave" /> I'm a{" "}
+        Hey, my name is Jeff <Emoji symbol="👋🏼" label="hand-wave" />. I'm a{" "}
         QuestBridge alum, Software Engineer at Mailchimp, amateur writer
         of <Link href="https://secondgen.substack.com/welcome">Second Generation</Link>
         {" "} and technical co-creator of APM Map.
