@@ -2,7 +2,7 @@ const path = require("path");
 const { createRemoteFileNode } = require("gatsby-source-filesystem");
 const { getRows } = require("./src/apis/gsheets");
 
-// createSchemaCustomization explicitly defines GraphQL data types
+// createSchemaCustomization explicitly defines a GraphQL data type
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
@@ -80,7 +80,11 @@ exports.onCreateNode = async ({
   const { createNode, createNodeField } = actions;
 
   // For all RecruitingResource and MentorJson nodes that have an image url, call createRemoteFileNode
-  if ((node.internal.type === "RecruitingResource" || node.internal.type === "MentorsJson") && node.image !== null) {
+  if (
+    (node.internal.type === "RecruitingResource" ||
+      node.internal.type === "MentorsJson") &&
+    node.image !== null
+  ) {
     const fileNode = await createRemoteFileNode({
       url: node.image, // string that points to the URL of the image
       parentNodeId: node.id,
