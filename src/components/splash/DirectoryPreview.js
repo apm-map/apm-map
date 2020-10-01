@@ -226,7 +226,7 @@ export default function DirectoryPreview({ context }) {
             navButtonsAlwaysVisible
             autoPlay={!context.isMobile}
             animation="slide"
-            interval={6000}
+            interval={9000}
           >
             {data.allRecruitingResource.nodes.map((node, index) => (
               <div className={classes.item}>
