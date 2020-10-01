@@ -1,0 +1,5 @@
+[context.production]
+environment = {TYPE = 'production'}
+
+[context.staging]
+environment = {TYPE = 'staging'}
