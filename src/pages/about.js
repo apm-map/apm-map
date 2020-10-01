@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Layout from "../components/layout/Layout";
@@ -35,6 +36,12 @@ const keywords = [
 ];
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "50vh 0px",
+  },
   aboutText: {
     padding: theme.spacing(2, 5, 2),
   },
@@ -83,8 +90,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AboutPage() {
+export default function AboutPage({ location }) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [pageContext, setPageContext] = useState(null);
   const classes = useStyles();
+
+  useEffect(() => {
+    if (pageContext) {
+      const navPath = pageContext.routes[pageContext.currentPage].link;
+
+      if (navPath === location.pathname) {
+        setIsLoading(false);
+      } else {
+        const locationPage = pageContext.routes.findIndex(
+          (v) => v.link === location.pathname
+        );
+        pageContext.setCurrentPage(locationPage);
+      }
+    }
+  }, [pageContext, location]);
+
   const aboutMima = (
     <>
       <Typography variant="h5" className={classes.aboutText}>
@@ -130,22 +155,26 @@ export default function AboutPage() {
       </Typography>
       <Typography className={classes.aboutText}>
         Hey, my name is Jeff <Emoji symbol="👋🏼" label="hand-wave" />. I'm a{" "}
-        QuestBridge alum, Software Engineer at Mailchimp, amateur writer
-        of <Link href="https://secondgen.substack.com/welcome">Second Generation</Link>
-        {" "} and technical co-creator of APM Map.
+        QuestBridge alum, Software Engineer at Mailchimp, amateur writer of{" "}
+        <Link href="https://secondgen.substack.com/welcome">
+          Second Generation
+        </Link>{" "}
+        and technical co-creator of APM Map.
       </Typography>
       <Typography className={classes.aboutText}>
         Like many others, I've had my fair share of frustrations with the
-        recruiting process. I was spending countless hours applying to every tech company under the sun and {" "}
-        working through <Link href="https://leetcode.com/"> trivial interview questions </Link>
+        recruiting process. I was spending countless hours applying to every
+        tech company under the sun and working through{" "}
+        <Link href="https://leetcode.com/"> trivial interview questions </Link>
         all while trying to keep my grades afloat, working a part-time job and
         just trying to figure out whether the path I was on was right for me to
         begin with.
       </Typography>
       <Typography className={classes.aboutText}>
         I'm helping build APM Map in hopes to simplify and <em> humanize </em>{" "}
-        the recruiting process — sharing the tools we all need to bring our best selves to that interview {" "}
-        and creating a supportive community that'll remind us that we're not alone in this journey.
+        the recruiting process — sharing the tools we all need to bring our best
+        selves to that interview and creating a supportive community that'll
+        remind us that we're not alone in this journey.
       </Typography>
     </>
   );
@@ -153,66 +182,73 @@ export default function AboutPage() {
   return (
     <Layout>
       <Context.Consumer>
-        {(context) => (
-          <>
-            <SEO lang={"en"} title={"About"} keywords={keywords} />
-            <Container className={classes.header}>
-              <Typography
-                className={classes.title}
-                variant="h3"
-                align="center"
-                color="textPrimary"
-                gutterBottom
-              >
-                {"Our Mission"}
-              </Typography>
-              <Paper className={classes.paper}>
+        {(context) => {
+          setPageContext(context);
+          return isLoading ? (
+            <div className={classes.root}>
+              <CircularProgress />
+            </div>
+          ) : (
+            <>
+              <SEO lang={"en"} title={"About"} keywords={keywords} />
+              <Container className={classes.header}>
                 <Typography
-                  className={classes.subtitle}
-                  variant="h6"
+                  className={classes.title}
+                  variant="h3"
                   align="center"
-                  color="textSecondary"
-                  paragraph
+                  color="textPrimary"
+                  gutterBottom
                 >
-                  {
-                    <>
-                      <strong>{"APM Map "}</strong>
-                      <Emoji symbol="🗺️" label="map" />
-                      {
-                        " is your one-stop destination for navigating your APM recruiting journey. Discover resources on everything from finding APM programs to acing your final onsite interviews — all with the help from our incredible mentors."
-                      }
-                    </>
-                  }
+                  {"Our Mission"}
                 </Typography>
-              </Paper>
-            </Container>
-            <Container className={classes.container}>
-              <Typography
-                className={classes.title}
-                variant="h3"
-                align="center"
-                color="textPrimary"
-              >
-                {"The Creators"}
-              </Typography>
-              <CreatorProfile
-                invert={context.isMobile}
-                content={aboutMima}
-                avatarSrc="https://storage.googleapis.com/mentors-pics/mima-profile-pic.jpg"
-                twitter="https://twitter.com/musingsbymima"
-                substack="https://techcare.substack.com/welcome"
-              />
-              <CreatorProfile
-                invert
-                content={aboutJeff}
-                avatarSrc="https://storage.googleapis.com/mentors-pics/jeff-3.jpg"
-                linkedIn="https://www.linkedin.com/in/jf2978/"
-                github="https://github.com/jf2978"
-                substack="https://secondgen.substack.com/welcome"
-              />
-            </Container>
-          </>
-        )}
+                <Paper className={classes.paper}>
+                  <Typography
+                    className={classes.subtitle}
+                    variant="h6"
+                    align="center"
+                    color="textSecondary"
+                    paragraph
+                  >
+                    {
+                      <>
+                        <strong>{"APM Map "}</strong>
+                        <Emoji symbol="🗺️" label="map" />
+                        {
+                          " is your one-stop destination for navigating your APM recruiting journey. Discover resources on everything from finding APM programs to acing your final onsite interviews — all with the help from our incredible mentors."
+                        }
+                      </>
+                    }
+                  </Typography>
+                </Paper>
+              </Container>
+              <Container className={classes.container}>
+                <Typography
+                  className={classes.title}
+                  variant="h3"
+                  align="center"
+                  color="textPrimary"
+                >
+                  {"The Creators"}
+                </Typography>
+                <CreatorProfile
+                  invert={context.isMobile}
+                  content={aboutMima}
+                  avatarSrc="https://storage.googleapis.com/mentors-pics/mima-profile-pic.jpg"
+                  twitter="https://twitter.com/musingsbymima"
+                  substack="https://techcare.substack.com/welcome"
+                />
+                <CreatorProfile
+                  invert
+                  content={aboutJeff}
+                  avatarSrc="https://storage.googleapis.com/mentors-pics/jeff-3.jpg"
+                  linkedIn="https://www.linkedin.com/in/jf2978/"
+                  github="https://github.com/jf2978"
+                  substack="https://secondgen.substack.com/welcome"
+                />
+              </Container>
+            </>
+          );
+        }}
       </Context.Consumer>
     </Layout>
   );

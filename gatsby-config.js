@@ -79,21 +79,21 @@ module.exports = {
     siteUrl: "https://www.apmmap.co",
     menuLinks: [
       {
-        name: 'home',
-        link: '/',
+        name: "home",
+        link: "/",
       },
       {
-        name: 'about',
-        link: '/about/',
+        name: "about",
+        link: "/about/",
       },
       {
-        name: 'directory',
-        link: '/directory/',
+        name: "directory",
+        link: "/directory/",
       },
       {
-        name: 'mentors',
-        link: '/mentors/',
+        name: "mentors",
+        link: "/mentors/",
       },
-    ]
+    ],
   },
 };
