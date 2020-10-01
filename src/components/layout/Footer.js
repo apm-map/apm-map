@@ -7,8 +7,6 @@ import Button from "@material-ui/core/Button";
 
 import Link from "../util/Link";
 
-
-
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
@@ -67,9 +65,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer({ children }) {
   const classes = useStyles();
-  const [isAdblock, setIsAdblock] = useState(true);
+  const [isAdblock, setIsAdblock] = useState(false);
 
-  useEffect(() => {
+  /**
+   * Check if an adblocker is being used on page load. Commented out since it
+   * hurts performance and we aren't sure if this is a real issue or not.
+   *
+   * useEffect(() => {
     // Determines if the user is likely using an ad block extension
     // source: https://davidwalsh.name/detect-ad-blocker
     async function checkAdBlocker() {
@@ -79,15 +81,20 @@ export default function Footer({ children }) {
       async function tryRequest() {
         try {
           return fetch(
-            new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", {
-              method: 'HEAD',
-              mode: 'no-cors'
-            }))
+            new Request(
+              "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+              {
+                method: "HEAD",
+                mode: "no-cors",
+              }
+            )
+          )
             .then(function (response) {
               // Google Ads request succeeded, so likely no ad blocker
               isBlocked = false;
               return isBlocked;
-            }).catch(function (e) {
+            })
+            .catch(function (e) {
               // Request failed, likely due to ad blocker
               isBlocked = true;
               return isBlocked;
@@ -106,7 +113,8 @@ export default function Footer({ children }) {
     }
 
     setIsAdblock(checkAdBlocker());
-  }, [])
+  }, []);
+   */
 
   return (
     <Container maxWidth={false} className={classes.container}>
@@ -142,7 +150,7 @@ export default function Footer({ children }) {
       </div>
 
       <div className={classes.signup}>
-        {isAdblock ?
+        {isAdblock ? (
           <div className={classes.buttonContainer}>
             <Button
               target="_blank"
@@ -157,18 +165,17 @@ export default function Footer({ children }) {
               </Typography>
             </Button>
           </div>
-          : (
-            <iframe
-              title="substack"
-              src="https://apmmap.substack.com/embed"
-              width="80%"
-              height="100%"
-              className={classes.substack}
-              frameborder="0"
-              scrolling="no"
-            ></iframe>
-          )
-        }
+        ) : (
+          <iframe
+            title="substack"
+            src="https://apmmap.substack.com/embed"
+            width="80%"
+            height="100%"
+            className={classes.substack}
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
+        )}
       </div>
     </Container>
   );
