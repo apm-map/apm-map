@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 import clsx from "clsx";
+
+import { makeStyles } from "@material-ui/core/styles";
 import {
   Grid,
   Container,
@@ -10,8 +12,9 @@ import {
   Box,
   Avatar,
   Typography,
+  CircularProgress,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+
 import DirectoryCard from "../components/util/MediaCard";
 import Emoji from "../components/util/Emoji";
 import {
@@ -140,14 +143,30 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     width: "50%",
   },
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "50vh 0px",
+  },
 }));
 
 export default function Profile({ data }) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [pageContext, setPageContext] = useState(null);
   const classes = useStyles();
 
+  useEffect(() => {
+    if (pageContext) {
+      const mentorsPage = pageContext.routes.findIndex(
+        (v) => v.link === "/mentors/"
+      );
+      pageContext.setCurrentPage(mentorsPage);
+      setIsLoading(false);
+    }
+  }, [pageContext]);
 
   const mentor = data.allMentorsJson.nodes[0];
-
   const recommendations = data.allRecruitingResource.nodes;
   const socials = mentor.socials.split(",");
   const platforms = [
@@ -208,77 +227,102 @@ export default function Profile({ data }) {
   return (
     <Layout>
       <Context.Consumer>
-        {(context) => (
-          <Container className={classes.container}>
-            <Box className={classes.header}>
-              <Paper>
-                <Grid container direction="column" justify="center">
-                  <Grid item>
-                    <div className={classes.bg} />
-                  </Grid>
-                  <Grid item>
-                    <Box
-                      pb={1}
-                      display="flex"
-                      flexDirection="column"
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <Avatar
-                        component={Img}
-                        fluid={{ ...mentor.image.childImageSharp.fluid, aspectRatio: 16 / 9 }}
-                        className={classes.avatar} />
-                      <Typography
-                        className={classes.title}
-                        variant="h3"
-                        align="center"
-                        color="textPrimary"
-                        gutterBottom
+        {(context) => {
+          setPageContext(context);
+          return isLoading ? (
+            <div className={classes.root}>
+              <CircularProgress />
+            </div>
+          ) : (
+            <Container className={classes.container}>
+              <Box className={classes.header}>
+                <Paper>
+                  <Grid container direction="column" justify="center">
+                    <Grid item>
+                      <div className={classes.bg} />
+                    </Grid>
+                    <Grid item>
+                      <Box
+                        pb={1}
+                        display="flex"
+                        flexDirection="column"
+                        alignItems="center"
+                        justifyContent="center"
                       >
-                        {mentor.name}
-                      </Typography>
-                      <Typography
-                        className={classes.bio}
-                        variant="body2"
-                        align="center"
-                        color="textSecondary"
-                        paragraph
-                      >
-                        {mentor.bio}
-                      </Typography>
-                      <Box p={2}>
-                        <Grid container spacing={2} justify="center">
-                          {platforms.map((val, idx) =>
-                            getSocialIconButton(val)
-                          )}
-                          {mentor.personal && getSocialIconButton("personal")}
-                        </Grid>
+                        <Avatar
+                          component={Img}
+                          fluid={{
+                            ...mentor.image.childImageSharp.fluid,
+                            aspectRatio: 16 / 9,
+                          }}
+                          className={classes.avatar}
+                        />
+                        <Typography
+                          className={classes.title}
+                          variant="h3"
+                          align="center"
+                          color="textPrimary"
+                          gutterBottom
+                        >
+                          {mentor.name}
+                        </Typography>
+                        <Typography
+                          className={classes.bio}
+                          variant="body2"
+                          align="center"
+                          color="textSecondary"
+                          paragraph
+                        >
+                          {mentor.bio}
+                        </Typography>
+                        <Box p={2}>
+                          <Grid container spacing={2} justify="center">
+                            {platforms.map((val, idx) =>
+                              getSocialIconButton(val)
+                            )}
+                            {mentor.personal && getSocialIconButton("personal")}
+                          </Grid>
+                        </Box>
                       </Box>
-                    </Box>
+                    </Grid>
                   </Grid>
-                </Grid>
-              </Paper>
-            </Box>
-            <Box py={3}>
-              <Typography
-                className={classes.title}
-                variant="h3"
-                color="textPrimary"
-              >
-                {"My Path "}
-                <Emoji symbol="🍃" label="leaf" />
-              </Typography>
-              <Typography
-                className={classes.subtitle}
-                variant="body2"
-                color="textSecondary"
-                paragraph
-              >
-                {"Resources that I recommend for APM recruiting"}
-              </Typography>
-              <Grid container display="flex" spacing={4}>
-                {mentor.tips.length ? (
-                  mentor.tips.map((tip, index) => (
+                </Paper>
+              </Box>
+              <Box py={3}>
+                <Typography
+                  className={classes.title}
+                  variant="h3"
+                  color="textPrimary"
+                >
+                  {"My Path "}
+                  <Emoji symbol="🍃" label="leaf" />
+                </Typography>
+                <Typography
+                  className={classes.subtitle}
+                  variant="body2"
+                  color="textSecondary"
+                  paragraph
+                >
+                  {"Resources that I recommend for APM recruiting"}
+                </Typography>
+                <Grid container display="flex" spacing={4}>
+                  {mentor.tips.length ? (
+                    mentor.tips.map((tip, index) => (
+                      <Grid
+                        item
+                        key={index}
+                        xs={12}
+                        sm={6}
+                        md={4}
+                        className={classes.cardGrid}
+                      >
+                        <JourneyCard loading={false} data={tip} />
+                      </Grid>
+                    ))
+                  ) : (
+                    <></>
+                  )}
+                  {recommendations.map((card, index) => (
                     <Grid
                       item
                       key={index}
@@ -287,67 +331,53 @@ export default function Profile({ data }) {
                       md={4}
                       className={classes.cardGrid}
                     >
-                      <JourneyCard loading={false} data={tip} />
-                    </Grid>
-                  ))
-                ) : (
-                    <></>
-                  )}
-                {recommendations.map((card, index) => (
-                  <Grid
-                    item
-                    key={index}
-                    xs={12}
-                    sm={6}
-                    md={4}
-                    className={classes.cardGrid}
-                  >
-                    <DirectoryCard
-                      loading={false}
-                      data={card}
-                      image={card.image}
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-            </Box>
-            {mentor.journeys.length ? (
-              <Box py={3}>
-                <Typography
-                  className={classes.title}
-                  variant="h3"
-                  color="textPrimary"
-                >
-                  {"My Next Journey  "}
-                  <Emoji symbol="🌱" label="sprout" />
-                </Typography>
-                <Typography
-                  className={classes.subtitle}
-                  variant="body2"
-                  color="textSecondary"
-                  paragraph
-                >
-                  {"Here's what I'm thinking about next"}
-                </Typography>
-                <Grid container display="flex" justify="left" spacing={4}>
-                  {mentor.journeys.map((journey, index) => (
-                    <Grid
-                      item
-                      key={index}
-                      xs={12}
-                      md={6}
-                      className={classes.cardGrid}
-                    >
-                      <JourneyCard data={journey} />
+                      <DirectoryCard
+                        loading={false}
+                        data={card}
+                        image={card.image}
+                      />
                     </Grid>
                   ))}
                 </Grid>
               </Box>
-            ) : (
+              {mentor.journeys.length ? (
+                <Box py={3}>
+                  <Typography
+                    className={classes.title}
+                    variant="h3"
+                    color="textPrimary"
+                  >
+                    {"My Next Journey  "}
+                    <Emoji symbol="🌱" label="sprout" />
+                  </Typography>
+                  <Typography
+                    className={classes.subtitle}
+                    variant="body2"
+                    color="textSecondary"
+                    paragraph
+                  >
+                    {"Here's what I'm thinking about next"}
+                  </Typography>
+                  <Grid container display="flex" justify="left" spacing={4}>
+                    {mentor.journeys.map((journey, index) => (
+                      <Grid
+                        item
+                        key={index}
+                        xs={12}
+                        md={6}
+                        className={classes.cardGrid}
+                      >
+                        <JourneyCard data={journey} />
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Box>
+              ) : (
                 <></>
               )}
-          </Container>
-        )}
+            </Container>
+          );
+        }}
       </Context.Consumer>
     </Layout>
   );

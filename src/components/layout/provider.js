@@ -22,8 +22,8 @@ export default function Provider({ children }) {
           }
         }
       }
-    }`
-  );
+    }
+  `);
 
   const routes = data.site.siteMetadata.menuLinks;
 
@@ -35,15 +35,16 @@ export default function Provider({ children }) {
           isMobile,
           routes,
           currentPage,
+          setCurrentPage,
           changeNav: (_, val) => {
             setCurrentPage(val);
             navigate(routes[val].link);
-          }
+          },
         }}
       >
         {children}
       </Context.Provider>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 }
 
