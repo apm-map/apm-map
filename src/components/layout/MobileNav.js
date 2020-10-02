@@ -4,9 +4,6 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 
-// "a11y" = accessibility
-// ARIA = Accessible Rich Internet Application and the set of attributes
-// help describe the web content for screen readers
 function a11yProps(index) {
   return {
     id: `nav-tab-${index}`,
