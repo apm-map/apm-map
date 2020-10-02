@@ -31,6 +31,7 @@ const keywords = [
   "technical interview",
   "books",
   "mock interviews",
+  "mock interview",
 ];
 
 const useStyles = makeStyles((theme) => ({
