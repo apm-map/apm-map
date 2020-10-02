@@ -249,9 +249,7 @@ export default function DirectoryPreview({ context }) {
       </Container>
       <div className={classes.buttonContainer}>
         <Button
-          component={Link}
           onClick={(event) => context.changeNav(event, 2)}
-          to={"/directory"}
           className={classes.button}
           variant="contained"
           color="primary"
