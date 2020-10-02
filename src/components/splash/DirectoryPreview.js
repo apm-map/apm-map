@@ -11,7 +11,6 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 import Card from "../util/MediaCard";
-import Link from "../util/Link";
 import { Divider } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
