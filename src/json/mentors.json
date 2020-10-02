@@ -532,5 +532,21 @@
         "description": "More stuff coming soon, stay tuned!"
       }
     ]
+  },
+  {
+    "id": 27,
+    "added": "10/2/2020 1:22:15",
+    "name": "Stephen Cognetta",
+    "pronouns": "he/him",
+    "email": "stephen@tryexponent.com",
+    "title": "CEO @ Exponent",
+    "image": "https://storage.googleapis.com/mentors-pics/stephen-cognetta.jpg",
+    "bio": "CEO @ Exponent. I'm a product management thought leader who has presented at Google, WeWork, Stanford GSB, Duke, Yale and more. Previously, I was a product manager at Google.",
+    "socials": "twitter.com/sycognetta, https://www.linkedin.com/in/stephencognetta/, https://www.youtube.com/c/exponentTV",
+    "personal": false,
+    "recommendations": ["30", "5", "136"],
+    "tips": [],
+    "path": "",
+    "journeys": []
   }
 ]
