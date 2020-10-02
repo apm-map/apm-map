@@ -4,8 +4,6 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 
-import Link from "../util/Link";
-
 // "a11y" = accessibility
 // ARIA = Accessible Rich Internet Application and the set of attributes
 // help describe the web content for screen readers
@@ -16,37 +14,21 @@ function a11yProps(index) {
   };
 }
 
-export default function MobileNav({ context }) {
+export default function MobileNav({ context, classes }) {
   return (
-    <Tabs value={context.nav} onChange={context.changeNav} variant="fullWidth">
-      <Tab
-        label={<Typography variant="overline">Home</Typography>}
-        component={Link}
-        to="/"
-        onClick={(event) => context.changeNav(event, 0)}
-        {...a11yProps(0)}
-      />
-      <Tab
-        label={<Typography variant="overline">About</Typography>}
-        component={Link}
-        to="/about"
-        onClick={(event) => context.changeNav(event, 1)}
-        {...a11yProps(1)}
-      />
-      <Tab
-        label={<Typography variant="overline">Directory</Typography>}
-        component={Link}
-        to="/directory"
-        onClick={(event) => context.changeNav(event, 2)}
-        {...a11yProps(2)}
-      />
-      <Tab
-        label={<Typography variant="overline">Mentors</Typography>}
-        component={Link}
-        to="/mentors"
-        onClick={(event) => context.changeNav(event, 3)}
-        {...a11yProps(3)}
-      />
+    <Tabs
+      className={classes.tabs}
+      value={context.currentPage}
+      onChange={context.changeNav}
+      variant="fullWidth"
+    >
+      {context.routes.map((route, idx) => (
+        <Tab
+          label={<Typography variant="overline">{route.name}</Typography>}
+          key={route.link}
+          {...a11yProps(idx)}
+        />
+      ))}
     </Tabs>
   );
 }

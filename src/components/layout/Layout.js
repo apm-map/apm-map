@@ -41,7 +41,6 @@ const variants = {
 
 export default function Layout({ location, children }) {
   const classes = useStyles();
-  console.log(location);
 
   return (
     <Context.Consumer>

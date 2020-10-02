@@ -56,7 +56,9 @@ export default function Nav({ context }) {
   return (
     <>
       {context.isMobile ? (
-        <MobileNav context={context} />
+        <nav className={classes.nav}>
+          <MobileNav context={context} classes={classes} />
+        </nav>
       ) : (
         <nav className={classes.nav}>
           <Link
