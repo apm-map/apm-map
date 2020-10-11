@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import Layout from "../components/layout/Layout";
-import { Context } from "../components/layout/Provider";
+import { Context } from "../components/layout/Context";
 import MentorsGrid from "../components/mentors/MentorsGrid";
 import SEO from "../components/util/seo";
 

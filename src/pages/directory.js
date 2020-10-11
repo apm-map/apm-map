@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import Layout from "../components/layout/Layout";
-import { Context } from "../components/layout/Provider";
+import { Context } from "../components/layout/Context";
 import Directory from "../components/directory/Directory";
 import Hero from "../components/util/Hero";
 import Emoji from "../components/util/Emoji";

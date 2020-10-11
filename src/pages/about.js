@@ -5,7 +5,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Layout from "../components/layout/Layout";
-import { Context } from "../components/layout/Provider";
+import { Context } from "../components/layout/Context";
 import Emoji from "../components/util/Emoji";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";

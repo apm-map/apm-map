@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-import { Context } from "./Provider";
+import { Context } from "./Context";
 import BuyMeACoffee from "./BuyMeACoffee";
 import Nav from "./Nav";
 import Footer from "./Footer";

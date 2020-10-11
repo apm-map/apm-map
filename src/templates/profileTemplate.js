@@ -26,7 +26,7 @@ import {
   Web,
 } from "@material-ui/icons";
 import Layout from "../components/layout/Layout";
-import { Context } from "../components/layout/Provider";
+import { Context } from "../components/layout/Context";
 
 import MediumIcon from "../../assets/medium.svg";
 import SubstackIcon from "../../assets/substack.svg";
