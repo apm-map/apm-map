@@ -12,18 +12,20 @@ export const Context = React.createContext();
 export default function Provider({ children }) {
   const [currentPage, setCurrentPage] = React.useState(0);
   const { isMobile } = useDeviceDetect();
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          menuLinks {
-            name
-            link
+  const data = useStaticQuery(
+    graphql`
+      query GetSiteMetadata {
+        site {
+          siteMetadata {
+            menuLinks {
+              name
+              link
+            }
           }
         }
       }
-    }
-  `);
+    `
+  );
 
   const routes = data.site.siteMetadata.menuLinks;
 

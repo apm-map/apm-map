@@ -95,7 +95,6 @@ export default function Footer({ children }) {
           }
         </Typography>
       </div>
-
       <div className={classes.signup}>
         <iframe
           title="substack"
@@ -106,7 +105,6 @@ export default function Footer({ children }) {
           frameborder="0"
           scrolling="no"
         ></iframe>
-        )
       </div>
     </Container>
   );
