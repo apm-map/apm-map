@@ -5,6 +5,7 @@ require("dotenv").config({
 });
 
 const website = require("./config/website");
+const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix;
 
 module.exports = {
   /* General Information */
@@ -116,9 +117,17 @@ module.exports = {
         theme_color: website.themeColor,
         display: "standalone",
         icon: website.favicon,
+        cache_busting_mode: "none",
       },
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/assets*"],
+        },
+      },
+    },
   ],
 };
