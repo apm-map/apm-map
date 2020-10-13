@@ -7,6 +7,7 @@ require("dotenv").config({
 module.exports = {
   pathPrefix: "/apm-map",
   plugins: [
+    `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,
