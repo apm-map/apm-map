@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby";
 
 export default function SEO({ description, lang, meta, keywords, title }) {
@@ -25,6 +25,7 @@ export default function SEO({ description, lang, meta, keywords, title }) {
         lang,
       }}
       title={title}
+      defer={false}
       titleTemplate={`%s | ${data.site.siteMetadata.title}`}
       meta={[
         {
