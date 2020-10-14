@@ -13,8 +13,6 @@ import useDeviceDetect from "../../hooks/useDeviceDetect";
 import ScrollToElement from "../util/ScrollToElement";
 import bgVideo from "../../../assets/bg-video-1-compressed.mp4";
 
-const videoSrc =
-  "https://storage.googleapis.com/apm-map-assets/bg-video-1-trimmed.mp4";
 const videoScreenshotSrc =
   "https://storage.googleapis.com/apm-map-assets/bg-video-screenshot.png";
 
@@ -54,16 +52,11 @@ export default function AnimatedSplash(props) {
   const letterVariants = {
     before: (i) => ({
       x: `calc(10vw + ${i * 50}px)`,
-      y: 25,
       opacity: 0,
       transition: springTransition(100, 500),
     }),
     after: {
       opacity: 1,
-      y: 0,
-      transition: springTransition(100, 500),
-    },
-    slide: {
       x: 0,
       transition: springTransition(100, 500),
     },
@@ -116,8 +109,7 @@ export default function AnimatedSplash(props) {
   useEffect(() => {
     async function sequence() {
       await bgControls.start("after");
-      apmControls.start("after");
-      apmControls.start("slide");
+      await apmControls.start("after");
       mapControls.start("after");
 
       // no particular order for these at this point
@@ -175,7 +167,7 @@ export default function AnimatedSplash(props) {
             background={""}
             size="auto"
             animate={apmControls}
-            variants={containerVariantsWithStagger(0.5)}
+            variants={containerVariantsWithStagger(0.2)}
           >
             {["A", "P", "M"].map((letter, index) => {
               return (
