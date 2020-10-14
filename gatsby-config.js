@@ -112,7 +112,7 @@ module.exports = {
         name: website.title,
         short_name: website.titleAlt,
         description: website.description,
-        start_url: pathPrefix,
+        start_url: website.pathPrefix,
         background_color: website.backgroundColor,
         theme_color: website.themeColor,
         display: "standalone",
@@ -120,14 +120,8 @@ module.exports = {
         cache_busting_mode: "none",
       },
     },
+    `gatsby-plugin-preload-link-crossorigin`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: "gatsby-plugin-offline",
-      options: {
-        workboxConfig: {
-          globPatterns: ["**/assets*"],
-        },
-      },
-    },
+    `gatsby-plugin-offline`,
   ],
 };

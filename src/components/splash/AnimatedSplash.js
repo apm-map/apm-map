@@ -11,6 +11,7 @@ import Video from "../util/Video";
 import Emoji from "../util/Emoji";
 import useDeviceDetect from "../../hooks/useDeviceDetect";
 import ScrollToElement from "../util/ScrollToElement";
+import bgVideo from "../../../assets/bg-video-1-compressed.mp4";
 
 const videoSrc =
   "https://storage.googleapis.com/apm-map-assets/bg-video-1-trimmed.mp4";
@@ -115,9 +116,9 @@ export default function AnimatedSplash(props) {
   useEffect(() => {
     async function sequence() {
       await bgControls.start("after");
-      await apmControls.start("after");
-      await apmControls.start("slide");
-      await mapControls.start("after");
+      apmControls.start("after");
+      apmControls.start("slide");
+      mapControls.start("after");
 
       // no particular order for these at this point
       subtitleControls.start("after");
@@ -147,7 +148,7 @@ export default function AnimatedSplash(props) {
           alt="APM Map video background"
         />
       ) : (
-        <Video src={videoSrc} />
+        <Video src={bgVideo} />
       )}
 
       <motion.div
