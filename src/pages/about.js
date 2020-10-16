@@ -28,7 +28,6 @@ const keywords = [
 ];
 
 export default function AboutPage({ location }) {
-  // TODO: make component loadable + use fallback for while loading (instead of react state)
   return (
     <Layout location={location}>
       <SEO lang={"en"} title={"About"} keywords={keywords} />

@@ -16,8 +16,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Directory({ category, toggleCategory }) {
+export default function MobileDirectory() {
   const classes = useStyles();
+  const [category, setCategory] = React.useState("All");
+  const toggleCategory = (value) => {
+    setCategory(value);
+  };
 
   return (
     <Container
