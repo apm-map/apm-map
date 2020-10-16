@@ -8,7 +8,6 @@ import { Context } from "../components/layout/Context";
 import Splash from "../components/splash/Splash";
 import DirectoryPreview from "../components/splash/DirectoryPreview";
 import SEO from "../components/util/seo";
-import { mergeClasses } from "@material-ui/styles";
 
 const keywords = [
   "apm",
