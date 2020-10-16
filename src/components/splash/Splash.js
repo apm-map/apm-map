@@ -1,9 +1,10 @@
 import React from "react";
+import loadable from "@loadable/component";
+
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
-import AnimatedSplash from "./AnimatedSplash";
-import MobileSplash from "./MobileSplash";
+import Loading from "../util/Loading";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -18,14 +19,16 @@ export default function Splash(props) {
   const classes = useStyles();
   const { context } = props;
 
-  // TODO: make these loadable()
+  const SplashComponent = context.isMobile
+    ? loadable(() => import("./MobileSplash"))
+    : loadable(() => import("./AnimatedSplash"));
+
   return (
     <Box className={classes.box}>
-      {context.isMobile ? (
-        <MobileSplash {...props} />
-      ) : (
-        <AnimatedSplash {...props} />
-      )}
+      <SplashComponent
+        fallback={<Loading />}
+        subtitle="Discover resources to help you navigate your journey into product management"
+      />
     </Box>
   );
 }

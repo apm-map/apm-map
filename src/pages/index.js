@@ -54,7 +54,6 @@ export default function IndexPage({ location }) {
     }
   }, [pageContext, location]);
 
-  // TODO: refactor loading circle into own component
   // TODO: make component loadable + use fallback for while loading (instead of react state)
   return (
     <Layout>
@@ -62,17 +61,9 @@ export default function IndexPage({ location }) {
       <Context.Consumer>
         {(context) => {
           setPageContext(context);
-          return isLoading ? (
-            <div className={classes.root}>
-              <CircularProgress />
-            </div>
-          ) : (
+          return (
             <>
-              <Splash
-                context={context}
-                title="APM Map"
-                subtitle="Discover resources to help you navigate your journey into product management"
-              />
+              <Splash context={context} />
               <DirectoryPreview context={context} />
             </>
           );
