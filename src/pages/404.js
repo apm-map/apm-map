@@ -5,10 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import HelpIcon from "@material-ui/icons/Help";
 
-import Layout from "../components/layout/Layout";
-import { Context } from "../components/layout/Context";
 import Emoji from "../components/util/Emoji";
 import Link from "../components/util/Link";
 

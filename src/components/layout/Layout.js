@@ -1,4 +1,5 @@
 import React from "react";
+import { navigate } from "gatsby";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -42,29 +43,50 @@ const variants = {
 export default function Layout({ location, children }) {
   const classes = useStyles();
 
+  function setup(context) {
+    // match the navigation with the page location; otherwise, return a 404
+    const locationPage = context.routes.findIndex(
+      (v) => v.link === location.pathname
+    );
+
+    if (locationPage === -1) {
+      navigate("/404");
+    }
+
+    context.setCurrentPage(locationPage);
+
+    // return new child nodes w/ context passed in as a prop
+    return React.Children.map(children, (child) =>
+      React.cloneElement(child, { context: context })
+    );
+  }
+
   return (
     <Context.Consumer>
-      {(context) => (
-        <Container
-          disableGutters
-          maxWidth={false}
-          className={classes.container}
-        >
-          <Nav context={context} />
-          <AnimatePresence>
-            <motion.main
-              variants={variants}
-              initial="initial"
-              animate="enter"
-              exit="exit"
-            >
-              {children}
-            </motion.main>
-          </AnimatePresence>
-          <Footer />
-          <BuyMeACoffee context={context} />
-        </Container>
-      )}
+      {(context) => {
+        const childrenWithContext = setup(context);
+        return (
+          <Container
+            disableGutters
+            maxWidth={false}
+            className={classes.container}
+          >
+            <Nav context={context} />
+            <AnimatePresence>
+              <motion.main
+                variants={variants}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+              >
+                {childrenWithContext}
+              </motion.main>
+            </AnimatePresence>
+            <Footer />
+            <BuyMeACoffee context={context} />
+          </Container>
+        );
+      }}
     </Context.Consumer>
   );
 }

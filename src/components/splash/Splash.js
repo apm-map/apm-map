@@ -15,9 +15,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Splash(props) {
+export default function Splash({ context }) {
   const classes = useStyles();
-  const { context } = props;
 
   const SplashComponent = context.isMobile
     ? loadable(() => import("./MobileSplash"))
