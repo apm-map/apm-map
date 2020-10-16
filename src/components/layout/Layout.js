@@ -44,11 +44,12 @@ export default function Layout({ location, children }) {
   const classes = useStyles();
 
   function setup(context) {
-    // match the navigation with the page location; otherwise, return a 404
-    const locationPage = context.routes.findIndex(
-      (v) => v.link === location.pathname
-    );
+    // match the navigation with the page location
+    const path = location.pathname;
+    const pathPrefix = path.substr(0, path.lastIndexOf("/") + 1);
+    const locationPage = context.routes.findIndex((v) => v.link === pathPrefix);
 
+    // otherwise, return a 404 (i.e. a new Gatsby page need to be added to config)
     if (locationPage === -1) {
       navigate("/404");
     }
