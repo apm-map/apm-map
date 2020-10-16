@@ -63,6 +63,8 @@ export default function DirectoryPage({ location }) {
     }
   }, [pageContext, location]);
 
+  // TODO: refactor loading circle into own component
+  // TODO: make component loadable + use fallback for while loading (instead of react state)
   return (
     <Layout>
       <Context.Consumer>

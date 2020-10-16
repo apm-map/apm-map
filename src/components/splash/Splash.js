@@ -18,6 +18,7 @@ export default function Splash(props) {
   const classes = useStyles();
   const { context } = props;
 
+  // TODO: make these loadable()
   return (
     <Box className={classes.box}>
       {context.isMobile ? (

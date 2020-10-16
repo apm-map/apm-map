@@ -86,6 +86,7 @@ export default function BuyMeACoffee({ context }) {
     yRange.onChange((v) => setIsInViewport(true || v >= 1));
   }, [yRange]);
 
+  // TODO: make these loadable()
   return (
     <>
       {context.isMobile ? (

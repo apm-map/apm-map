@@ -74,6 +74,8 @@ export default function MentorsPage({ location }) {
     }
   }, [pageContext, location]);
 
+  // TODO: refactor loading circle into own component
+  // TODO: make component loadable + use fallback for while loading (instead of react state)
   return (
     <Layout>
       <SEO lang={"en"} title={"Mentors"} keywords={keywords} />

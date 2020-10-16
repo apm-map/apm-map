@@ -178,6 +178,8 @@ export default function Profile({ data }) {
     "github",
     "substack",
   ];
+
+  // TODO: make these loadable icons
   const platformIcons = {
     linkedin: <LinkedIn />,
     twitter: <Twitter />,
@@ -224,6 +226,8 @@ export default function Profile({ data }) {
     );
   }
 
+  // TODO: refactor loading circle into own component
+  // TODO: make component loadable + use fallback for while loading (instead of react state)
   return (
     <Layout>
       <Context.Consumer>

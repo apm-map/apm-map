@@ -10,6 +10,7 @@ export default function Directory({ context }) {
     setCategory(value);
   };
 
+  // TODO: make these loadable()
   return context.isMobile ? (
     <MobileDirectory category={category} toggleCategory={toggleCategory} />
   ) : (

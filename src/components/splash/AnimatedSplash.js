@@ -121,6 +121,7 @@ export default function AnimatedSplash(props) {
     sequence();
   }, [bgControls, apmControls, mapControls, subtitleControls, arrowControls]);
 
+  // TODO: delete mobile checks here
   return (
     <Box className={classes.box}>
       {isMobile ? (
