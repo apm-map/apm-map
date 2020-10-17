@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
@@ -76,48 +71,36 @@ export default function BuyMeACoffee() {
     },
   };
 
-  const [isInViewport, setIsInViewport] = useState(false);
-  const { scrollYProgress } = useViewportScroll();
-  const yRange = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
-
-  // on viewport scroll and/or path complete, trigger animations
-  useEffect(() => {
-    yRange.onChange((v) => setIsInViewport(true || v >= 1));
-  }, [yRange]);
-
-  // TODO: make these loadable()
   return (
     <AnimatePresence>
-      {isInViewport && (
-        <motion.div
-          className={classes.bmac}
-          initial="before"
-          animate={["after", "bounce"]}
-          exit={{ scale: 0 }}
-          variants={buttonVariants}
+      <motion.div
+        className={classes.bmac}
+        initial="before"
+        animate={["after", "bounce"]}
+        exit={{ scale: 0 }}
+        variants={buttonVariants}
+      >
+        <HTMLTooltip
+          title={
+            <Typography variant="body2">
+              {
+                " If we've helped you in your journey, consider supporting ours! "
+              }
+              <Emoji symbol="❤️" label="heart" />
+            </Typography>
+          }
+          placement="left"
+          aria-label="help-support-us"
         >
-          <HTMLTooltip
-            title={
-              <Typography variant="body2">
-                {
-                  " If we've helped you in your journey, consider supporting ours! "
-                }
-                <Emoji symbol="❤️" label="heart" />
-              </Typography>
-            }
-            placement="left"
-            aria-label="help-support-us"
+          <IconButton
+            target="_blank"
+            className={classes.button}
+            href="https://buymeacoff.ee/jeffandmichelle"
           >
-            <IconButton
-              target="_blank"
-              className={classes.button}
-              href="https://buymeacoff.ee/jeffandmichelle"
-            >
-              <BuyMeACoffeeIcon height={75} width={75} />
-            </IconButton>
-          </HTMLTooltip>
-        </motion.div>
-      )}
+            <BuyMeACoffeeIcon height={75} width={75} />
+          </IconButton>
+        </HTMLTooltip>
+      </motion.div>
     </AnimatePresence>
   );
 }
