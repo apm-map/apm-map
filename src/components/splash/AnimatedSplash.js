@@ -109,7 +109,7 @@ export default function AnimatedSplash(props) {
   useEffect(() => {
     async function sequence() {
       await bgControls.start("after");
-      apmControls.start("after");
+      await apmControls.start("after");
       mapControls.start("after");
 
       // no particular order for these at this point
