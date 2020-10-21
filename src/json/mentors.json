@@ -10,111 +10,13 @@
     "bio": "Incoming APM @ Google. Senior at UC Berkeley (Go Bears!). Lover of yoga.",
     "socials": "https://www.linkedin.com/in/roshnirawal/",
     "personal": false,
-    "recommendations": ["149", "120", "150"],
+    "recommendations": [
+      "149",
+      "120",
+      "150"
+    ],
     "tips": [],
     "path": "<https://web.eecs.umich.edu/~weimerw/2019-481W/readings/PM%20at%20Microsoft%20%E2%80%93%20Steven%20Sinofsky's%20Microsoft%20TechTalk.html> -[Former President of Windows Division of Microsoft explains product/program management], <https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw>  - [Great YouTube channel to help navigate system design questions], <https://docs.google.com/spreadsheets/d/1rz10oEeLx-eGnilahKczYPhGfCUzIEKL-xRnjoQ-SX4/edit#gid=1024620532> - [PM interview question bank by company. Great for mock interviews.]",
-    "journeys": []
-  },
-  {
-    "id": 6,
-    "added": "9/6/2020 1:10:41",
-    "name": "Kelly Luo",
-    "pronouns": "she/her/hers",
-    "email": "kellylx25@gmail.com",
-    "title": "APM @ Twitter",
-    "recommendations": ["170", "139", "171", "172", "80"],
-    "tips": [],
-    "image": "https://storage.googleapis.com/mentors-pics/kelly-luo.jpg",
-    "bio": "APM @ Twitter. Love talking about pop culture, design, drinking tea.",
-    "socials": "https://twitter.com/kluo25, https://kellyluo.me/",
-    "personal": true,
-    "path": "<https://tiny.cc/apm-two-truths-and-a-lie> - [two truths and a lie about apm recruiting: the three things i wish i knew before i started]  <https://www.amazon.com/Product-Manager-Interview-Questions-Answers/dp/0998120480> - [the product manager interview (167 actual q&a's) by lewis c. lin: an in-depth guide for practicing interview questions]  <https://www.intercom.com/blog/tag/intercom-on-product/> - [intercom on product: my favorite podcast series for understanding product management inside and out]  <https://medium.com/agileinsider/navigating-the-entry-level-pm-apm-recruiting-process-957993620ac5> - [navigating the apm recruiting process: a helpful overview of the process from start to end] <https://medium.com/@jackiebo> - [insightful advice and tips from jackie bavaro]",
-    "journeys": [
-      {
-        "title": "Kelly's Thoughts",
-        "description": "this is a reminder to take a breather and take care of yourself—you got this! 😊 always feel free to say hello!"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "added": "9/5/2020 12:20:35",
-    "name": "Nancy Wang",
-    "pronouns": "she/her/hers",
-    "email": "nwang625@gmail.com",
-    "title": "PM @ Microsoft",
-    "recommendations": ["127", "80", "29"],
-    "tips": [],
-    "image": "https://storage.googleapis.com/mentors-pics/nancy-wang.JPG",
-    "bio": "PM @ Microsoft. JHU '20. I strive to amplify human stories to transform the world around us.",
-    "socials": "https://www.linkedin.com/in/nancywangjhu/, https://medium.com/@nwang625, https://twitter.com/oldnan_andthec",
-    "personal": false,
-    "path": "<https://www.quora.com/q/theartofproductmanagement> - A blog about product management by Jackie Bavaro, co-founder of Cracking the PM Interview, <https://medium.com/agileinsider/navigating-the-entry-level-pm-apm-recruiting-process-957993620ac5> - Comprehensive article on APM/PM recruiting, <https://www.youtube.com/channel/UCjm_qVkCPjOVDz9BWjNqO9A> - YouTube channel with everything from mock PM interviews to tips on negotiating your offer!",
-    "journeys": [
-      {
-        "title": "Nancy's Thoughts",
-        "description": "Currently dipping my toes into writing/reflecting about my thoughts, ideas and experiences on Medium. Volunteering @ Breaktime to help launch the careers of young adults experiencing homelessness, you can check us out and support at breaktime.org!",
-        "link": "https://breaktime.org"
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "added": "9/6/2020 18:26:52",
-    "name": "Charlene Wang",
-    "pronouns": "She/Her",
-    "email": "charlene@mylivingos.com",
-    "recommendations": ["167", "168", "169"],
-    "tips": [],
-    "title": "APM @ Google & Founder @ LivingOS",
-    "image": "https://storage.googleapis.com/mentors-pics/charlene-wang.JPG",
-    "bio": "APM @ Google. Founder of LivingOS. You can achieve more and be happier. Let me help you.",
-    "socials": "https://twitter.com/hsinleiwang, https://www.instagram.com/yourlivingos/, https://www.facebook.com/YourLivingOS",
-    "personal": false,
-    "path": "https://www.lennyrachitsky.com/ - Lenny's Newsletter, https://www.yourlivingos.com/blog/how-to-build-product-intuition/ - How To Build Product Intuition, https://www.yourlivingos.com/blog/seek-to-understand/ - Seek to Understand",
-    "journeys": [
-      {
-        "title": "Weekly Gem",
-        "description": "",
-        "link": "https://livingos.substack.com"
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "added": "9/13/2020 19:03:25",
-    "name": "Emmett Chen-Ran",
-    "pronouns": "he/him",
-    "email": "emchenran@gmail.com",
-    "title": "APM @ Salesforce",
-    "image": "https://storage.googleapis.com/mentors-pics/emmett-chen-ran.png",
-    "bio": "APM @ Salesforce. Previously:  CS @ Yale, SWE Intern @ Bloomberg & Stripe. Interested in how law + policy intersect with tech + society and may eventually dip from the tech industry to go to law school.",
-    "socials": "https://www.instagram.com/ecr.jpg/, https://www.linkedin.com/in/echenran/",
-    "recommendations": ["154", "155", "156", "6"],
-    "tips": [],
-    "personal": false,
-    "path": "http://alanz.me/apm - Full time APM deadlines, https://docs.google.com/spreadsheets/d/1-RuKYVhXb3Ez0IxmvnGFvLBet6n78OgOPnX9SxkX31s - Full time + internship APM deadlines, https://alanz.me/resources - Alan Zhang's interview resources, https://docs.google.com/document/d/1CC9mbK5hi8YqBvLVwnTahzqmek8T8VPeJ3XQTvLA1FE - Jacqueline Chung's interview resources",
-    "journeys": [
-      {
-        "title": "Emmett's Thoughts",
-        "description": "A personal financial advising platform, name TBD!"
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "added": "9/13/2020 22:21:40",
-    "name": "Johnathan Zhou",
-    "pronouns": "he/him",
-    "email": "johnathanz@berkeley.edu",
-    "title": "Product Manager @ Dropbox",
-    "image": "https://storage.googleapis.com/mentors-pics/jonathan-zhou.jpg",
-    "bio": "PM @ Dropbox. In the past, I've worked in product, swe, and venture -- feel free to ask me about any of that! Besides working in product, I love to journal, take pictures, and watch anime :)",
-    "socials": "https://twitter.com/johnathanzhou, https://johnathanzhou.com",
-    "personal": true,
-    "recommendations": ["153"],
-    "tips": [],
-    "path": "https://www.lennyrachitsky.com/p/how-to-get-into-product-management -- this is my top recommended resource! Lenny goes into depth onto the entire journey of getting into product.",
     "journeys": []
   },
   {
@@ -128,7 +30,10 @@
     "bio": "APM @ Yahoo (Verizon Media), working on the video ad recommendations team. Recent grad from Canada with an interest is in data science and ML applications!",
     "socials": "https://twitter.com/fdong_, https://www.linkedin.com/in/dongfrank/",
     "personal": false,
-    "recommendations": ["152", "72"],
+    "recommendations": [
+      "152",
+      "72"
+    ],
     "tips": [],
     "path": "https://stratechery.com/ - daily tech strategy articles related to industry trends/news, https://www.lewis-lin.com/blog/2018/7/8/lewis-c-lins-slack-community - good community to find peers to do PM prep with,",
     "journeys": [
@@ -139,76 +44,14 @@
     ]
   },
   {
-    "id": 14,
-    "added": "9/7/2020 12:42:31",
-    "name": "David Lietjauw",
-    "pronouns": "He/Him/His",
-    "email": "davlietjauw@gmail.com",
-    "title": "APM @ Twitter",
-    "recommendations": ["121", "160", "161", "162", "163"],
-    "tips": [],
-    "image": "https://storage.googleapis.com/mentors-pics/david-l.jpg",
-    "bio": "APM @ Twitter. I used to be a sweet potato farmer from Kansas. Now, I'm an APM @ Twitter learning how to build with empathy so we can all experience a more inclusive future. You can find me tending to my succulents~",
-    "socials": "https://twitter.com/davidfromkansas",
-    "personal": false,
-    "path": "Swipe to Unlock (book) - My friend, Neel, wrote this easy to understand primer on how technology and business work together, www.techmeme.com - Reading the technews everyday helps develop product sense by understanding trends in the industry,  https://www.getrevue.co/profile/caseynewton - The Interface is a newsletter focusing on dialogue around social media and consumer tech by The Verge's Casey Newton, https://constine.substack.com/ - Weekly newsletter over startups and new tech trends by TechCrunch's Josh Constine, https://www.youtube.com/playlist?list=PLfAX25ZLrPGRzfILkSd-YiWfsoloCETAe - Bloomberg Technology is a daily 1-hour show where Emily Chang talks about what's going on in tech by interviewing CEOs and talking to experts (I watch this during breakfast everyday!).",
-    "journeys": [
-      {
-        "title": "ColorStack",
-        "description": "My friend Jehron Petty started ColorStack, a non-profit whose mission is to increase the entrance, retention and success of Black, Latinx, and Native American college students in computing. Consider volunteering your time to help the next-gen of diverse tech talent succeed!",
-        "link": "https://www.colorstack.org/"
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "added": "9/6/2020 21:31:04",
-    "name": "David Cai",
-    "pronouns": "He/him/his",
-    "email": "davidcai2012@gmail.com",
-    "recommendations": ["166", "93", "18"],
-    "tips": [],
-    "title": "APM II @ Yahoo (Verizon Media)",
-    "image": "https://storage.googleapis.com/mentors-pics/david-cai.jpg",
-    "bio": "APM @ Yahoo (Verizon Media). APM by day, SWE at heart, filling my free time with running.",
-    "socials": "https://www.linkedin.com/in/caiismyname,https://github.com/caiismyname, https://davidcai.me",
-    "personal": true,
-    "path": "<https://productsense.carrd.co> - [A card of the news sources I used to develop product sense],<pmtechlessons.com> - [Approachable explainers of tech concepts for non-technical PMs], <http://www.crackingthepminterview.com> - [A classic prep book. I don't really have an allegiance to a particular book, but this is what I used]",
-    "journeys": [
-      {
-        "title": "PM Tech Lessons",
-        "description": "Approachable explainers of tech concepts for non-technical PMs, specifically with an algorithms-focused prep course.",
-        "link": "https://pmtechlessons.com/interview-prep"
-      }
-    ]
-  },
-  {
-    "id": 24,
-    "added": "9/15/2020 13:12:42",
-    "name": "Max Beech",
-    "pronouns": "Mr / he",
-    "email": "max.beech@verizonmedia.com",
-    "title": "APM @ Yahoo (Verizon Media)",
-    "image": "https://storage.googleapis.com/mentors-pics/max-beech.jpg",
-    "bio": "APM @ Yahoo (Verizon Media), working on emerging ad formats team. Previously: Product @ Revolut (financial startup), Co-Founder @ Intro, Computer Science graduate at Exeter University in the UK. Fun fact: I once won third prize at a talent contest for sticking out my tongue",
-    "socials": "https://twitter.com/maxedbeech,https://www.linkedin.com/in/maxbeech, https://maxbeech.com",
-    "personal": true,
-    "recommendations": ["18", "117", "5"],
-    "tips": [],
-    "path": "<https://stellarpeers.com/> - [A fantastic community of aspiring and existing PMs who through a series of shared interview practices, made a huge difference to my ability to perform under pressure], <https://www.amazon.co.uk/Cracking-PM-Interview-Product-Technology/dp/0984782818> - [You should definitely read at least one of the popular interview books, but be wary of copy/pasting their formula. Design your own approach to answering questions], <https://apmlist.com/> - [A tried and tested site, APM list gives a comprehensive guide to US-based APM programs. Particularly if you are international, make sure to find local opportunities too]",
-    "journeys": [
-      {
-        "title": "Today",
-        "description": "Doing stuff with no-one there to push you is hard. Today helps you to actually do that side-project you've been putting off and holds you to it thanks to its unique approach of tracking the time you spend on each task. Unique timing. Daily streaks. Eye-candy.",
-        "link": "https://thetoday.app/"
-      }
-    ]
-  },
-  {
     "id": 17,
     "added": "9/8/2020 16:26:34",
     "name": "Mahmoud Alzaghari",
-    "recommendations": ["153", "157", "26"],
+    "recommendations": [
+      "153",
+      "157",
+      "26"
+    ],
     "tips": [],
     "pronouns": "he/him",
     "email": "mhalzaghari@gmail.com",
@@ -221,150 +64,13 @@
     "journeys": []
   },
   {
-    "id": 0,
-    "added": "7/12/2020 12:15:12",
-    "name": "Michelle Ma",
-    "pronouns": "She/her/hers",
-    "email": "michelle.ma2007@gmail.com",
-    "title": "APM @ Yahoo",
-    "socials": "https://twitter.com/musingsbymima, https://techcare.substack.com/welcome",
-    "personal": false,
-    "bio": "APM @ Yahoo (Verizon Media). Thinking about self care, community care, structural care, and matcha lattes. Creating APM Map 🗺️ & Tech Care 🌿",
-    "image": "https://storage.googleapis.com/mentors-pics/mima-profile-pic.jpg",
-    "recommendations": ["15", "119", "72", "120", "93", "6"],
-    "tips": [],
-    "journeys": [
-      {
-        "title": "Writing Tech Care",
-        "description": "Tech Care is a newsletter that will unpack what it means to build tech that cares, so that you can take care of yourself, of your communities, and of the structures and systems that uphold our society today.",
-        "link": "https://techcare.substack.com/welcome"
-      },
-      {
-        "title": "Follow me on Twitter",
-        "description": "Over the next few months, I'll be tweeting new resources & mentors that have been added to APM Map, and any other things we might be featuring that week.",
-        "link": "https://twitter.com/musingsbymima"
-      }
-    ]
-  },
-  {
-    "id": 1,
-    "added": "9/3/2020 12:15:12",
-    "name": "Katie Goldstein",
-    "pronouns": "She/her/hers",
-    "email": "katie.e.goldstein@gmail.com",
-    "title": "PM @ Microsoft",
-    "image": "https://storage.googleapis.com/mentors-pics/katie-goldstein.png",
-    "bio": "PM @ Microsoft. Recent Dartmouth grad from SF. I get excited about pugs, helping others, my Duolingo streak, and Japanese toilets. Let's chat!",
-    "socials": "https://www.linkedin.com/in/katie-goldstein/",
-    "personal": false,
-    "recommendations": ["18", "176", "177", "178"],
-    "tips": [],
-    "path": "<https://www.amazon.com/Cracking-PM-Interview-Product-Technology/dp/0984782818> - [Read this book cover to cover to learn more about PMing and prep for PM design questions. I'd recommend you take notes on the different frameworks!], <https://www.linkedin.com/> - [I networked a bunch before starting my role to 1) gain more clarity into the role and company culture and 2) gain useful insights to disseminate during my interviews, and 3) gain referrals.],  <https://www.theverge.com/, https://techcrunch.com/> - [Two great tech news sites that I browse for 5-10 min regularly! Send cool articles to your friends/family/others. Form opinions about things that are happening, and keep track of companies and initiatives that seem interesting.]",
-    "journeys": [
-      {
-        "title": "The Future of Education",
-        "link": "https://www.fastcompany.com/section/reinventing-education"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "added": "9/3/2020 23:26:49",
-    "name": "Dasani Madipalli",
-    "pronouns": "She/Her",
-    "email": "info@dasanidecoded.com",
-    "title": "PM @ Microsoft & Founder @ Dasani Decoded",
-    "recommendations": ["174", "30", "103"],
-    "tips": [],
-    "image": "https://storage.googleapis.com/mentors-pics/dasani-madipalli.jpeg",
-    "bio": "PM @ Microsoft & Founder @ Dasani Decoded. I love doodling, doggos and believe owning our narratives can change the world",
-    "socials": "https://twitter.com/dasani_decoded,  https://www.instagram.com/dasani_decoded/, https://www.linkedin.com/in/dasani-m, https://www.medium.com/@dasanidecoded, https://www.dasanidecoded.com/",
-    "personal": true,
-    "path": "https://www.tryexponent.com/ -  for interview prep, , https://link.medium.com/86TL6gTNu9 - being a pm at Microsoft,  https://productbuds.co/ - aspiring pm community",
-    "journeys": []
-  },
-  {
-    "id": 4,
-    "added": "9/4/2020 20:26:04",
-    "name": "Lisa Huang-North",
-    "pronouns": "She/Her",
-    "email": "lisa.yc.huang@gmail.com",
-    "title": "Product Lead @ Planet",
-    "recommendations": ["173"],
-    "tips": [],
-    "image": "https://storage.googleapis.com/mentors-pics/lisa-huang.jpg",
-    "bio": "Product Lead @ Planet. My name is Lisa Huang-North and I am a 2x Founder. I am building products at Planet, a startup with a mission to use Space 🛰 to help life on Earth 🌎 ",
-    "socials": "https://www.linkedin.com/in/lisaychuang/, https://twitter.com/lisaychuang",
-    "personal": false,
-    "path": "I've compiled resources into this doc: https://docs.google.com/document/d/1NZOOGbisMTocrIZ6dGfcZpmiP89iyiDoxGXtYr5NME0/edit?usp=sharing, which includes 2 resources written by me: \"Career pivots: Product Management masterclass\"  and \"How to stand out from the crowd of aspiring Product Managers",
-    "journeys": [
-      {
-        "title": "Lisa's Newsletter",
-        "description": "Sign up for my newsletter here",
-        "link": "https://lisahuangnorth.substack.com/p/coming-soon"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "added": "9/3/2020 21:12:21",
-    "name": "Shruti Ramanathan",
-    "pronouns": "she/her",
-    "email": "shrutiramanathansr@gmail.com",
-    "title": "Product TPM @ Instagram (Facebook)",
-    "image": "https://storage.googleapis.com/mentors-pics/shruti-ramanathan.JPG",
-    "recommendations": ["18", "175"],
-    "tips": [],
-    "bio": "Product TPM @ Instagram. Georgia Tech ’20. Let’s chat about ethics in tech, social psyc, or personal passions!",
-    "socials": "https://www.linkedin.com/in/shrutiramanathan/, https://www.instagram.com/shrutir16/, https://github.com/shrutiramanathan",
-    "personal": false,
-    "path": "https://www.amazon.com/Cracking-PM-Interview-Product-Technology/dp/0984782818: My literal manual to life for the semester I was interview prepping! Highly recommend using this over video interviews to practice a diversity of questions.   https://blog.pramp.com/how-to-succeed-in-a-system-design-interview-27b35de0df26: Thinking about scaling infrastructure is super crucial to acing more technical product management interviews. Better understanding how to approach these questions is not a piece of cake, but highly recommend a computer architecture class curriculum as a foundation.",
-    "journeys": []
-  },
-  {
-    "id": 21,
-    "added": "9/14/2020 1:06:38",
-    "name": "Sari Abukhadra",
-    "pronouns": "He/him",
-    "email": "sariabukhadra@gmail.com",
-    "title": "APM @ Roblox",
-    "image": "https://storage.googleapis.com/mentors-pics/sari-abukhadra.JPG",
-    "bio": "APM @ Roblox. Helping to build the metaverse!",
-    "socials": "https://linkedin.com/in/sari-abukhadra, https://sariabukhadra.com",
-    "personal": true,
-    "recommendations": ["151", "117"],
-    "tips": [],
-    "path": "https://mailchi.mp/056ea1e9b0d3/subscribe-page - newsletter for APM interviews and recruiting tips, http://stellarpeers.com/ - Great resource for scheduling mock interviews",
-    "journeys": [
-      {
-        "title": "Sari's Newsletter",
-        "description": "newsletter for Product Management advice and recruiting tips",
-        "link": "https://mailchi.mp/056ea1e9b0d3/subscribe-page"
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "added": "9/6/2020 22:28:49",
-    "name": "Nelly Lin",
-    "pronouns": "she/her",
-    "recommendations": ["93"],
-    "tips": [],
-    "email": "linnberkeley@berkeley.edu",
-    "title": "APM @ Wayfair",
-    "image": "https://storage.googleapis.com/mentors-pics/nelly-lin.jpg",
-    "bio": "APM @ Wayfair. UC Berkeley '19. Passionate about social justice, avid reader and writer, and travel fanatic.",
-    "socials": "https://www.linkedin.com/in/nellylin/",
-    "personal": false,
-    "path": "",
-    "journeys": []
-  },
-  {
     "id": 10,
     "added": "9/6/2020 23:51:40",
     "name": "Adam Chow",
     "pronouns": "he/him",
-    "recommendations": ["18"],
+    "recommendations": [
+      "18"
+    ],
     "tips": [],
     "email": "asc789@gmail.com",
     "title": "Product Manager @ VMware",
@@ -387,23 +93,81 @@
     ]
   },
   {
-    "id": 11,
-    "added": "9/7/2020 2:18:54",
-    "name": "Priyanka Maskar",
-    "pronouns": "She/Her",
-    "recommendations": ["165"],
-    "tips": [],
-    "email": "priaynkamaskar@gmail.com",
-    "title": "Product Manager @ Loop Commerce",
-    "image": "https://storage.googleapis.com/mentors-pics/priyanka-maskar.jpg",
-    "bio": "PM@Loop Commerce, building delightful products in the gift commerce platform. Excited about the challenges I face everyday as a PM and passionate about people, traveling, pilates and life in general 😉. My life’s mantra is “Never give up”, keep trying and keep hustling!",
-    "socials": "https://www.linkedin.com/in/priyankamaskar/",
+    "id": 23,
+    "added": "9/15/2020 9:38:13",
+    "name": "Joel Montano",
+    "pronouns": "he'him",
+    "email": "joel97montano@gmail.com",
+    "title": "PM @ Microsoft",
+    "image": "https://storage.googleapis.com/mentors-pics/joel-montano.JPG",
+    "bio": "PM @ Microsoft. Currently working at Envision Accelerator, helping underrepresented founders receive the funding and resources they need to set them up for success. I'm also scouting for a venture fund and generally interested in the future of work, gaming, dev tools, no-low code, and the creator economy. Outside of tech, I'm trying to get into hiking and learning Korean (for fun) :).",
+    "socials": "https://twitter.com/JoelMon97 , https://www.linkedin.com/in/joelmontanoucf/",
     "personal": false,
-    "path": "Made my own resources list: https://docs.google.com/document/d/1J6hm6xBD6kCqJIlBPd0GjrNfeQ8p06oW-8WcpMaFgR4/edit",
+    "recommendations": [
+      "29",
+      "18"
+    ],
+    "tips": [],
+    "path": "Cracking the Coding Interview [Book on general PM topics], https://www.youtube.com/channel/UCjm_qVkCPjOVDz9BWjNqO9A [Great mock videos]",
     "journeys": [
       {
-        "title": "Priyanka's Thoughts",
-        "description": "Becoming a great Sr. Product Manager and solving bigger problems!"
+        "title": "Envision",
+        "link": "https://www.envisionaccelerator.com/"
+      },
+      {
+        "title": "Joel's Newsletter",
+        "link": "https://learnwithjoel.substack.com/"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "added": "9/4/2020 20:26:04",
+    "name": "Lisa Huang-North",
+    "pronouns": "She/Her",
+    "email": "lisa.yc.huang@gmail.com",
+    "title": "Product Lead @ Planet",
+    "recommendations": [
+      "173"
+    ],
+    "tips": [],
+    "image": "https://storage.googleapis.com/mentors-pics/lisa-huang.jpg",
+    "bio": "Product Lead @ Planet. My name is Lisa Huang-North and I am a 2x Founder. I am building products at Planet, a startup with a mission to use Space 🛰 to help life on Earth 🌎 ",
+    "socials": "https://www.linkedin.com/in/lisaychuang/, https://twitter.com/lisaychuang",
+    "personal": false,
+    "path": "I've compiled resources into this doc: https://docs.google.com/document/d/1NZOOGbisMTocrIZ6dGfcZpmiP89iyiDoxGXtYr5NME0/edit?usp=sharing, which includes 2 resources written by me: \"Career pivots: Product Management masterclass\"  and \"How to stand out from the crowd of aspiring Product Managers",
+    "journeys": [
+      {
+        "title": "Lisa's Newsletter",
+        "description": "Sign up for my newsletter here",
+        "link": "https://lisahuangnorth.substack.com/p/coming-soon"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "added": "9/6/2020 1:10:41",
+    "name": "Kelly Luo",
+    "pronouns": "she/her/hers",
+    "email": "kellylx25@gmail.com",
+    "title": "APM @ Twitter",
+    "recommendations": [
+      "170",
+      "139",
+      "171",
+      "172",
+      "80"
+    ],
+    "tips": [],
+    "image": "https://storage.googleapis.com/mentors-pics/kelly-luo.jpg",
+    "bio": "APM @ Twitter. Love talking about pop culture, design, drinking tea.",
+    "socials": "https://twitter.com/kluo25, https://kellyluo.me/",
+    "personal": true,
+    "path": "<https://tiny.cc/apm-two-truths-and-a-lie> - [two truths and a lie about apm recruiting: the three things i wish i knew before i started]  <https://www.amazon.com/Product-Manager-Interview-Questions-Answers/dp/0998120480> - [the product manager interview (167 actual q&a's) by lewis c. lin: an in-depth guide for practicing interview questions]  <https://www.intercom.com/blog/tag/intercom-on-product/> - [intercom on product: my favorite podcast series for understanding product management inside and out]  <https://medium.com/agileinsider/navigating-the-entry-level-pm-apm-recruiting-process-957993620ac5> - [navigating the apm recruiting process: a helpful overview of the process from start to end] <https://medium.com/@jackiebo> - [insightful advice and tips from jackie bavaro]",
+    "journeys": [
+      {
+        "title": "Kelly's Thoughts",
+        "description": "this is a reminder to take a breather and take care of yourself—you got this! 😊 always feel free to say hello!"
       }
     ]
   },
@@ -412,7 +176,12 @@
     "added": "9/7/2020 2:30:10",
     "name": "Nimalen (Nim) Sivapalan",
     "pronouns": "he/him",
-    "recommendations": ["18", "22", "107", "72"],
+    "recommendations": [
+      "18",
+      "22",
+      "107",
+      "72"
+    ],
     "tips": [],
     "email": "nsivapalan@berkeley.edu",
     "title": "APM @ WePay",
@@ -430,10 +199,79 @@
     ]
   },
   {
+    "id": 3,
+    "added": "9/3/2020 23:26:49",
+    "name": "Dasani Madipalli",
+    "pronouns": "She/Her",
+    "email": "info@dasanidecoded.com",
+    "title": "PM @ Microsoft & Founder @ Dasani Decoded",
+    "recommendations": [
+      "174",
+      "30",
+      "103"
+    ],
+    "tips": [],
+    "image": "https://storage.googleapis.com/mentors-pics/dasani-madipalli.jpeg",
+    "bio": "PM @ Microsoft & Founder @ Dasani Decoded. I love doodling, doggos and believe owning our narratives can change the world",
+    "socials": "https://twitter.com/dasani_decoded,  https://www.instagram.com/dasani_decoded/, https://www.linkedin.com/in/dasani-m, https://www.medium.com/@dasanidecoded, https://www.dasanidecoded.com/",
+    "personal": true,
+    "path": "https://www.tryexponent.com/ -  for interview prep, , https://link.medium.com/86TL6gTNu9 - being a pm at Microsoft,  https://productbuds.co/ - aspiring pm community",
+    "journeys": []
+  },
+  {
+    "id": 2,
+    "added": "9/3/2020 21:12:21",
+    "name": "Shruti Ramanathan",
+    "pronouns": "she/her",
+    "email": "shrutiramanathansr@gmail.com",
+    "title": "Product TPM @ Instagram (Facebook)",
+    "image": "https://storage.googleapis.com/mentors-pics/shruti-ramanathan.JPG",
+    "recommendations": [
+      "18",
+      "175"
+    ],
+    "tips": [],
+    "bio": "Product TPM @ Instagram. Georgia Tech ’20. Let’s chat about ethics in tech, social psyc, or personal passions!",
+    "socials": "https://www.linkedin.com/in/shrutiramanathan/, https://www.instagram.com/shrutir16/, https://github.com/shrutiramanathan",
+    "personal": false,
+    "path": "https://www.amazon.com/Cracking-PM-Interview-Product-Technology/dp/0984782818: My literal manual to life for the semester I was interview prepping! Highly recommend using this over video interviews to practice a diversity of questions.   https://blog.pramp.com/how-to-succeed-in-a-system-design-interview-27b35de0df26: Thinking about scaling infrastructure is super crucial to acing more technical product management interviews. Better understanding how to approach these questions is not a piece of cake, but highly recommend a computer architecture class curriculum as a foundation.",
+    "journeys": []
+  },
+  {
+    "id": 14,
+    "added": "9/7/2020 12:42:31",
+    "name": "David Lietjauw",
+    "pronouns": "He/Him/His",
+    "email": "davlietjauw@gmail.com",
+    "title": "APM @ Twitter",
+    "recommendations": [
+      "121",
+      "160",
+      "161",
+      "162",
+      "163"
+    ],
+    "tips": [],
+    "image": "https://storage.googleapis.com/mentors-pics/david-l.jpg",
+    "bio": "APM @ Twitter. I used to be a sweet potato farmer from Kansas. Now, I'm an APM @ Twitter learning how to build with empathy so we can all experience a more inclusive future. You can find me tending to my succulents~",
+    "socials": "https://twitter.com/davidfromkansas",
+    "personal": false,
+    "path": "Swipe to Unlock (book) - My friend, Neel, wrote this easy to understand primer on how technology and business work together, www.techmeme.com - Reading the technews everyday helps develop product sense by understanding trends in the industry,  https://www.getrevue.co/profile/caseynewton - The Interface is a newsletter focusing on dialogue around social media and consumer tech by The Verge's Casey Newton, https://constine.substack.com/ - Weekly newsletter over startups and new tech trends by TechCrunch's Josh Constine, https://www.youtube.com/playlist?list=PLfAX25ZLrPGRzfILkSd-YiWfsoloCETAe - Bloomberg Technology is a daily 1-hour show where Emily Chang talks about what's going on in tech by interviewing CEOs and talking to experts (I watch this during breakfast everyday!).",
+    "journeys": [
+      {
+        "title": "ColorStack",
+        "description": "My friend Jehron Petty started ColorStack, a non-profit whose mission is to increase the entrance, retention and success of Black, Latinx, and Native American college students in computing. Consider volunteering your time to help the next-gen of diverse tech talent succeed!",
+        "link": "https://www.colorstack.org/"
+      }
+    ]
+  },
+  {
     "id": 13,
     "added": "9/7/2020 7:34:16",
     "name": "Aditi Priya",
-    "recommendations": ["164"],
+    "recommendations": [
+      "164"
+    ],
     "tips": [],
     "pronouns": "She",
     "email": "priya.aditi92@gmail.com",
@@ -450,7 +288,10 @@
     "added": "9/8/2020 2:45:03",
     "name": "Sandra Luo",
     "pronouns": "she/her",
-    "recommendations": ["158", "159"],
+    "recommendations": [
+      "158",
+      "159"
+    ],
     "tips": [
       {
         "title": "Sandra's Tips",
@@ -472,27 +313,260 @@
     ]
   },
   {
-    "id": 23,
-    "added": "9/15/2020 9:38:13",
-    "name": "Joel Montano",
-    "pronouns": "he'him",
-    "email": "joel97montano@gmail.com",
+    "id": 5,
+    "added": "9/5/2020 12:20:35",
+    "name": "Nancy Wang",
+    "pronouns": "she/her/hers",
+    "email": "nwang625@gmail.com",
     "title": "PM @ Microsoft",
-    "image": "https://storage.googleapis.com/mentors-pics/joel-montano.JPG",
-    "bio": "PM @ Microsoft. Currently working at Envision Accelerator, helping underrepresented founders receive the funding and resources they need to set them up for success. I'm also scouting for a venture fund and generally interested in the future of work, gaming, dev tools, no-low code, and the creator economy. Outside of tech, I'm trying to get into hiking and learning Korean (for fun) :).",
-    "socials": "https://twitter.com/JoelMon97 , https://www.linkedin.com/in/joelmontanoucf/",
-    "personal": false,
-    "recommendations": ["29", "18"],
+    "recommendations": [
+      "127",
+      "80",
+      "29"
+    ],
     "tips": [],
-    "path": "Cracking the Coding Interview [Book on general PM topics], https://www.youtube.com/channel/UCjm_qVkCPjOVDz9BWjNqO9A [Great mock videos]",
+    "image": "https://storage.googleapis.com/mentors-pics/nancy-wang.JPG",
+    "bio": "PM @ Microsoft. JHU '20. I strive to amplify human stories to transform the world around us.",
+    "socials": "https://www.linkedin.com/in/nancywangjhu/, https://medium.com/@nwang625, https://twitter.com/oldnan_andthec",
+    "personal": false,
+    "path": "<https://www.quora.com/q/theartofproductmanagement> - A blog about product management by Jackie Bavaro, co-founder of Cracking the PM Interview, <https://medium.com/agileinsider/navigating-the-entry-level-pm-apm-recruiting-process-957993620ac5> - Comprehensive article on APM/PM recruiting, <https://www.youtube.com/channel/UCjm_qVkCPjOVDz9BWjNqO9A> - YouTube channel with everything from mock PM interviews to tips on negotiating your offer!",
     "journeys": [
       {
-        "title": "Envision",
-        "link": "https://www.envisionaccelerator.com/"
-      },
+        "title": "Nancy's Thoughts",
+        "description": "Currently dipping my toes into writing/reflecting about my thoughts, ideas and experiences on Medium. Volunteering @ Breaktime to help launch the careers of young adults experiencing homelessness, you can check us out and support at breaktime.org!",
+        "link": "https://breaktime.org"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "added": "10/2/2020 1:22:15",
+    "name": "Stephen Cognetta",
+    "pronouns": "he/him",
+    "email": "stephen@tryexponent.com",
+    "title": "CEO @ Exponent",
+    "image": "https://storage.googleapis.com/mentors-pics/stephen-cognetta.jpg",
+    "bio": "CEO @ Exponent. I'm a product management thought leader who has presented at Google, WeWork, Stanford GSB, Duke, Yale and more. Previously, I was a product manager at Google.",
+    "socials": "twitter.com/sycognetta, https://www.linkedin.com/in/stephencognetta/, https://www.youtube.com/c/exponentTV",
+    "personal": false,
+    "recommendations": [
+      "30",
+      "5",
+      "136"
+    ],
+    "tips": [],
+    "path": "",
+    "journeys": []
+  },
+  {
+    "id": 19,
+    "added": "9/13/2020 22:21:40",
+    "name": "Johnathan Zhou",
+    "pronouns": "he/him",
+    "email": "johnathanz@berkeley.edu",
+    "title": "Product Manager @ Dropbox",
+    "image": "https://storage.googleapis.com/mentors-pics/jonathan-zhou.jpg",
+    "bio": "PM @ Dropbox. In the past, I've worked in product, swe, and venture -- feel free to ask me about any of that! Besides working in product, I love to journal, take pictures, and watch anime :)",
+    "socials": "https://twitter.com/johnathanzhou, https://johnathanzhou.com",
+    "personal": true,
+    "recommendations": [
+      "153"
+    ],
+    "tips": [],
+    "path": "https://www.lennyrachitsky.com/p/how-to-get-into-product-management -- this is my top recommended resource! Lenny goes into depth onto the entire journey of getting into product.",
+    "journeys": []
+  },
+  {
+    "id": 11,
+    "added": "9/7/2020 2:18:54",
+    "name": "Priyanka Maskar",
+    "pronouns": "She/Her",
+    "recommendations": [
+      "165"
+    ],
+    "tips": [],
+    "email": "priaynkamaskar@gmail.com",
+    "title": "Product Manager @ Loop Commerce",
+    "image": "https://storage.googleapis.com/mentors-pics/priyanka-maskar.jpg",
+    "bio": "PM@Loop Commerce, building delightful products in the gift commerce platform. Excited about the challenges I face everyday as a PM and passionate about people, traveling, pilates and life in general 😉. My life’s mantra is “Never give up”, keep trying and keep hustling!",
+    "socials": "https://www.linkedin.com/in/priyankamaskar/",
+    "personal": false,
+    "path": "Made my own resources list: https://docs.google.com/document/d/1J6hm6xBD6kCqJIlBPd0GjrNfeQ8p06oW-8WcpMaFgR4/edit",
+    "journeys": [
       {
-        "title": "Joel's Newsletter",
-        "link": "https://learnwithjoel.substack.com/"
+        "title": "Priyanka's Thoughts",
+        "description": "Becoming a great Sr. Product Manager and solving bigger problems!"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "added": "9/15/2020 13:12:42",
+    "name": "Max Beech",
+    "pronouns": "Mr / he",
+    "email": "max.beech@verizonmedia.com",
+    "title": "APM @ Yahoo (Verizon Media)",
+    "image": "https://storage.googleapis.com/mentors-pics/max-beech.jpg",
+    "bio": "APM @ Yahoo (Verizon Media), working on emerging ad formats team. Previously: Product @ Revolut (financial startup), Co-Founder @ Intro, Computer Science graduate at Exeter University in the UK. Fun fact: I once won third prize at a talent contest for sticking out my tongue",
+    "socials": "https://twitter.com/maxedbeech,https://www.linkedin.com/in/maxbeech, https://maxbeech.com",
+    "personal": true,
+    "recommendations": [
+      "18",
+      "117",
+      "5"
+    ],
+    "tips": [],
+    "path": "<https://stellarpeers.com/> - [A fantastic community of aspiring and existing PMs who through a series of shared interview practices, made a huge difference to my ability to perform under pressure], <https://www.amazon.co.uk/Cracking-PM-Interview-Product-Technology/dp/0984782818> - [You should definitely read at least one of the popular interview books, but be wary of copy/pasting their formula. Design your own approach to answering questions], <https://apmlist.com/> - [A tried and tested site, APM list gives a comprehensive guide to US-based APM programs. Particularly if you are international, make sure to find local opportunities too]",
+    "journeys": [
+      {
+        "title": "Today",
+        "description": "Doing stuff with no-one there to push you is hard. Today helps you to actually do that side-project you've been putting off and holds you to it thanks to its unique approach of tracking the time you spend on each task. Unique timing. Daily streaks. Eye-candy.",
+        "link": "https://thetoday.app/"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "added": "9/6/2020 18:26:52",
+    "name": "Charlene Wang",
+    "pronouns": "She/Her",
+    "email": "charlene@mylivingos.com",
+    "recommendations": [
+      "167",
+      "168",
+      "169"
+    ],
+    "tips": [],
+    "title": "APM @ Google & Founder @ LivingOS",
+    "image": "https://storage.googleapis.com/mentors-pics/charlene-wang.JPG",
+    "bio": "APM @ Google. Founder of LivingOS. You can achieve more and be happier. Let me help you.",
+    "socials": "https://twitter.com/hsinleiwang, https://www.instagram.com/yourlivingos/, https://www.facebook.com/YourLivingOS",
+    "personal": false,
+    "path": "https://www.lennyrachitsky.com/ - Lenny's Newsletter, https://www.yourlivingos.com/blog/how-to-build-product-intuition/ - How To Build Product Intuition, https://www.yourlivingos.com/blog/seek-to-understand/ - Seek to Understand",
+    "journeys": [
+      {
+        "title": "Weekly Gem",
+        "description": "",
+        "link": "https://livingos.substack.com"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "added": "9/14/2020 1:06:38",
+    "name": "Sari Abukhadra",
+    "pronouns": "He/him",
+    "email": "sariabukhadra@gmail.com",
+    "title": "APM @ Roblox",
+    "image": "https://storage.googleapis.com/mentors-pics/sari-abukhadra.JPG",
+    "bio": "APM @ Roblox. Helping to build the metaverse!",
+    "socials": "https://linkedin.com/in/sari-abukhadra, https://sariabukhadra.com",
+    "personal": true,
+    "recommendations": [
+      "151",
+      "117"
+    ],
+    "tips": [],
+    "path": "https://mailchi.mp/056ea1e9b0d3/subscribe-page - newsletter for APM interviews and recruiting tips, http://stellarpeers.com/ - Great resource for scheduling mock interviews",
+    "journeys": [
+      {
+        "title": "Sari's Newsletter",
+        "description": "newsletter for Product Management advice and recruiting tips",
+        "link": "https://mailchi.mp/056ea1e9b0d3/subscribe-page"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "added": "9/3/2020 12:15:12",
+    "name": "Katie Goldstein",
+    "pronouns": "She/her/hers",
+    "email": "katie.e.goldstein@gmail.com",
+    "title": "PM @ Microsoft",
+    "image": "https://storage.googleapis.com/mentors-pics/katie-goldstein.png",
+    "bio": "PM @ Microsoft. Recent Dartmouth grad from SF. I get excited about pugs, helping others, my Duolingo streak, and Japanese toilets. Let's chat!",
+    "socials": "https://www.linkedin.com/in/katie-goldstein/",
+    "personal": false,
+    "recommendations": [
+      "18",
+      "176",
+      "177",
+      "178"
+    ],
+    "tips": [],
+    "path": "<https://www.amazon.com/Cracking-PM-Interview-Product-Technology/dp/0984782818> - [Read this book cover to cover to learn more about PMing and prep for PM design questions. I'd recommend you take notes on the different frameworks!], <https://www.linkedin.com/> - [I networked a bunch before starting my role to 1) gain more clarity into the role and company culture and 2) gain useful insights to disseminate during my interviews, and 3) gain referrals.],  <https://www.theverge.com/, https://techcrunch.com/> - [Two great tech news sites that I browse for 5-10 min regularly! Send cool articles to your friends/family/others. Form opinions about things that are happening, and keep track of companies and initiatives that seem interesting.]",
+    "journeys": [
+      {
+        "title": "The Future of Education",
+        "link": "https://www.fastcompany.com/section/reinventing-education"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "added": "9/7/2020 19:50:42",
+    "name": "Umesh Khanna",
+    "pronouns": "He/Him",
+    "recommendations": [
+      "37",
+      "180"
+    ],
+    "email": "ukumarkhanna@gmail.com",
+    "title": "Product Manager @ Hatch Credit",
+    "image": "https://storage.googleapis.com/mentors-pics/umesh-khanna.jpg",
+    "bio": "PM @ Hatch Credit. Running the exciting world of small business financing and banking at Hatch. Love to travel (or I guess zoom now?), run and play tetris.",
+    "socials": "https://www.linkedin.com/in/umeshkhanna/, https://www.facebook.com/Umesh64, https://twitter.com/ukumarkhanna",
+    "personal": false,
+    "path": "Get a mentor, learn how to organize your thoughts, be passionate about something!",
+    "tips": [],
+    "journeys": [
+      {
+        "title": "Hatch",
+        "link": "https://hatchcard.com/checking-waitlist"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "added": "9/6/2020 22:28:49",
+    "name": "Nelly Lin",
+    "pronouns": "she/her",
+    "recommendations": [
+      "93"
+    ],
+    "tips": [],
+    "email": "linnberkeley@berkeley.edu",
+    "title": "APM @ Wayfair",
+    "image": "https://storage.googleapis.com/mentors-pics/nelly-lin.jpg",
+    "bio": "APM @ Wayfair. UC Berkeley '19. Passionate about social justice, avid reader and writer, and travel fanatic.",
+    "socials": "https://www.linkedin.com/in/nellylin/",
+    "personal": false,
+    "path": "",
+    "journeys": []
+  },
+  {
+    "id": 8,
+    "added": "9/6/2020 21:31:04",
+    "name": "David Cai",
+    "pronouns": "He/him/his",
+    "email": "davidcai2012@gmail.com",
+    "recommendations": [
+      "166",
+      "93",
+      "18"
+    ],
+    "tips": [],
+    "title": "APM II @ Yahoo (Verizon Media)",
+    "image": "https://storage.googleapis.com/mentors-pics/david-cai.jpg",
+    "bio": "APM @ Yahoo (Verizon Media). APM by day, SWE at heart, filling my free time with running.",
+    "socials": "https://www.linkedin.com/in/caiismyname,https://github.com/caiismyname, https://davidcai.me",
+    "personal": true,
+    "path": "<https://productsense.carrd.co> - [A card of the news sources I used to develop product sense],<pmtechlessons.com> - [Approachable explainers of tech concepts for non-technical PMs], <http://www.crackingthepminterview.com> - [A classic prep book. I don't really have an allegiance to a particular book, but this is what I used]",
+    "journeys": [
+      {
+        "title": "PM Tech Lessons",
+        "description": "Approachable explainers of tech concepts for non-technical PMs, specifically with an algorithms-focused prep course.",
+        "link": "https://pmtechlessons.com/interview-prep"
       }
     ]
   },
@@ -507,7 +581,9 @@
     "bio": "APM at @ Yahoo (Verizon Media). I love talking to people passionate about people, products and technology.",
     "socials": "https://www.linkedin.com/in/nelli-petikyan/",
     "personal": false,
-    "recommendations": ["117"],
+    "recommendations": [
+      "117"
+    ],
     "tips": [],
     "path": "https://stellarpeers.com/ - [for mock interviews]",
     "journeys": []
@@ -523,7 +599,12 @@
     "bio": "APM @ Groupon | Previously: EE @ UCLA, Founder of Diversity and Inclusion in Product and Data @ UCLA, Product @ Belkin | Huge fan of Inclusive Tech, Music, Podcasts and Sports",
     "socials": "https://twitter.com/KeerthiPradaa, https://medium.com/@KeerthiPradaa, https://linkedin.com/in/keerthipradaa, https://keerthipradaa.com",
     "personal": true,
-    "recommendations": ["148", "119", "136", "104"],
+    "recommendations": [
+      "148",
+      "119",
+      "136",
+      "104"
+    ],
     "tips": [],
     "path": "https://medium.com/@dipducla - DIPD @UCLA's medium blog, https://www.facebook.com/groups/SubtlePM - PM Community used to network and learn, https://thepminterview.com/ - Random Interview Question Generator, https://www.productmanagementexercises.com/ - Interview Question Database,",
     "journeys": [
@@ -534,19 +615,85 @@
     ]
   },
   {
-    "id": 27,
-    "added": "10/2/2020 1:22:15",
-    "name": "Stephen Cognetta",
+    "id": 18,
+    "added": "9/13/2020 19:03:25",
+    "name": "Emmett Chen-Ran",
     "pronouns": "he/him",
-    "email": "stephen@tryexponent.com",
-    "title": "CEO @ Exponent",
-    "image": "https://storage.googleapis.com/mentors-pics/stephen-cognetta.jpg",
-    "bio": "CEO @ Exponent. I'm a product management thought leader who has presented at Google, WeWork, Stanford GSB, Duke, Yale and more. Previously, I was a product manager at Google.",
-    "socials": "twitter.com/sycognetta, https://www.linkedin.com/in/stephencognetta/, https://www.youtube.com/c/exponentTV",
-    "personal": false,
-    "recommendations": ["30", "5", "136"],
+    "email": "emchenran@gmail.com",
+    "title": "APM @ Salesforce",
+    "image": "https://storage.googleapis.com/mentors-pics/emmett-chen-ran.png",
+    "bio": "APM @ Salesforce. Previously:  CS @ Yale, SWE Intern @ Bloomberg & Stripe. Interested in how law + policy intersect with tech + society and may eventually dip from the tech industry to go to law school.",
+    "socials": "https://www.instagram.com/ecr.jpg/, https://www.linkedin.com/in/echenran/",
+    "recommendations": [
+      "154",
+      "155",
+      "156",
+      "6"
+    ],
     "tips": [],
-    "path": "",
-    "journeys": []
+    "personal": false,
+    "path": "http://alanz.me/apm - Full time APM deadlines, https://docs.google.com/spreadsheets/d/1-RuKYVhXb3Ez0IxmvnGFvLBet6n78OgOPnX9SxkX31s - Full time + internship APM deadlines, https://alanz.me/resources - Alan Zhang's interview resources, https://docs.google.com/document/d/1CC9mbK5hi8YqBvLVwnTahzqmek8T8VPeJ3XQTvLA1FE - Jacqueline Chung's interview resources",
+    "journeys": [
+      {
+        "title": "Emmett's Thoughts",
+        "description": "A personal financial advising platform, name TBD!"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "added": "10/16/2020 15:51:05",
+    "name": "Emily Salvador",
+    "pronouns": "She/Her",
+    "email": "emily.salvador.mit@gmail.com",
+    "title": "APM II @ Yahoo (Verizon Media)",
+    "socials": "https://www.linkedin.com/in/emily-salvador-897b20b1/",
+    "personal": false,
+    "bio": "APM @ Yahoo (Verizon Media). My happy place is where engineering, art, and innovation intersect. I’m working on AR, 5G and digital/physical infrastructure.",
+    "image": "https://storage.googleapis.com/mentors-pics/emily-salvador.jpeg",
+    "recommendations": [
+      "183"
+    ],
+    "tips": [],
+    "journeys": [
+      {
+        "title": "Glitch",
+        "description": "My side project focuses on the intersection of creativity and AI",
+        "link": "https://emilysalvador.com/ai_fashion/index.html"
+      }
+    ]
+  },
+  {
+    "id": 0,
+    "added": "7/12/2020 12:15:12",
+    "name": "Michelle Ma",
+    "pronouns": "She/her/hers",
+    "email": "michelle.ma2007@gmail.com",
+    "title": "APM @ Yahoo",
+    "socials": "https://twitter.com/musingsbymima, https://techcare.substack.com/welcome",
+    "personal": false,
+    "bio": "APM @ Yahoo (Verizon Media). Thinking about self care, community care, structural care, and matcha lattes. Creating APM Map 🗺️ & Tech Care 🌿",
+    "image": "https://storage.googleapis.com/mentors-pics/mima-profile-pic.jpg",
+    "recommendations": [
+      "15",
+      "119",
+      "72",
+      "120",
+      "93",
+      "6"
+    ],
+    "tips": [],
+    "journeys": [
+      {
+        "title": "Writing Tech Care",
+        "description": "Tech Care is a newsletter that will unpack what it means to build tech that cares, so that you can take care of yourself, of your communities, and of the structures and systems that uphold our society today.",
+        "link": "https://techcare.substack.com/welcome"
+      },
+      {
+        "title": "Follow me on Twitter",
+        "description": "Over the next few months, I'll be tweeting new resources & mentors that have been added to APM Map, and any other things we might be featuring that week.",
+        "link": "https://twitter.com/musingsbymima"
+      }
+    ]
   }
 ]
