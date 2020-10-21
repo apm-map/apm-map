@@ -1,18 +1,12 @@
 import React from "react";
+import loadable from "@loadable/component";
 
-import MobileDirectory from "./MobileDirectory";
-import AnimatedDirectory from "./AnimatedDirectory";
+import Loading from "../util/Loading";
 
 export default function Directory({ context }) {
-  // filter (categories) state
-  const [category, setCategory] = React.useState("All");
-  const toggleCategory = (value) => {
-    setCategory(value);
-  };
+  const DirectoryComponent = context.isMobile
+    ? loadable(() => import("./MobileDirectory"))
+    : loadable(() => import("./AnimatedDirectory"));
 
-  return context.isMobile ? (
-    <MobileDirectory category={category} toggleCategory={toggleCategory} />
-  ) : (
-    <AnimatedDirectory category={category} toggleCategory={toggleCategory} />
-  );
+  return <DirectoryComponent fallback={<Loading />} />;
 }

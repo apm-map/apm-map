@@ -9,7 +9,7 @@ import Emoji from "../util/Emoji";
 import ScrollToElement from "../util/ScrollToElement";
 
 const videoScreenshotSrc =
-  "https://storage.googleapis.com/apm-map-assets/bg-video-screenshot.png";
+  "https://storage.googleapis.com/apm-map-assets/bg-video-screenshot-640x320.png";
 
 const useStyles = makeStyles((theme) => ({
   bgImg: {

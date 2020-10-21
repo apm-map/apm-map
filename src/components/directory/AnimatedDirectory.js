@@ -16,8 +16,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AnimatedDirectory({ category, toggleCategory }) {
+export default function AnimatedDirectory() {
   const classes = useStyles();
+
+  const [category, setCategory] = React.useState("All");
+  const toggleCategory = (value) => {
+    setCategory(value);
+  };
 
   return (
     <Container

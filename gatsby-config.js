@@ -4,9 +4,46 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const website = require("./config/website");
+const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix;
+
 module.exports = {
-  pathPrefix: "/apm-map",
+  /* General Information */
+  pathPrefix: website.pathPrefix,
+  siteMetadata: {
+    siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
+    pathPrefix,
+    title: website.title,
+    titleAlt: website.titleAlt,
+    description: website.description,
+    banner: website.logo,
+    headline: website.headline,
+    siteLanguage: website.siteLanguage,
+    ogLanguage: website.ogLanguage,
+    author: website.author,
+    twitter: website.twitter,
+    facebook: website.facebook,
+    menuLinks: [
+      {
+        name: "home",
+        link: "/",
+      },
+      {
+        name: "about",
+        link: "/about/",
+      },
+      {
+        name: "directory",
+        link: "/directory/",
+      },
+      {
+        name: "mentors",
+        link: "/mentors/",
+      },
+    ],
+  },
   plugins: [
+    `gatsby-plugin-loadable-components-ssr`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,
@@ -67,33 +104,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-172152528-1",
+        trackingId: website.googleAnalyticsID,
       },
     },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: website.title,
+        short_name: website.titleAlt,
+        description: website.description,
+        start_url: website.pathPrefix,
+        background_color: website.backgroundColor,
+        theme_color: website.themeColor,
+        display: "standalone",
+        icon: website.favicon,
+        cache_busting_mode: "none",
+      },
+    },
+    `gatsby-plugin-preload-link-crossorigin`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
   ],
-  siteMetadata: {
-    title: "APM Map",
-    description:
-      "APM Map is your one-stop destination for navigating your APM recruiting journey.",
-    author: "Jeffrey Fabian",
-    siteUrl: "https://www.apmmap.co",
-    menuLinks: [
-      {
-        name: "home",
-        link: "/",
-      },
-      {
-        name: "about",
-        link: "/about/",
-      },
-      {
-        name: "directory",
-        link: "/directory/",
-      },
-      {
-        name: "mentors",
-        link: "/mentors/",
-      },
-    ],
-  },
 };

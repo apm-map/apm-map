@@ -60,7 +60,7 @@ export default function MentorsGrid({ category }) {
 
   useEffect(() => {
     setCurrentPageItems(data.allMentorsJson.edges.slice(0, mentorsPerPage));
-  }, [data])
+  }, [data]);
 
   return (
     <Container disableGutters maxWidth={false}>
@@ -69,7 +69,7 @@ export default function MentorsGrid({ category }) {
         subtitle="Learn what resources current APMs used to ace their interviews "
         emoji={<Emoji symbol="🌏" label="globe" />}
       />
-      {currentPageItems &&
+      {currentPageItems && (
         <Container maxWidth="lg" className={classes.gridContainer}>
           <Grid container spacing={2} className={classes.cardGrid}>
             {currentPageItems.map((edge, index) => (
@@ -84,7 +84,7 @@ export default function MentorsGrid({ category }) {
             setCurrentPageItems={setCurrentPageItems}
           />
         </Container>
-      }
+      )}
     </Container>
   );
 }
