@@ -3,3 +3,6 @@ environment = {TYPE = 'production'}
 
 [context.staging]
 environment = {TYPE = 'staging'}
+
+[[plugins]]
+package = "netlify-plugin-gatsby-cache"
