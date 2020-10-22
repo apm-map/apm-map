@@ -66,7 +66,7 @@ export default function AboutPage({ location }) {
               <strong>{"APM Map "}</strong>
               <Emoji symbol="🗺️" label="map" />
               {
-                " is your one-stop destination for navigating your APM recruiting journey. Discover resources on everything from finding APM programs to acing your final onsite interviews — all with the help from our incredible mentors."
+                " is your one-stop destination for navigating your APM recruiting journey. Discover resources on everything from finding APM programs to acing your final onsite interviews — all with the help of our incredible mentors."
               }
             </>
           }
