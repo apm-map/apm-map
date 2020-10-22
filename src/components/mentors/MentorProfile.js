@@ -198,7 +198,6 @@ export default function MentorProfile({ mentor, recommendations }) {
     );
   }
 
-  // TODO: make component loadable + use fallback for while loading (instead of react state)
   return (
     <Container className={classes.container}>
       <Box className={classes.header}>

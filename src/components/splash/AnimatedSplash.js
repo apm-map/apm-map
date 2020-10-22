@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AnimatedSplash(props) {
   const classes = useStyles();
-  const { isMobile } = useDeviceDetect();
 
   // container variant helper function
   const containerVariantsWithStagger = (stagger) => ({
@@ -121,29 +120,9 @@ export default function AnimatedSplash(props) {
     sequence();
   }, [bgControls, apmControls, mapControls, subtitleControls, arrowControls]);
 
-  // TODO: delete mobile checks here
   return (
     <Box className={classes.box}>
-      {isMobile ? (
-        <img
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            height: "100%",
-            width: "100%",
-            zIndex: "-1",
-            objectFit: "cover",
-          }}
-          src={videoScreenshotSrc}
-          alt="APM Map video background"
-        />
-      ) : (
-        <Video src={bgVideo} />
-      )}
-
+      <Video src={bgVideo} />
       <motion.div
         style={{
           display: "flex",
@@ -261,7 +240,7 @@ export default function AnimatedSplash(props) {
           background={""}
           size="auto"
           initial="before"
-          animate={!isMobile && subtitleControls}
+          animate={subtitleControls}
           variants={containerVariantsWithStagger(0.05)}
         >
           <motion.div
