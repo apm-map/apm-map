@@ -33,6 +33,7 @@
     "googleapis": "^57.0.0",
     "http2": "^3.3.7",
     "netlify-plugin-gatsby-cache": "^0.3.2",
+    "npm-check-updates": "^9.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "latest",
