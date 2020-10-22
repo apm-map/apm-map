@@ -85,7 +85,6 @@ export default function BuyMeACoffee() {
     yRange.onChange((v) => setIsInViewport(true || v >= 1));
   }, [yRange]);
 
-  // TODO: make these loadable()
   return (
     <AnimatePresence>
       {isInViewport && (
