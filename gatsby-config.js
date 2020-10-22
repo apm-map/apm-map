@@ -43,6 +43,7 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-loadable-components-ssr`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
