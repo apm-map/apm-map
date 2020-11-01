@@ -664,6 +664,26 @@
     ]
   },
   {
+    "id": 29,
+    "added": "10/20/2020 22:07:40",
+    "name": "Anirudha Nandi",
+    "pronouns": "He/She",
+    "email": "anandi.hba2020@ivey.ca",
+    "title": "APM @ Uber",
+    "socials": "https://www.linkedin.com/in/anirudha-nandi/",
+    "personal": false,
+    "bio": "APM @ Uber. Passionate about tech, recruiting and soccer. Happy to chat about anything PM and non-PM.",
+    "image": "https://storage.googleapis.com/mentors-pics/anirudha-nandi.jpg",
+    "recommendations": [
+      "139",
+      "152",
+      "182",
+      "184"
+    ],
+    "tips": [],
+    "journeys": []
+  },
+  {
     "id": 0,
     "added": "7/12/2020 12:15:12",
     "name": "Michelle Ma",
