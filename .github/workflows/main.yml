@@ -1,0 +1,11 @@
+name: Trigger Gatsby Cloud Build
+on:
+  schedule:
+    - cron: "*/5 * * * *" # every 5 minutes
+jobs:
+  build:
+    name: Request Gatsby Cloud Webhook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl request
+        run: curl -X POST -d {} https://webhook.gatsbyjs.com/hooks/data_source/publish/4c261bab-d94a-44d2-ac23-3d16a96fa29e
