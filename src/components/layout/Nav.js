@@ -36,6 +36,16 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
   },
+  productHunt: {
+    position: "absolute",
+    top: 5,
+    right: 5,
+    padding: theme.spacing(2),
+
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
 }));
 
 export default function Nav({ context }) {
@@ -85,6 +95,20 @@ export default function Nav({ context }) {
               <Tab label={route.name} key={route.link} {...a11yProps(idx)} />
             ))}
           </Tabs>
+          <div className={classes.productHunt}>
+            <a
+              href="https://www.producthunt.com/posts/apm-map?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-apm-map"
+              target="_blank"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=271828&theme=light"
+                alt="APM Map - Discover resources to help you navigate your journey into PM | Product Hunt"
+                style={{ width: "250px", height: "54px" }}
+                width="250"
+                height="54"
+              />
+            </a>
+          </div>
         </nav>
       )}
     </>

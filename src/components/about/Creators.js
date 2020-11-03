@@ -97,7 +97,6 @@ export default function Creators({ context }) {
     </>
   );
 
-  // TODO: make component loadable + use fallback for while loading (instead of react state)
   return (
     <Container className={classes.container}>
       <Typography

@@ -80,6 +80,7 @@ exports.onCreateNode = async ({
   const { createNode, createNodeField } = actions;
 
   // For all RecruitingResource and MentorJson nodes that have an image url, call createRemoteFileNode
+  // TODO: look into making some of these files smaller? Creating these nodes creates a build-time bottleneck
   if (
     (node.internal.type === "RecruitingResource" ||
       node.internal.type === "MentorsJson") &&
