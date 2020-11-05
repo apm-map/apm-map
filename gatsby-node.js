@@ -1,28 +1,57 @@
 const path = require("path");
 const { createRemoteFileNode } = require("gatsby-source-filesystem");
-const { getRows } = require("./src/apis/gsheets");
+const {
+  getAllDirectoryResources,
+  getAllMentors,
+  getDirectoryResourceByID,
+  getMentorJourneyByID,
+} = require("./src/apis/airtable");
 
 // createSchemaCustomization explicitly defines a GraphQL data type
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
-
-  createTypes(`
+  const typeDefs = `
     type RecruitingResource implements Node {
       id: String!
       rowID: String!,
       name: String!
+      link: String!,
+      recommendedBy: [String],
+      recommendationCount: Int,
       description: String,
       featured: Boolean,
       featuredOrder: Int,
-      link: String!,
       category: String,
       tags: [String],
       type: String,
       stage: String,
-      imageUrl: String,
+      imageUrl: String!,
       image: File @link(from: "image___NODE")
     }
-  `);
+    type Mentor implements Node {
+      id: String!,
+      name: String!,
+      title: String!,
+      bio: String!,
+      imageUrl: String!,
+      image: File @link(from: "image___NODE"),
+      socials: [String],
+      personal: Boolean,
+      recommendationIDs: [String],
+      recommendations: [RecruitingResource],
+      journeyIDs: [String],
+      journeys: [MentorJourney]
+      tips: [String]
+    }
+    type MentorJourney implements Node {
+      id: String!,
+      title: String!,
+      description: String,
+      link: String
+    }
+`;
+
+  createTypes(typeDefs);
 };
 
 // called after all source plugins have created nodes
@@ -30,37 +59,68 @@ exports.createSchemaCustomization = ({ actions }) => {
 // It also has the added benefit of allowing me to explicitly define and shape nodes.
 exports.sourceNodes = async ({
   actions,
-  store,
-  cache,
   createNodeId,
   createContentDigest,
 }) => {
   const { createNode } = actions;
 
-  // 1. Pull, sanitize and transform data from Google Sheets
-  const rows = await getRows();
+  // Pull data from Airtable + create Gatsby nodes
+  const resources = await getAllDirectoryResources();
+  resources.map((resource) => {
+    const nodeID = createNodeId(`${resource.id}`);
+    const fields = resource.fields;
 
-  // 2. Create Gatsby nodes from the sanitized Google Sheets data
-  rows.map((row, index) => {
-    const nodeID = createNodeId(`${index}`);
     const node = {
       id: nodeID,
       parent: `__SOURCE__`,
       internal: {
         type: `RecruitingResource`, // name of the GraphQL query --> allItem {}
-        contentDigest: createContentDigest(row),
+        contentDigest: createContentDigest(resource),
       },
       children: [],
-      rowID: row.id,
-      name: row.name,
-      link: row.link,
-      category: row.category,
-      type: row.type,
-      description: row.description,
-      featured: row.featured == "TRUE" ? true : false,
-      featuredOrder: row.featuredOrder,
-      tags: row.tags,
-      image: row.image,
+      rowID: fields.id,
+      name: fields.name,
+      link: fields.link,
+      category: fields.category,
+      type: fields.type,
+      description: fields.description,
+      featured: fields.featured ? true : false,
+      featuredOrder: fields.featuredOrder,
+      recommendedBy: fields.recommendedBy ? fields.recommendedBy : [],
+      recommendationCount: fields.recommendationCount
+        ? fields.recommendationCount
+        : 0,
+      tags: fields.tags,
+      imageUrl: fields.image,
+    };
+
+    createNode(node);
+  });
+
+  // Do the same for mentors data
+  const mentors = await getAllMentors();
+  mentors.map((mentor) => {
+    const nodeID = createNodeId(`${mentor.id}`);
+    const fields = mentor.fields;
+
+    const node = {
+      id: nodeID,
+      parent: `__SOURCE__`,
+      internal: {
+        type: `Mentor`, // name of the GraphQL query --> allItem {}
+        contentDigest: createContentDigest(mentor),
+      },
+      children: [],
+      rowID: fields.id,
+      name: fields.name,
+      title: fields.title,
+      bio: fields.bio,
+      imageUrl: fields.image,
+      recommendationIDs: fields.recommendations ? fields.recommendations : [],
+      journeyIDs: fields.journeys ? fields.journeys : [],
+      socials: fields.socials ? fields.socials : [],
+      personal: fields.personal ? true : false,
+      tips: [], // TODO: fix me
     };
 
     createNode(node);
@@ -72,22 +132,21 @@ exports.sourceNodes = async ({
 exports.onCreateNode = async ({
   node,
   actions,
-  getNode,
+  createContentDigest,
   createNodeId,
   cache,
   store,
 }) => {
   const { createNode, createNodeField } = actions;
 
-  // For all RecruitingResource and MentorJson nodes that have an image url, call createRemoteFileNode
-  // TODO: look into making some of these files smaller? Creating these nodes creates a build-time bottleneck
   if (
     (node.internal.type === "RecruitingResource" ||
-      node.internal.type === "MentorsJson") &&
-    node.image !== null
+      node.internal.type === "Mentor") &&
+    node.imageUrl
   ) {
+    // add a file node for the hosted image
     const fileNode = await createRemoteFileNode({
-      url: node.image, // string that points to the URL of the image
+      url: node.imageUrl, // string that points to the URL of the image
       parentNodeId: node.id,
       createNode,
       createNodeId,
@@ -102,13 +161,66 @@ exports.onCreateNode = async ({
     }
   }
 
-  if (node.internal.type === "MentorsJson") {
+  if (node.internal.type === "Mentor") {
+    // prepare the slug field
     const slug = `/mentors/${node.name}`.split(" ").join("-").toLowerCase();
-
     createNodeField({
       node,
       name: `slug`,
       value: slug,
+    });
+
+    // fetch linked resources from airtable by ID + add these nodes here
+    node.recommendations = node.recommendationIDs.map(async (id) => {
+      const resource = await getDirectoryResourceByID(id);
+      console.log(resource);
+      const nodeID = createNodeId(`${id}`);
+      const fields = resource.fields;
+
+      createNode({
+        id: nodeID,
+        parent: `__SOURCE__`,
+        internal: {
+          type: `RecruitingResource`, // name of the GraphQL query --> allItem {}
+          contentDigest: createContentDigest(resource),
+        },
+        children: [],
+        rowID: fields.id,
+        name: fields.name,
+        link: fields.link,
+        category: fields.category,
+        type: fields.type,
+        description: fields.description,
+        featured: fields.featured ? true : false,
+        featuredOrder: fields.featuredOrder,
+        recommendedBy: fields.recommendedBy ? fields.recommendedBy : [],
+        recommendationCount: fields.recommendationCount
+          ? fields.recommendationCount
+          : 0,
+        tags: fields.tags,
+        imageUrl: fields.image,
+      });
+    });
+
+    // fetch mentor journeys by ID as well (they live in a separate table)
+    node.journeys = node.journeyIDs.map(async (id) => {
+      const resource = await getMentorJourneyByID(id);
+      const nodeID = createNodeId(`${id}`);
+      const fields = resource.fields;
+
+      createNode({
+        id: nodeID,
+        parent: `__SOURCE__`,
+        internal: {
+          type: `MentorJourney`, // name of the GraphQL query --> allItem {}
+          contentDigest: createContentDigest(resource),
+        },
+        children: [],
+        rowID: fields.id,
+        title: fields.title,
+        description: fields.description ? fields.description : "",
+        link: fields.link ? fields.link : "#",
+      });
     });
   }
 };
@@ -121,25 +233,9 @@ exports.createPages = ({ actions, graphql }) => {
   // Create mentor profile pages
   const profileTemplate = path.resolve(`src/templates/profileTemplate.js`);
   return graphql(`
-    query mentorsWithResourcesQuery {
-      allMentorsJson {
+    query mentorSlug {
+      allMentor {
         nodes {
-          id
-          name
-          title
-          bio
-          recommendations
-          image {
-            childImageSharp {
-              fluid(quality: 75, cropFocus: ATTENTION) {
-                base64
-                aspectRatio
-                src
-                srcSet
-                sizes
-              }
-            }
-          }
           fields {
             slug
           }
@@ -153,12 +249,11 @@ exports.createPages = ({ actions, graphql }) => {
 
     // for each mentor, create a page with a custom slug (see onCreateNode)
     // and list of recommendations passed as page context
-    result.data.allMentorsJson.nodes.forEach((mentor) => {
+    result.data.allMentor.nodes.forEach((mentor) => {
       createPage({
         path: mentor.fields.slug,
         component: profileTemplate,
         context: {
-          recommendations: mentor.recommendations,
           slug: mentor.fields.slug,
         },
       });

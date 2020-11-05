@@ -7,19 +7,21 @@ import MentorProfile from "../components/mentors/MentorProfile";
 export default function Profile({ location, data }) {
   return (
     <Layout location={location}>
-      <MentorProfile
-        mentor={data.allMentorsJson.nodes[0]}
-        recommendations={data.allRecruitingResource.nodes}
-      />
+      <MentorProfile mentor={data.allMentor.nodes[0]} />
     </Layout>
   );
 }
 
 export const query = graphql`
-  query MyQuery($slug: String!, $recommendations: [String]) {
-    allMentorsJson(filter: { fields: { slug: { eq: $slug } } }) {
+  query GetFullMentorProfile($slug: String!) {
+    allMentor(filter: { fields: { slug: { eq: $slug } } }) {
       nodes {
+        id
         name
+        title
+        bio
+        socials
+        tips
         image {
           childImageSharp {
             fluid(quality: 75, cropFocus: ATTENTION) {
@@ -27,35 +29,24 @@ export const query = graphql`
             }
           }
         }
-        bio
-        tips {
-          title
-          description
-        }
         journeys {
+          id
+          title
           description
           link
-          title
         }
-        socials
-        personal
-        fields {
-          slug
-        }
-      }
-    }
-    allRecruitingResource(filter: { rowID: { in: $recommendations } }) {
-      nodes {
-        id
-        name
-        description
-        category
-        tags
-        link
-        image {
-          childImageSharp {
-            fluid(quality: 75, cropFocus: ATTENTION) {
-              ...GatsbyImageSharpFluid
+        recommendations {
+          id
+          name
+          description
+          category
+          tags
+          link
+          image {
+            childImageSharp {
+              fluid(quality: 75, cropFocus: ATTENTION) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
