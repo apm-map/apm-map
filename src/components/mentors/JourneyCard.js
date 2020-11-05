@@ -41,6 +41,8 @@ export default function JourneyCard({ data }) {
     setRaised(!raised);
   };
 
+  console.log(data);
+
   return (
     <Card
       className={classes.card}

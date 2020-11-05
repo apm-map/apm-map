@@ -9,22 +9,12 @@ const base = new Airtable().base(process.env.AIRTABLE_BASE_ID);
 // DIRECTORY RESOURCES
 const resources = base.table("Directory Resources");
 
-// Gets all directory resources sorted by a relevance ranking,
-// where "relevance" is calculated as: number of mentor recommendations + 3 (if a featured resource)
+// Gets all directory resources sorted by relevance.
+// Currently, "relevance" is calculated as: number of mentor recommendations + 3 (if a featured resource)
 async function getAllDirectoryResources() {
   return resources
     .select({
       sort: [{ field: "relevance", direction: "desc" }],
-    })
-    .all();
-}
-
-// Gets directory resources sorted by relevance ranking, filtered by the provided category
-async function getDirectoryResourcesByCategory(category) {
-  return resources
-    .select({
-      sort: [{ field: "relevance", direction: "desc" }],
-      filterByFormula: `category = ${category}`,
     })
     .all();
 }

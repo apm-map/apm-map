@@ -21,7 +21,10 @@ export const query = graphql`
         title
         bio
         socials
-        tips
+        tips {
+          title
+          description
+        }
         image {
           childImageSharp {
             fluid(quality: 75, cropFocus: ATTENTION) {
@@ -30,7 +33,6 @@ export const query = graphql`
           }
         }
         journeys {
-          id
           title
           description
           link

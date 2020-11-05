@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MediaCard({ loading, data, image }) {
   const classes = useStyles();
+  console.log(data);
   const [raised, setRaised] = useState(false);
   const toggleRaised = () => {
     setRaised(!raised);

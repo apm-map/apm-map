@@ -39,15 +39,18 @@ exports.createSchemaCustomization = ({ actions }) => {
       personal: Boolean,
       recommendationIDs: [String],
       recommendations: [RecruitingResource],
-      journeyIDs: [String],
       journeys: [MentorJourney]
-      tips: [String]
+      tip: MentorTip
     }
-    type MentorJourney implements Node {
-      id: String!,
+    type MentorJourney {
+      id: String,
       title: String!,
       description: String,
       link: String
+    }
+    type MentorTip {
+      title: String!,
+      description: String,
     }
 `;
 
@@ -66,7 +69,7 @@ exports.sourceNodes = async ({
 
   // Pull data from Airtable + create Gatsby nodes
   const resources = await getAllDirectoryResources();
-  resources.map((resource) => {
+  await resources.map((resource) => {
     const nodeID = createNodeId(`${resource.id}`);
     const fields = resource.fields;
 
@@ -74,24 +77,22 @@ exports.sourceNodes = async ({
       id: nodeID,
       parent: `__SOURCE__`,
       internal: {
-        type: `RecruitingResource`, // name of the GraphQL query --> allItem {}
+        type: `RecruitingResource`,
         contentDigest: createContentDigest(resource),
       },
       children: [],
       rowID: fields.id,
       name: fields.name,
+      description: fields.description,
       link: fields.link,
       category: fields.category,
-      type: fields.type,
-      description: fields.description,
+      tags: fields.tags ? fields.tags : [],
+      imageUrl: fields.image,
       featured: fields.featured ? true : false,
-      featuredOrder: fields.featuredOrder,
-      recommendedBy: fields.recommendedBy ? fields.recommendedBy : [],
+      featuredOrder: fields.featuredOrder ? fields.featuredOrder : -1,
       recommendationCount: fields.recommendationCount
         ? fields.recommendationCount
         : 0,
-      tags: fields.tags,
-      imageUrl: fields.image,
     };
 
     createNode(node);
@@ -99,15 +100,30 @@ exports.sourceNodes = async ({
 
   // Do the same for mentors data
   const mentors = await getAllMentors();
-  mentors.map((mentor) => {
+  mentors.map(async (mentor) => {
     const nodeID = createNodeId(`${mentor.id}`);
     const fields = mentor.fields;
+
+    // get nested mentor journeys async
+    const journeys = fields.journeys
+      ? fields.journeys.map(async (journeyID) => {
+          const journey = await getMentorJourneyByID(journeyID);
+          const fields = journey.fields;
+
+          return {
+            rowID: journey.id,
+            title: fields.title,
+            description: fields.description ? fields.description : "",
+            link: fields.link ? fields.link : "#",
+          };
+        })
+      : [];
 
     const node = {
       id: nodeID,
       parent: `__SOURCE__`,
       internal: {
-        type: `Mentor`, // name of the GraphQL query --> allItem {}
+        type: `Mentor`,
         contentDigest: createContentDigest(mentor),
       },
       children: [],
@@ -117,13 +133,19 @@ exports.sourceNodes = async ({
       bio: fields.bio,
       imageUrl: fields.image,
       recommendationIDs: fields.recommendations ? fields.recommendations : [],
-      journeyIDs: fields.journeys ? fields.journeys : [],
       socials: fields.socials ? fields.socials : [],
       personal: fields.personal ? true : false,
-      tips: [], // TODO: fix me
+      tips: {
+        title: fields.tips__title,
+        description: fields.tips__description,
+      },
     };
 
-    createNode(node);
+    // make sure we've finished fetching mentor joruneys before creating the node
+    Promise.all(journeys).then((res) => {
+      node.journeys = res;
+      createNode(node);
+    });
   });
 };
 
@@ -132,7 +154,7 @@ exports.sourceNodes = async ({
 exports.onCreateNode = async ({
   node,
   actions,
-  createContentDigest,
+  getNode,
   createNodeId,
   cache,
   store,
@@ -140,13 +162,12 @@ exports.onCreateNode = async ({
   const { createNode, createNodeField } = actions;
 
   if (
-    (node.internal.type === "RecruitingResource" ||
-      node.internal.type === "Mentor") &&
-    node.imageUrl
+    node.internal.type === "RecruitingResource" ||
+    node.internal.type === "Mentor"
   ) {
     // add a file node for the hosted image
     const fileNode = await createRemoteFileNode({
-      url: node.imageUrl, // string that points to the URL of the image
+      url: node.imageUrl, // url string of the image
       parentNodeId: node.id,
       createNode,
       createNodeId,
@@ -170,57 +191,16 @@ exports.onCreateNode = async ({
       value: slug,
     });
 
-    // fetch linked resources from airtable by ID + add these nodes here
-    node.recommendations = node.recommendationIDs.map(async (id) => {
-      const resource = await getDirectoryResourceByID(id);
-      console.log(resource);
-      const nodeID = createNodeId(`${id}`);
-      const fields = resource.fields;
-
-      createNode({
-        id: nodeID,
-        parent: `__SOURCE__`,
-        internal: {
-          type: `RecruitingResource`, // name of the GraphQL query --> allItem {}
-          contentDigest: createContentDigest(resource),
-        },
-        children: [],
-        rowID: fields.id,
-        name: fields.name,
-        link: fields.link,
-        category: fields.category,
-        type: fields.type,
-        description: fields.description,
-        featured: fields.featured ? true : false,
-        featuredOrder: fields.featuredOrder,
-        recommendedBy: fields.recommendedBy ? fields.recommendedBy : [],
-        recommendationCount: fields.recommendationCount
-          ? fields.recommendationCount
-          : 0,
-        tags: fields.tags,
-        imageUrl: fields.image,
-      });
-    });
-
-    // fetch mentor journeys by ID as well (they live in a separate table)
-    node.journeys = node.journeyIDs.map(async (id) => {
-      const resource = await getMentorJourneyByID(id);
-      const nodeID = createNodeId(`${id}`);
-      const fields = resource.fields;
-
-      createNode({
-        id: nodeID,
-        parent: `__SOURCE__`,
-        internal: {
-          type: `MentorJourney`, // name of the GraphQL query --> allItem {}
-          contentDigest: createContentDigest(resource),
-        },
-        children: [],
-        rowID: fields.id,
-        title: fields.title,
-        description: fields.description ? fields.description : "",
-        link: fields.link ? fields.link : "#",
-      });
+    // fetch linked resources from airtable by ID
+    // since these should exist as nodes already and we created the same node ID,
+    // we can link this to an existing node instead of re-fetching + creating a new node.
+    Promise.all(
+      node.recommendationIDs.map(async (id) => {
+        const nodeID = createNodeId(`${id}`);
+        return getNode(nodeID);
+      })
+    ).then((res) => {
+      node.recommendations = res;
     });
   }
 };
