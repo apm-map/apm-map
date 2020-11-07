@@ -137,8 +137,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MentorProfile({ mentor }) {
   const classes = useStyles();
-
-  console.log(mentor);
   const socials = mentor.socials;
   const platforms = [
     "linkedin",
@@ -199,7 +197,6 @@ export default function MentorProfile({ mentor }) {
     );
   }
 
-  console.log(mentor);
   return (
     <Container className={classes.container}>
       <Box className={classes.header}>

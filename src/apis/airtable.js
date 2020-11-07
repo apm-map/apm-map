@@ -1,9 +1,4 @@
 const Airtable = require("airtable");
-
-var dotenv = require("dotenv").config({
-  path: `.env.development`,
-});
-
 const base = new Airtable().base(process.env.AIRTABLE_BASE_ID);
 
 // DIRECTORY RESOURCES
