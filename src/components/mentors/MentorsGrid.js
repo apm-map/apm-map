@@ -36,23 +36,21 @@ export default function MentorsGrid({ category }) {
   const [currentPageItems, setCurrentPageItems] = useState(null);
   const data = useStaticQuery(graphql`
     query MentorsQuery {
-      allMentorsJson {
-        edges {
-          node {
-            id
-            name
-            title
-            bio
-            image {
-              childImageSharp {
-                fluid(quality: 75, cropFocus: ATTENTION) {
-                  ...GatsbyImageSharpFluid
-                }
+      allMentor {
+        nodes {
+          id
+          name
+          title
+          bio
+          image {
+            childImageSharp {
+              fluid(quality: 75, cropFocus: ATTENTION) {
+                ...GatsbyImageSharpFluid
               }
             }
-            fields {
-              slug
-            }
+          }
+          fields {
+            slug
           }
         }
       }
@@ -60,7 +58,7 @@ export default function MentorsGrid({ category }) {
   `);
 
   useEffect(() => {
-    setCurrentPageItems(data.allMentorsJson.edges.slice(0, mentorsPerPage));
+    setCurrentPageItems(data.allMentor.nodes.slice(0, mentorsPerPage));
   }, [data]);
 
   return (
@@ -73,14 +71,14 @@ export default function MentorsGrid({ category }) {
       {currentPageItems && (
         <Container maxWidth="lg" className={classes.gridContainer}>
           <Grid container spacing={2} className={classes.cardGrid}>
-            {currentPageItems.map((edge, index) => (
+            {currentPageItems.map((node, index) => (
               <Grid item key={index} xs={12} sm={6}>
-                <AvatarCard data={edge.node} />
+                <AvatarCard data={node} />
               </Grid>
             ))}
           </Grid>
           <Pagination
-            items={data.allMentorsJson.edges}
+            items={data.allMentor.nodes}
             itemsPerPage={mentorsPerPage}
             setCurrentPageItems={setCurrentPageItems}
           />
