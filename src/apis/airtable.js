@@ -10,6 +10,7 @@ async function getAllDirectoryResources() {
   return resources
     .select({
       sort: [{ field: "relevance", direction: "desc" }],
+      filterByFormula: "NOT({image} = '')", // ignore records w/o image urls
     })
     .all();
 }
@@ -23,7 +24,11 @@ async function getDirectoryResourceByID(id) {
 const mentors = base.table("Mentors");
 
 async function getAllMentors() {
-  return mentors.select().all();
+  return mentors
+    .select({
+      filterByFormula: "NOT({image} = '')", // ignore records w/o image urls
+    })
+    .all();
 }
 
 async function getMentorByID(id) {
