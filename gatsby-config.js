@@ -7,6 +7,13 @@ require("dotenv").config({
 const website = require("./config/website");
 const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix;
 
+// TODO: leverage new cache logic: https://github.com/gatsbyjs/gatsby/discussions/28331
+// TODO: fix DeprecationWarning: OutgoingMessage.prototype._headers (with update to node 12)
+
+// TODO: migrate to gatsby-plugin-image: https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/
+// TODO: migrate to gatsby-plugin-google-gtag: https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/
+// TODO: migrate to framer-motion v4 (animations basically break on the site when updating to @latest)
+
 module.exports = {
   /* General Information */
   pathPrefix: website.pathPrefix,
