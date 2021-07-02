@@ -238,7 +238,7 @@ SEO.defaultProps = {
   node: null,
 };
 
-// TODO: refactor this to just use what's passed into context?
+// TODO: refactor this to just use what's passed into context??
 const query = graphql`
   query SEO {
     site {

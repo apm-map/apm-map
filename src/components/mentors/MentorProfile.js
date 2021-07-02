@@ -135,10 +135,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MentorProfile({ mentor, recommendations }) {
+export default function MentorProfile({ mentor }) {
   const classes = useStyles();
-
-  const socials = mentor.socials.split(",");
+  const socials = mentor.socials;
   const platforms = [
     "linkedin",
     "twitter",
@@ -265,23 +264,7 @@ export default function MentorProfile({ mentor, recommendations }) {
           {"Resources that I recommend for APM recruiting"}
         </Typography>
         <Grid container display="flex" spacing={4}>
-          {mentor.tips.length ? (
-            mentor.tips.map((tip, index) => (
-              <Grid
-                item
-                key={index}
-                xs={12}
-                sm={6}
-                md={4}
-                className={classes.cardGrid}
-              >
-                <JourneyCard loading={false} data={tip} />
-              </Grid>
-            ))
-          ) : (
-            <></>
-          )}
-          {recommendations.map((card, index) => (
+          {mentor.recommendations.map((card, index) => (
             <Grid
               item
               key={index}

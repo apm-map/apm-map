@@ -58,8 +58,10 @@ export default function DirectoryGrid({ category }) {
   `);
 
   useEffect(() => {
-    setCurrentPageItems(data.allRecruitingResource.nodes.slice(0, resourcesPerPage));
-  }, [data])
+    setCurrentPageItems(
+      data.allRecruitingResource.nodes.slice(0, resourcesPerPage)
+    );
+  }, [data]);
 
   const renderFiltered = (category) => {
     switch (category) {
@@ -82,13 +84,12 @@ export default function DirectoryGrid({ category }) {
       default:
         return (
           <>
-            {currentPageItems && (
+            {currentPageItems &&
               currentPageItems.map((node, index) => (
                 <Grid item key={index} xs={12} sm={6} lg={4}>
                   <Card loading={false} data={node} image={node.image} />
                 </Grid>
-              ))
-            )}
+              ))}
             <Grid item xs={12}>
               <Pagination
                 items={data.allRecruitingResource.nodes}

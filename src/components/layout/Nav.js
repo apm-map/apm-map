@@ -99,6 +99,7 @@ export default function Nav({ context }) {
             <a
               href="https://www.producthunt.com/posts/apm-map?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-apm-map"
               target="_blank"
+              rel="noreferrer"
             >
               <img
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=271828&theme=light"
