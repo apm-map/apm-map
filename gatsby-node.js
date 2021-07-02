@@ -100,6 +100,7 @@ exports.sourceNodes = async ({
 
   // Do the same for mentors data
   const mentors = await getAllMentors();
+
   mentors.map(async (mentor) => {
     const nodeID = createNodeId(`${mentor.id}`);
     const fields = mentor.fields;
@@ -185,7 +186,7 @@ exports.onCreateNode = async ({
   if (node.internal.type === "Mentor") {
     // prepare the slug field
     const slug = `/mentors/${node.name}`.split(" ").join("-").toLowerCase();
-    createNodeField({
+    await createNodeField({
       node,
       name: `slug`,
       value: slug,

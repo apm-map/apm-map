@@ -49,6 +49,10 @@ module.exports = {
       },
     ],
   },
+  flags: {
+    FAST_DEV: true,
+    DEV_SSR: true,
+  },
   plugins: [
     `gatsby-plugin-loadable-components-ssr`,
     `gatsby-transformer-sharp`,
