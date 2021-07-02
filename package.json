@@ -23,7 +23,7 @@
     "gatsby-plugin-google-gtag": "^3.8.0",
     "gatsby-plugin-loadable-components-ssr": "^3.0.0",
     "gatsby-plugin-manifest": "^3.6.0",
-    "gatsby-plugin-material-ui": "latest",
+    "gatsby-plugin-material-ui": "^3.0.1",
     "gatsby-plugin-offline": "^4.6.0",
     "gatsby-plugin-preload-link-crossorigin": "^1.0.2",
     "gatsby-plugin-react-helmet": "latest",
