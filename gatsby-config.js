@@ -7,6 +7,11 @@ require("dotenv").config({
 const website = require("./config/website");
 const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix;
 
+// TODO: fix DeprecationWarning: OutgoingMessage.prototype._headers (with update to node 12)
+
+// TODO: migrate to gatsby-plugin-image: https://www.gatsbyjs.com/docs/reference/release-notes/image-migration-guide/
+// TODO: migrate to framer-motion v4 (animations basically break on the site when updating to @latest)
+
 module.exports = {
   /* General Information */
   pathPrefix: website.pathPrefix,
@@ -42,22 +47,16 @@ module.exports = {
       },
     ],
   },
+  flags: {
+    FAST_DEV: true,
+    DEV_SSR: true,
+  },
   plugins: [
     `gatsby-plugin-loadable-components-ssr`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,
-    {
-      resolve: "gatsby-plugin-material-ui",
-      // If you want to use styled components you should change the injection order.
-      options: {
-        // stylesProvider: {
-        //   injectFirst: true,
-        // },
-      },
-    },
-    // If you want to use styled components you should add the plugin here.
-    // 'gatsby-plugin-styled-components',
+    `gatsby-plugin-material-ui`,
     "gatsby-plugin-react-helmet",
     `gatsby-transformer-json`,
     {
@@ -102,9 +101,25 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: website.googleAnalyticsID,
+        trackingIds: [website.googleAnalyticsID],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          optimize_id: "OPT-TX9H4RS",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+          exclude: [],
+        },
       },
     },
     {
